@@ -1,7 +1,10 @@
-import Layout from '../ui/article';
+import React from "react";
+import ContactScreen from "../contact/screens/ContactScreen";
 
-function Contact() {
-  return <Layout title="Contact">Contact Page</Layout>;
-}
+interface Props {}
+
+const Contact: React.FC<Props> = () => {
+  return <ContactScreen />;
+};
 
 export default Contact;

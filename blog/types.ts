@@ -1,5 +1,17 @@
-export interface Post {
-  id: string;
-  title: string;
+export interface Blog {
+  id?: string;
+  tags: string;
+  name: string;
+  createdAt: string;
   description: string;
+}
+
+export interface singleBlog {
+  id: string;
+  properties: {
+    createdAt: any;
+    description: any;
+    name: any;
+    tags: any;
+  };
 }

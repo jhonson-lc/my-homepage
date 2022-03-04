@@ -1,8 +1,8 @@
-import React from 'react';
-import Head from 'next/head';
-import { Box, Container } from '@chakra-ui/react';
-import NavBar from './navbar';
-import Footer from './footer';
+import React from "react";
+import Head from "next/head";
+import { Box, Container } from "@chakra-ui/react";
+import NavBar from "../../components/header/NavBar";
+import Footer from "../../components/Footer";
 
 type Props = {
   router?: any;
