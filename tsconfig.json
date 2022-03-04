@@ -15,11 +15,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "incremental": true,
-    "paths": {
-      "contentlayer/data": ["./.contentlayer/data"]
-      // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    }
   },
-  "include": [".contentlayer/data","next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
