@@ -5,9 +5,9 @@
     "node": true
   },
   "extends": [
+    "plugin:react/recommended",
     "plugin:prettier/recommended",
-    "next",
-    "next/core-web-vitals"
+    "plugin:react-hooks/recommended"
   ],
   "plugins": ["react", "prettier", "import", "@typescript-eslint"],
   "parser": "@typescript-eslint/parser",
