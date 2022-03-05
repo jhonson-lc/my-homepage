@@ -1,36 +1,36 @@
-import type { NextPage } from "next";
-import { SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import type {NextPage} from "next";
+import {SimpleGrid, Stack, Text} from "@chakra-ui/react";
 
-import { GetServerSideProps } from "next";
+import {GetServerSideProps} from "next";
 
 import Section from "../components/Section";
 import Layout from "../app/layouts/ArticleLayout";
 import Button from "../ui/controls/Button/Button";
 import P from "../work/components/Paragraph";
 import api from "../blog/resources";
-import { Blog } from "../blog/types";
+import {Blog} from "../blog/types";
 import Avatar from "../ui/feedback/Avatar";
 
 import ItemPost from "../blog/components/GridItemPost";
-import { ParameterWork } from "../work/components/Work";
+import {ParameterWork} from "../work/components/Work";
 import WorkImage from "../work/components/WorkImage";
 
 interface Props {
   blogs: Blog[];
 }
 
-const IndexPage: NextPage<Props> = ({ blogs }) => {
+const IndexPage: NextPage<Props> = ({blogs}) => {
   return (
     <Layout title="Home">
       <Stack spacing={10}>
         <Stack
           align="center"
           justifyContent="space-between"
-          direction={{ base: "column", sm: "row" }}
+          direction={{base: "column", sm: "row"}}
         >
-          <Stack order={{ base: "2", sm: "0" }} pos="relative">
+          <Stack order={{base: "2", sm: "0"}} pos="relative">
             <Text
-              align={{ base: "center", sm: "left" }}
+              align={{base: "center", sm: "left"}}
               color="secondary"
               fontSize={32}
               fontWeight="600"
@@ -40,12 +40,7 @@ const IndexPage: NextPage<Props> = ({ blogs }) => {
             >
               Jhon A. Lescano
             </Text>
-            <Text
-              fontSize="sm"
-              fontWeight="regular"
-              color="primary"
-              letterSpacing="tighter"
-            >
+            <Text fontSize="sm" fontWeight="regular" color="primary" letterSpacing="tighter">
               Desarrollador Frontend ( Estudiante / Autodidacta / Apasionado )
             </Text>
           </Stack>
@@ -53,9 +48,8 @@ const IndexPage: NextPage<Props> = ({ blogs }) => {
         </Stack>
         <Section title="Trabajo">
           <P>
-            Soy un desarrollador versátil y apasionado por aprender nuevas
-            tecnologías, combinar la rapidez y la funcionalidad en desarrollo
-            web. Actualmente estoy estudiando{" "}
+            Soy un desarrollador versátil y apasionado por aprender nuevas tecnologías, combinar la
+            rapidez y la funcionalidad en desarrollo web. Actualmente estoy estudiando{" "}
             <Text fontWeight="500" color="secondary" as="ins">
               Ingeniería en Software
             </Text>
@@ -71,12 +65,7 @@ const IndexPage: NextPage<Props> = ({ blogs }) => {
           <Button label="Ver todo" href="/blog" />
         </Section>
         <Section title="Proyectos">
-          <SimpleGrid
-            justifyItems="center"
-            columns={[1, 1, 2]}
-            w="100%"
-            gap={10}
-          >
+          <SimpleGrid justifyItems="center" columns={[1, 1, 2]} w="100%" gap={10}>
             <Stack as="article" justifyContent="flex-start" direction="column">
               <ParameterWork title="Proyecto">
                 <Text variant="information">Gif Finder</Text>

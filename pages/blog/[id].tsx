@@ -1,9 +1,9 @@
 import React from "react";
-import { GetStaticProps, GetStaticPaths } from "next";
+import {GetStaticProps, GetStaticPaths} from "next";
 
-import { allBlogs } from ".contentlayer/generated";
-import type { Blog } from ".contentlayer/generated/types";
-import { useMDXComponent } from "next-contentlayer/hooks";
+import {allBlogs} from ".contentlayer/generated";
+import type {Blog} from ".contentlayer/generated/types";
+import {useMDXComponent} from "next-contentlayer/hooks";
 
 import Avatar from "../../ui/feedback/Avatar";
 import Button from "../../ui/controls/Button/Button";
@@ -11,36 +11,27 @@ import Layout from "../../app/layouts/ArticleLayout";
 
 import formatDate from "utils/formatDate";
 
-import { Text, Divider, Heading, Stack } from "@chakra-ui/react";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
+import {Text, Divider, Heading, Stack} from "@chakra-ui/react";
+import {ArrowForwardIcon} from "@chakra-ui/icons";
 
 interface Props {
   blog: Blog;
 }
 
-const Blog: React.FC<Props> = ({ blog }) => {
+const Blog: React.FC<Props> = ({blog}) => {
   const Component = useMDXComponent(blog.body.code);
 
   return (
     <Layout title="Blog">
       <Stack spacing={8}>
         <Heading>{blog.title}</Heading>
-        <Stack
-          direction="row"
-          justifyContent="space-between"
-          alignItems="center"
-        >
+        <Stack direction="row" justifyContent="space-between" alignItems="center">
           <Stack direction="row">
             <Avatar size={8} />
             <Stack
               alignItems="center"
               divider={
-                <Divider
-                  orientation="vertical"
-                  border={0.5}
-                  borderColor="secondary"
-                  h={5}
-                />
+                <Divider orientation="vertical" border={0.5} borderColor="secondary" h={5} />
               }
               direction="row"
             >
@@ -68,14 +59,14 @@ const Blog: React.FC<Props> = ({ blog }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: allBlogs.map((blog) => ({ params: { id: blog.slug } })),
+    paths: allBlogs.map((blog) => ({params: {id: blog.slug}})),
     fallback: false,
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({params}) => {
   const blog = allBlogs.find((blog) => blog.slug === params.id);
-  return { props: { blog } };
+  return {props: {blog}};
 };
 
 export default Blog;
