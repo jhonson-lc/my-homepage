@@ -1,12 +1,12 @@
-import { ChevronRightIcon } from '@chakra-ui/icons';
-import { Flex, Text, Link, Badge, useColorModeValue } from '@chakra-ui/react';
-import NextLink from 'next/link';
+import {ChevronRightIcon} from "@chakra-ui/icons";
+import {Flex, Text, Link, Badge, useColorModeValue} from "@chakra-ui/react";
+import NextLink from "next/link";
 
-export const TitleNavigation = ({ title }: { title: string }) => {
+export const TitleNavigation = ({title}: {title: string}) => {
   return (
-    <Flex alignItems="center" w="100%" mb={8} gap={1}>
-      <NextLink href="/work" passHref>
-        <Link _hover={{ textDecoration: 'underline' }} color="secondary">
+    <Flex alignItems="center" gap={1} mb={8} w="100%">
+      <NextLink passHref href="/work">
+        <Link _hover={{textDecoration: "underline"}} color="secondary">
           Work
         </Link>
       </NextLink>
@@ -18,24 +18,33 @@ export const TitleNavigation = ({ title }: { title: string }) => {
   );
 };
 
-export const ParameterWork: React.FC<Parameter> = ({ title, children }) => {
+export const ParameterWork: React.FC<Parameter> = ({title, children}) => {
   return (
-    <Flex wrap="wrap" alignItems="center" justifyContent="flex-start" gap={2}>
-      <Badge fontSize="sm" colorScheme={useColorModeValue('teal', 'cyan')}>
-        {title}:{' '}
+    <Flex alignItems="center" gap={2} justifyContent="flex-start" wrap="wrap">
+      <Badge colorScheme={useColorModeValue("teal", "cyan")} fontSize="sm">
+        {title}:{" "}
       </Badge>
       {children}
     </Flex>
   );
 };
 
-export const BuildWork = ({ build }: { build: string[] }) => {
+export const BuildWork = ({build}: {build: string[]}) => {
   return (
     <>
-      {build.map(item => {
-        const c = colors.filter(({ stack }) => stack === item).map(item => item.color);
+      {build.map((item) => {
+        const c = colors
+          .filter(({stack}) => stack === item)
+          .map((item) => item.color);
+
         return (
-          <Badge key={item} fontSize={9} borderRadius="none" variant="outline" colorScheme={c[0]}>
+          <Badge
+            key={item}
+            borderRadius="none"
+            colorScheme={c[0]}
+            fontSize={9}
+            variant="outline"
+          >
             {item}
           </Badge>
         );
@@ -45,19 +54,19 @@ export const BuildWork = ({ build }: { build: string[] }) => {
 };
 
 const colors: ColorBadge[] = [
-  { stack: 'html', color: 'red' },
-  { stack: 'css', color: 'blue' },
-  { stack: 'vanilla js', color: 'yellow' },
-  { stack: 'javascript', color: 'yellow' },
-  { stack: 'react.js', color: 'linkedin' },
-  { stack: 'wouter', color: 'green' },
-  { stack: 'framer-motion', color: 'cyan' },
-  { stack: 'typescript', color: 'linkedin' },
-  { stack: 'next.js', color: 'gray' },
-  { stack: 'chakra-ui', color: 'teal' },
-  { stack: 'dark mode', color: 'purple' },
-  { stack: 'tailwindcss', color: 'teal' },
-  { stack: 'styled-components', color: 'pink' },
+  {stack: "html", color: "red"},
+  {stack: "css", color: "blue"},
+  {stack: "vanilla js", color: "yellow"},
+  {stack: "javascript", color: "yellow"},
+  {stack: "react.js", color: "linkedin"},
+  {stack: "wouter", color: "green"},
+  {stack: "framer-motion", color: "cyan"},
+  {stack: "typescript", color: "linkedin"},
+  {stack: "next.js", color: "gray"},
+  {stack: "chakra-ui", color: "teal"},
+  {stack: "dark mode", color: "purple"},
+  {stack: "tailwindcss", color: "teal"},
+  {stack: "styled-components", color: "pink"},
 ];
 
 type Parameter = {

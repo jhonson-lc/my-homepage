@@ -1,17 +1,18 @@
-import { Stack, Heading } from "@chakra-ui/react";
+import React from "react";
+import {Stack, Heading} from "@chakra-ui/react";
 
 interface Post {
   title?: string;
   desc?: string;
 }
 
-const Section: React.FC<Post> = ({ title, children }) => {
+const Section: React.FC<Post> = ({title, children}) => {
   return (
-    <Stack spacing={10} direction="column">
-      <Heading variant="title-section" color="heading">
+    <Stack direction="column" spacing={10}>
+      <Heading color="heading" variant="title-section">
         {title}
       </Heading>
-      <Stack w="100%" spacing={5} align="flex-start">
+      <Stack align="flex-start" spacing={5} w="100%">
         {children}
       </Stack>
     </Stack>

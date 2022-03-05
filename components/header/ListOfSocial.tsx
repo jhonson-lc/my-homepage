@@ -1,21 +1,22 @@
-import { Stack, Link, Icon } from "@chakra-ui/react";
+import {Stack, Link, Icon} from "@chakra-ui/react";
 import NextLink from "next/link";
-import { motion } from "framer-motion";
-import { SOCIAL_MEDIAS } from "./constants";
+import {motion} from "framer-motion";
 
-const ListOfSocial = ({ size, color }: { size: number; color: string }) => {
+import {SOCIAL_MEDIAS} from "./constants";
+
+const ListOfSocial = ({size, color}: {size: number; color: string}) => {
   return (
     <Stack direction="row" justify="center" spacing={5}>
       {SOCIAL_MEDIAS.map((social) => {
         return (
-          <NextLink key={social.text} href={social.href} passHref>
+          <NextLink key={social.text} passHref href={social.href}>
             <Link
+              _focus={{boxShadow: "none"}}
               as={motion.a}
-              _focus={{ boxShadow: "none" }}
-              whileHover={{ scale: 1.1 }}
               target="_blank"
+              whileHover={{scale: 1.1}}
             >
-              <Icon color={color} w={size} h={size} as={social.icon} />
+              <Icon as={social.icon} color={color} h={size} w={size} />
             </Link>
           </NextLink>
         );

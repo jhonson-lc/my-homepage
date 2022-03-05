@@ -1,39 +1,47 @@
+import type {Blog} from ".contentlayer/generated/types";
+
 import React from "react";
 import {GetStaticProps, GetStaticPaths} from "next";
-
-import {allBlogs} from ".contentlayer/generated";
-import type {Blog} from ".contentlayer/generated/types";
 import {useMDXComponent} from "next-contentlayer/hooks";
-
-import Avatar from "../../ui/feedback/Avatar";
-import Button from "../../ui/controls/Button/Button";
-import Layout from "../../app/layouts/ArticleLayout";
-
 import formatDate from "utils/formatDate";
-
 import {Text, Divider, Heading, Stack} from "@chakra-ui/react";
 import {ArrowForwardIcon} from "@chakra-ui/icons";
+
+import Layout from "../../app/layouts/ArticleLayout";
+import Button from "../../ui/controls/Button/Button";
+import Avatar from "../../ui/feedback/Avatar";
+
+import {allBlogs} from ".contentlayer/generated";
 
 interface Props {
   blog: Blog;
 }
 
-const Blog: React.FC<Props> = ({blog}) => {
+const SingleBlog: React.FC<Props> = ({blog}) => {
   const Component = useMDXComponent(blog.body.code);
 
   return (
     <Layout title="Blog">
       <Stack spacing={8}>
         <Heading>{blog.title}</Heading>
-        <Stack direction="row" justifyContent="space-between" alignItems="center">
+        <Stack
+          alignItems="center"
+          direction="row"
+          justifyContent="space-between"
+        >
           <Stack direction="row">
             <Avatar size={8} />
             <Stack
               alignItems="center"
-              divider={
-                <Divider orientation="vertical" border={0.5} borderColor="secondary" h={5} />
-              }
               direction="row"
+              divider={
+                <Divider
+                  border={0.5}
+                  borderColor="secondary"
+                  h={5}
+                  orientation="vertical"
+                />
+              }
             >
               <Text variant="information">Por Jhon Lescano</Text>
               <Text variant="information">{formatDate(blog.publishedAt)}</Text>
@@ -44,12 +52,12 @@ const Blog: React.FC<Props> = ({blog}) => {
           </Text>
         </Stack>
         <Component />
-        <Stack direction="row" w="100%" justifyContent="end">
+        <Stack direction="row" justifyContent="end" w="100%">
           <Button
-            label="Volver"
             href="/blog"
-            rightIcon=""
+            label="Volver"
             leftIcon={<ArrowForwardIcon transform="rotate(180deg)" />}
+            rightIcon=""
           />
         </Stack>
       </Stack>
@@ -66,7 +74,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({params}) => {
   const blog = allBlogs.find((blog) => blog.slug === params.id);
+
   return {props: {blog}};
 };
 
-export default Blog;
+export default SingleBlog;

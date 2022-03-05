@@ -15,73 +15,72 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
-
-import { GiHamburgerMenu } from "react-icons/gi";
+import {GiHamburgerMenu} from "react-icons/gi";
+import {motion} from "framer-motion";
 
 import Logo from "../../ui/static/Logo";
 import ThemeButton from "../../ui/structure/theme-button";
-import { motion } from "framer-motion";
-import { LINKS_NAV } from "./constants";
+
+import {LINKS_NAV} from "./constants";
 import LinkItem from "./LinkItem";
 import ListOfSocial from "./ListOfSocial";
 
-function Navbar({ path }: any) {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+function Navbar({path}: any) {
+  const {isOpen, onOpen, onClose} = useDisclosure();
 
   return (
     <Box
-      p={2}
       as={motion.nav}
-      css={{ backdropFilter: "blur(20px)" }}
-      width="100%"
-      top="0"
+      css={{backdropFilter: "blur(20px)"}}
+      p={2}
       position="sticky"
+      top="0"
+      width="100%"
       zIndex="1"
     >
       <Container
-        display="flex"
-        pos="relative"
-        maxW="container.md"
         alignItems="center"
+        display="flex"
         justifyContent="space-between"
+        maxW="container.md"
+        pos="relative"
       >
         <Logo size={16} />
-        <Box display="flex" alignItems="center">
+        <Box alignItems="center" display="flex">
           <ThemeButton size={24} />
           <Menu>
             <MenuButton
-              ml={5}
-              display="flex"
-              _hover={{ transform: "scale(1.1)" }}
-              _focus={{ boxShadow: "none" }}
-              as={IconButton}
-              fontSize={45}
+              _focus={{boxShadow: "none"}}
+              _hover={{transform: "scale(1.1)"}}
               aria-label="Options"
+              as={IconButton}
+              display="flex"
+              fontSize={45}
               icon={<GiHamburgerMenu />}
+              ml={5}
               variant="ghost"
               onClick={() => onOpen()}
             />
             <Modal
               blockScrollOnMount={false}
-              returnFocusOnClose={false}
-              onClose={onClose}
               isOpen={isOpen}
-              size="sm"
               motionPreset="slideInBottom"
+              returnFocusOnClose={false}
+              size="sm"
+              onClose={onClose}
             >
               <ModalOverlay
-                bg="blackAlpha.300"
                 backdropFilter="blur(2px) hue-rotate(90deg)"
+                bg="blackAlpha.300"
               />
               <ModalContent
-                borderRadius="none"
                 border="2px"
                 borderColor="primary"
+                borderRadius="none"
                 w="300px"
               >
                 <ModalCloseButton
-                  pos="absolute"
-                  _focus={{ boxShadow: "none" }}
+                  _focus={{boxShadow: "none"}}
                   _hover={{
                     bg: "none",
                     fontSize: "25px",
@@ -89,23 +88,24 @@ function Navbar({ path }: any) {
                   }}
                   color="secondary"
                   fontSize="20px"
-                  top="1.5vw"
+                  pos="absolute"
                   right="1.5vw"
+                  top="1.5vw"
                   zIndex="1"
                 />
-                <ModalBody spacing={6} p={14} bg="background" as={Stack}>
+                <ModalBody as={Stack} bg="background" p={14} spacing={6}>
                   <Stack>
-                    {LINKS_NAV.map(({ href, text, icon }) => {
+                    {LINKS_NAV.map(({href, text, icon}) => {
                       return (
                         <LinkItem
-                          font={{ size: 20, weight: 900 }}
-                          onClose={onClose}
                           key={href}
+                          font={{size: 20, weight: 900}}
                           href={href}
                           path={path}
+                          onClose={onClose}
                         >
                           {icon ? (
-                            <Stack direction="row" align="center">
+                            <Stack align="center" direction="row">
                               <span>{text}</span>
                               <Icon as={icon} />
                             </Stack>
@@ -116,7 +116,7 @@ function Navbar({ path }: any) {
                       );
                     })}
                   </Stack>
-                  <Divider border="none" h="1px" bg="secondary" />
+                  <Divider bg="secondary" border="none" h="1px" />
                   <ListOfSocial color="secondary" size={5} />
                   <Center>
                     <ThemeButton size={24} />

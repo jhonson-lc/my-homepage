@@ -1,17 +1,11 @@
-import { motion } from "framer-motion";
+import React from "react";
+import {motion} from "framer-motion";
 import NextLink from "next/link";
-import P from "../../work/components/Paragraph";
 import formatDate from "utils/formatDate";
 import convertBlogURL from "utils/convertBlogURL";
+import {Image, Text, Stack, Box, LinkOverlay, LinkBox} from "@chakra-ui/react";
 
-import {
-  Image,
-  Text,
-  Stack,
-  Box,
-  LinkOverlay,
-  LinkBox,
-} from "@chakra-ui/react";
+import P from "../../work/components/Paragraph";
 
 interface Props {
   blog: {
@@ -26,60 +20,61 @@ interface Props {
   };
 }
 
-const ItemPost: React.FC<Props | any> = ({ blog }) => {
+const ItemPost: React.FC<Props | any> = ({blog}) => {
   const LinkBoxM = motion(LinkBox);
+
   return (
     <LinkBoxM
-      whileHover={{ scale: 0.99 }}
       as="article"
-      shadow="md"
-      rounded="md"
-      borderWidth="1px"
       borderRadius="lg"
+      borderWidth="1px"
+      rounded="md"
+      shadow="md"
+      whileHover={{scale: 0.99}}
     >
       <Stack>
         {blog.properties.image.files[0]?.file.url && (
           <Image
-            w="100%"
+            borderBottomRadius="none"
             h={140}
+            loading="lazy"
             objectFit="cover"
             rounded="lg"
-            loading="lazy"
-            borderBottomRadius="none"
             src={blog.properties.image.files[0]?.file.url}
+            w="100%"
           />
         )}
       </Stack>
       <Stack
-        rounded="lg"
         borderTopRadius="none"
-        p={5}
-        maxH={170}
-        h="100%"
         direction="column"
+        h="100%"
+        maxH={170}
+        p={5}
         pos="relative"
+        rounded="lg"
       >
         <Box
-          top="2"
-          right="5"
           as="time"
-          fontSize="sm"
           color="primary"
+          fontSize="sm"
           position="absolute"
+          right="5"
+          top="2"
         >
           {formatDate(blog?.properties.createdAt.created_time)}
         </Box>
         <NextLink
-          href={`/blog/${convertBlogURL(
-            blog?.properties.name.title[0]?.plain_text
-          )}`}
           passHref
+          href={`/blog/${convertBlogURL(
+            blog?.properties.name.title[0]?.plain_text,
+          )}`}
         >
           <LinkOverlay
             color="heading"
+            fontSize="xl"
             fontWeight="500"
             lineHeight={5}
-            fontSize="xl"
           >
             {blog?.properties.name.title[0]?.plain_text}
           </LinkOverlay>
@@ -88,7 +83,7 @@ const ItemPost: React.FC<Props | any> = ({ blog }) => {
           <P limitLines={3}>
             {blog?.properties.description.rich_text[0]?.plain_text}
           </P>
-          <Text variant="information" color="secondary">
+          <Text color="secondary" variant="information">
             Leer más ...
           </Text>
         </Stack>

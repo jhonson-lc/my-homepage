@@ -6,7 +6,7 @@ import {
   BsLinkedin,
 } from "react-icons/bs";
 
-import { LinkNav } from "./types";
+import {LinkNav} from "./types";
 
 export const SOCIAL_MEDIAS: LinkNav[] = [
   {
@@ -19,7 +19,7 @@ export const SOCIAL_MEDIAS: LinkNav[] = [
     text: "Facebook",
     icon: BsFacebook,
   },
-  { href: "https://twitter.com/jhonson_lc", text: "Twitter", icon: BsTwitter },
+  {href: "https://twitter.com/jhonson_lc", text: "Twitter", icon: BsTwitter},
   {
     href: "https://www.linkedin.com/in/jhonlescano/",
     text: "LinkedIn",
@@ -28,10 +28,10 @@ export const SOCIAL_MEDIAS: LinkNav[] = [
 ];
 
 export const LINKS_NAV: LinkNav[] = [
-  { href: "/", text: "Inicio" },
-  { href: "/work", text: "Trabajo" },
-  { href: "/blog", text: "Blog" },
-  { href: "/contact", text: "Contacto" },
+  {href: "/", text: "Inicio"},
+  {href: "/work", text: "Trabajo"},
+  {href: "/blog", text: "Blog"},
+  {href: "/contact", text: "Contacto"},
   {
     href: "https://github.com/jhonson-lc",
     text: "Ver Código",

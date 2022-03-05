@@ -6,15 +6,13 @@ import {
   Textarea,
   Stack,
 } from "@chakra-ui/react";
+import {BsPerson} from "react-icons/bs";
+import {MdPhone, MdEmail, MdLocationOn, MdOutlineEmail} from "react-icons/md";
 
 import FormControl from "../components/FormControl";
 import InputInformation from "../components/InputInformation";
-
 import Layout from "../../app/layouts/ArticleLayout";
 import Section from "../../components/Section";
-
-import { BsPerson } from "react-icons/bs";
-import { MdPhone, MdEmail, MdLocationOn, MdOutlineEmail } from "react-icons/md";
 
 export default function ContactScreen() {
   const toast = useToast();
@@ -28,16 +26,17 @@ export default function ContactScreen() {
       isClosable: true,
     });
   };
+
   return (
     <Layout title="Contact">
       <Section title="Contact">
         <Stack spacing={5}>
           <Text color="secondary">Fill up the form below to contact</Text>
           <Stack
-            spacing={3}
-            direction="column"
             alignItems="flex-start"
+            direction="column"
             justifyContent="flex-start"
+            spacing={3}
           >
             <InputInformation icon={<MdPhone />}>
               +593 98 165 7629
@@ -50,34 +49,34 @@ export default function ContactScreen() {
             </InputInformation>
           </Stack>
         </Stack>
-        <Stack w="100%" justifyContent="center" direction="row">
-          <Stack p={8} w={400} bg="footer" borderRadius="lg">
+        <Stack direction="row" justifyContent="center" w="100%">
+          <Stack bg="footer" borderRadius="lg" p={8} w={400}>
             <VStack justifyContent="center">
               <form onSubmit={handleSubmit}>
                 <FormControl
                   help="Ej: John"
-                  label="Your name"
                   icon={BsPerson}
+                  label="Your name"
                 />
                 <FormControl
                   help="Ej: johndoe@mail.com"
-                  label="Email"
                   icon={MdOutlineEmail}
+                  label="Email"
                 />
-                <FormControl label="Message" help="Ej: Me gusta!">
+                <FormControl help="Ej: Me gusta!" label="Message">
                   <Textarea
-                    p={2}
                     borderColor="primary"
-                    rows={5}
+                    p={2}
                     resize="none"
+                    rows={5}
                   />
                 </FormControl>
                 <Button
-                  variant="solid"
-                  bg="primary"
-                  type="submit"
-                  color="background"
                   _hover={{}}
+                  bg="primary"
+                  color="background"
+                  type="submit"
+                  variant="solid"
                 >
                   Send Message
                 </Button>

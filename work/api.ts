@@ -1,26 +1,26 @@
-import { Work as IWork } from './types';
+import {Work as IWork} from "./types";
 
 interface RawWork extends IWork {
-  type: 'work';
+  type: "work";
 }
 
 class Work implements IWork {
-  id: IWork['id'];
-  title: IWork['title'];
-  thumbnail: IWork['thumbnail'];
-  siteurl: IWork['siteurl'];
-  build: IWork['build'];
-  platform: IWork['platform'];
-  description: IWork['description'];
+  id: IWork["id"];
+  title: IWork["title"];
+  thumbnail: IWork["thumbnail"];
+  siteurl: IWork["siteurl"];
+  build: IWork["build"];
+  platform: IWork["platform"];
+  description: IWork["description"];
 
   constructor() {
-    this.id = {} as Work['id'];
-    this.title = {} as Work['title'];
-    this.thumbnail = {} as Work['thumbnail'];
-    this.siteurl = {} as Work['siteurl'];
-    this.build = {} as Work['build'];
-    this.platform = {} as Work['platform'];
-    this.description = {} as Work['description'];
+    this.id = {} as Work["id"];
+    this.title = {} as Work["title"];
+    this.thumbnail = {} as Work["thumbnail"];
+    this.siteurl = {} as Work["siteurl"];
+    this.build = {} as Work["build"];
+    this.platform = {} as Work["platform"];
+    this.description = {} as Work["description"];
   }
 
   set(work: RawWork) {
@@ -51,20 +51,21 @@ class Work implements IWork {
 }
 
 function normalize(data: RawWork[]) {
-  const works = new Map<RawWork['id'], Work>();
+  const works = new Map<RawWork["id"], Work>();
 
   for (const item of data) {
     if (!works.has(item.id)) {
       works.set(item.id, new Work());
     }
-    if (item.type === 'work') {
+    if (item.type === "work") {
       const work = works.get(item.id);
+
       work?.set(item);
     }
   }
 
-  const normalized: IWork[] = Object.values(Object.fromEntries(works)).map(product =>
-    product.toJSON(),
+  const normalized: IWork[] = Object.values(Object.fromEntries(works)).map(
+    (product) => product.toJSON(),
   );
 
   return normalized;
@@ -72,5 +73,7 @@ function normalize(data: RawWork[]) {
 
 export default {
   list: (work: string): Promise<IWork[]> =>
-    import(`./works/${work}.json`).then(result => normalize(result.default as RawWork[])),
+    import(`./works/${work}.json`).then((result) =>
+      normalize(result.default as RawWork[]),
+    ),
 };

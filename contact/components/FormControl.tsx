@@ -4,11 +4,10 @@ import {
   FormLabel,
   FormHelperText,
   InputGroup,
-  InputLeftElement,
   Input,
+  InputLeftElement,
 } from "@chakra-ui/react";
-
-import { IconType } from "react-icons";
+import {IconType} from "react-icons";
 
 interface Props {
   label: string;
@@ -16,14 +15,14 @@ interface Props {
   help?: string;
 }
 
-const FormControl: React.FC<Props> = ({ label, icon, help, children }) => {
+const FormControl: React.FC<Props> = ({label, icon, help, children}) => {
   return (
     <ChakraFormControl isRequired>
       <FormLabel display="inline-block">{label}</FormLabel>
       {!children && (
         <InputGroup borderColor="primary">
-          <InputLeftElement color="primary" w={5} ml={2} as={icon} />
-          <Input autoComplete="off" type="text" size="md" />
+          <InputLeftElement as={icon} color="primary" ml={2} w={5} />
+          <Input autoComplete="off" size="md" type="text" />
         </InputGroup>
       )}
       {children && children}

@@ -1,4 +1,4 @@
-import { Client } from "@notionhq/client";
+import {Client} from "@notionhq/client";
 
 export default {
   list: async (): Promise<any> => {
@@ -9,6 +9,7 @@ export default {
     const response = await notion.databases.query({
       database_id: databaseId,
     });
+
     return response.results;
   },
 };

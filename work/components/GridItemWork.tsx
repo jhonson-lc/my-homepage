@@ -1,20 +1,22 @@
 import React from "react";
-import { Text, Stack } from "@chakra-ui/react";
-import { ParameterWork, BuildWork } from "./Work";
+import {Text, Stack} from "@chakra-ui/react";
+
+import {Work} from "../types";
+
+import {ParameterWork, BuildWork} from "./Work";
 import WorkImage from "./WorkImage";
-import { Work } from "../types";
 
 interface Props {
   work: Work;
 }
 
-const ItemWork: React.FC<Props> = ({ work }) => {
+const ItemWork: React.FC<Props> = ({work}) => {
   return (
     <Stack
-      spacing={3}
       as="article"
-      justifyContent="flex-start"
       direction="column"
+      justifyContent="flex-start"
+      spacing={3}
     >
       <ParameterWork title="Proyecto">
         <Text variant="information">{work.title}</Text>

@@ -1,3 +1,4 @@
+import React from "react";
 import {GetStaticProps} from "next";
 
 import WorkScreen from "../work/screens/WorkPage";
@@ -8,7 +9,7 @@ interface Props {
   works: Work[];
 }
 
-const Work: React.FC<Props> = ({works}) => {
+const IndexWork: React.FC<Props> = ({works}) => {
   return <WorkScreen works={works} />;
 };
 
@@ -23,4 +24,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default Work;
+export default IndexWork;

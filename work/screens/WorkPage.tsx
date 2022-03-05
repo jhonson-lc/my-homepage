@@ -1,26 +1,24 @@
 import React from "react";
-import { SimpleGrid } from "@chakra-ui/react";
+import {SimpleGrid} from "@chakra-ui/react";
 
 import ItemWork from "../components/GridItemWork";
-
 import Section from "../../components/Section";
 import Layout from "../../app/layouts/ArticleLayout";
-
-import { Work } from "../types";
+import {Work} from "../types";
 
 interface Props {
   works: Work[];
 }
 
-const Work: React.FC<Props> = ({ works }) => {
+const WorkScreen: React.FC<Props> = ({works}) => {
   return (
     <Layout title="Work">
       <Section title="Trabajos">
         <SimpleGrid
-          justifyItems="center"
           columns={[1, 1, 2]}
-          w="100%"
           gridGap={24}
+          justifyItems="center"
+          w="100%"
         >
           {works &&
             works.map((work) => {
@@ -32,4 +30,4 @@ const Work: React.FC<Props> = ({ works }) => {
   );
 };
 
-export default Work;
+export default WorkScreen;

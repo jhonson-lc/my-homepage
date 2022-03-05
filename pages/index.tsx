@@ -1,6 +1,6 @@
 import type {NextPage} from "next";
-import {SimpleGrid, Stack, Text} from "@chakra-ui/react";
 
+import {SimpleGrid, Stack, Text} from "@chakra-ui/react";
 import {GetServerSideProps} from "next";
 
 import Section from "../components/Section";
@@ -10,7 +10,6 @@ import P from "../work/components/Paragraph";
 import api from "../blog/resources";
 import {Blog} from "../blog/types";
 import Avatar from "../ui/feedback/Avatar";
-
 import ItemPost from "../blog/components/GridItemPost";
 import {ParameterWork} from "../work/components/Work";
 import WorkImage from "../work/components/WorkImage";
@@ -25,8 +24,8 @@ const IndexPage: NextPage<Props> = ({blogs}) => {
       <Stack spacing={10}>
         <Stack
           align="center"
-          justifyContent="space-between"
           direction={{base: "column", sm: "row"}}
+          justifyContent="space-between"
         >
           <Stack order={{base: "2", sm: "0"}} pos="relative">
             <Text
@@ -34,13 +33,18 @@ const IndexPage: NextPage<Props> = ({blogs}) => {
               color="secondary"
               fontSize={32}
               fontWeight="600"
+              letterSpacing="tighter"
               lineHeight={7}
               py={2}
-              letterSpacing="tighter"
             >
               Jhon A. Lescano
             </Text>
-            <Text fontSize="sm" fontWeight="regular" color="primary" letterSpacing="tighter">
+            <Text
+              color="primary"
+              fontSize="sm"
+              fontWeight="regular"
+              letterSpacing="tighter"
+            >
               Desarrollador Frontend ( Estudiante / Autodidacta / Apasionado )
             </Text>
           </Stack>
@@ -48,25 +52,31 @@ const IndexPage: NextPage<Props> = ({blogs}) => {
         </Stack>
         <Section title="Trabajo">
           <P>
-            Soy un desarrollador versátil y apasionado por aprender nuevas tecnologías, combinar la
-            rapidez y la funcionalidad en desarrollo web. Actualmente estoy estudiando{" "}
-            <Text fontWeight="500" color="secondary" as="ins">
+            Soy un desarrollador versátil y apasionado por aprender nuevas
+            tecnologías, combinar la rapidez y la funcionalidad en desarrollo
+            web. Actualmente estoy estudiando{" "}
+            <Text as="ins" color="secondary" fontWeight="500">
               Ingeniería en Software
             </Text>
             , pero me mantengo aprendiendo y desarrollando proyectos.
           </P>
-          <Button label="Mi Portafolio" href="/work" />
+          <Button href="/work" label="Mi Portafolio" />
         </Section>
         <Section title="Últimos posts">
-          <SimpleGrid w="100%" columns={1} gap={5}>
+          <SimpleGrid columns={1} gap={5} w="100%">
             <ItemPost blog={blogs[0]} />
             <ItemPost blog={blogs[1]} />
           </SimpleGrid>
-          <Button label="Ver todo" href="/blog" />
+          <Button href="/blog" label="Ver todo" />
         </Section>
         <Section title="Proyectos">
-          <SimpleGrid justifyItems="center" columns={[1, 1, 2]} w="100%" gap={10}>
-            <Stack as="article" justifyContent="flex-start" direction="column">
+          <SimpleGrid
+            columns={[1, 1, 2]}
+            gap={10}
+            justifyItems="center"
+            w="100%"
+          >
+            <Stack as="article" direction="column" justifyContent="flex-start">
               <ParameterWork title="Proyecto">
                 <Text variant="information">Gif Finder</Text>
               </ParameterWork>
@@ -78,7 +88,7 @@ const IndexPage: NextPage<Props> = ({blogs}) => {
                 }}
               />
             </Stack>
-            <Stack as="article" justifyContent="flex-start" direction="column">
+            <Stack as="article" direction="column" justifyContent="flex-start">
               <ParameterWork title="Proyecto">
                 <Text variant="information">Netflix Clone UI</Text>
               </ParameterWork>
@@ -91,7 +101,7 @@ const IndexPage: NextPage<Props> = ({blogs}) => {
               />
             </Stack>
           </SimpleGrid>
-          <Button label="Ver todo el trabajo" href="/work" />
+          <Button href="/work" label="Ver todo el trabajo" />
         </Section>
       </Stack>
     </Layout>
@@ -100,6 +110,7 @@ const IndexPage: NextPage<Props> = ({blogs}) => {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const blogs = await api.list();
+
   return {
     props: {
       revalidate: 1,

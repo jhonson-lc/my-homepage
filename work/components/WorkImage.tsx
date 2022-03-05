@@ -1,26 +1,28 @@
-import { Image, Stack } from '@chakra-ui/react';
-import { Work } from '../types';
-import NextLink from 'next/link';
+import React from "react";
+import {Image, Stack} from "@chakra-ui/react";
+import NextLink from "next/link";
+
+import {Work} from "../types";
 
 interface Props {
   work: Work;
 }
 
-const WorkImage: React.FC<Props> = ({ work }) => {
+const WorkImage: React.FC<Props> = ({work}) => {
   return (
-    <Stack justifyContent="flex-end" h="100%">
-      <NextLink href={`/work/${work.id}`} passHref>
+    <Stack h="100%" justifyContent="flex-end">
+      <NextLink passHref href={`/work/${work.id}`}>
         <Image
+          _hover={{transform: "scale(1.04)"}}
           alt={work.title}
-          transition="transform .3s,-webkit-transform .3s"
-          _hover={{ transform: 'scale(1.04)' }}
-          cursor="pointer"
+          borderRadius="xl"
           boxShadow="md"
-          w="350px"
+          cursor="pointer"
           h="180px"
           objectFit="cover"
-          borderRadius="xl"
           src={work.thumbnail}
+          transition="transform .3s,-webkit-transform .3s"
+          w="350px"
         />
       </NextLink>
     </Stack>
