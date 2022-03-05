@@ -2,7 +2,7 @@ import React from "react";
 import {GetStaticProps} from "next";
 
 import WorkScreen from "../work/screens/WorkPage";
-import api from "../work/api";
+import api from "../work/resources";
 import {Work} from "../work/types";
 
 interface Props {
@@ -14,7 +14,7 @@ const IndexWork: React.FC<Props> = ({works}) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const works = await api.list("default");
+  const {works} = api.list();
 
   return {
     props: {

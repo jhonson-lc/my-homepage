@@ -25,8 +25,9 @@ const SingleBlog: React.FC<Props> = ({blog}) => {
       <Stack spacing={8}>
         <Heading>{blog.title}</Heading>
         <Stack
-          alignItems="center"
-          direction="row"
+          alignItems={{base: "flex-start", sm: "center"}}
+          direction={{base: "column", md: "row"}}
+          gap={4}
           justifyContent="space-between"
         >
           <Stack direction="row">

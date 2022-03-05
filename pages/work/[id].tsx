@@ -10,78 +10,61 @@ import {
   BuildWork,
 } from "../../work/components/Work";
 import {Work} from "../../work/types";
-import api from "../../work/api";
+import api from "../../work/resources";
 
-const SingleWork: React.FC<Props> = ({works}) => {
+interface Props {
+  work: Work;
+}
+
+const SingleWork: React.FC<Props> = ({work}) => {
   return (
-    <>
-      {works &&
-        works.map(
-          ({id, title, build, thumbnail, description, platform, siteurl}) => {
-            return (
-              <Layout key={id} title={title}>
-                <Stack
-                  alignItems="flex-start"
-                  direction="column"
-                  spacing={5}
-                  w="100%"
-                >
-                  <TitleNavigation title={title} />
-                  <ParameterWork title="Project">
-                    <Text variant="information">{title}</Text>
-                  </ParameterWork>
-                  <ParameterWork title="Build with">
-                    {build && <BuildWork build={build} />}
-                  </ParameterWork>
-                  <ParameterWork title="Platform">
-                    <Text variant="information">
-                      {platform &&
-                        platform.reduce(
-                          (text, item) => text.concat(`${item}/`),
-                          ``,
-                        )}
-                    </Text>
-                  </ParameterWork>
-                  <ParameterWork title="Site URL">
-                    <Link href={siteurl} target="_blank">
-                      <Text variant="linkexternal">{siteurl}</Text>
-                    </Link>
-                  </ParameterWork>
-                  <ParameterWork title="Description">
-                    <P>{description}</P>
-                  </ParameterWork>
-                  <ParameterWork title="Screenshots">
-                    <Stack spacing={10}>
-                      <Image alt={title} src={thumbnail} />
-                    </Stack>
-                  </ParameterWork>
-                </Stack>
-              </Layout>
-            );
-          },
-        )}
-    </>
+    <Layout key={work.id} title={work.title}>
+      <Stack alignItems="flex-start" direction="column" spacing={5} w="100%">
+        <TitleNavigation title={work.title} />
+        <ParameterWork title="Project">
+          <Text variant="information">{work.title}</Text>
+        </ParameterWork>
+        <ParameterWork title="Build with">
+          {work.build && <BuildWork build={work.build} />}
+        </ParameterWork>
+        <ParameterWork title="Platform">
+          <Text variant="information">
+            {work.platform &&
+              work.platform.reduce((text, item) => text.concat(`${item}/`), ``)}
+          </Text>
+        </ParameterWork>
+        <ParameterWork title="Site URL">
+          <Link href={work.siteurl} target="_blank">
+            <Text variant="linkexternal">{work.siteurl}</Text>
+          </Link>
+        </ParameterWork>
+        <ParameterWork title="Description">
+          <P>{work.description}</P>
+        </ParameterWork>
+        <ParameterWork title="Screenshots">
+          <Stack spacing={10}>
+            <Image alt={work.title} src={work.thumbnail} />
+          </Stack>
+        </ParameterWork>
+      </Stack>
+    </Layout>
   );
 };
 
-interface Props {
-  works: Work[];
-}
-
 export const getStaticProps: GetStaticProps = async ({params}) => {
-  const w = await api.list("default");
-  const works = w.filter((work) => work.id === params?.id);
+  const {works} = api.list();
+  const work = works.find((work) => work.id === params.id);
 
   return {
     props: {
-      works,
+      work,
     },
     revalidate: 10,
   };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const works = await api.list("default");
+  const {works} = api.list();
 
   const paths = works.map((item) => {
     return {
