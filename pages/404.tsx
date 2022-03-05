@@ -1,3 +1,4 @@
+import React from "react";
 import NextLink from "next/link";
 import {
   Box,
@@ -10,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import {ExternalLinkIcon} from "@chakra-ui/icons";
 
-const NotFound = () => {
+const NotFound: React.FC = () => {
   return (
     <Stack as={Grid} h="58vh" justifyContent="center" placeItems="center">
       <Heading as="h1">Not found</Heading>
