@@ -4,7 +4,7 @@ import {SimpleGrid, Stack, Text} from "@chakra-ui/react";
 import {GetServerSideProps} from "next";
 
 import Section from "../components/Section";
-import Layout from "../app/layouts/ArticleLayout";
+import Layout from "../app/layouts/HeadLayout";
 import Button from "../ui/controls/Button/Button";
 import P from "../work/components/Paragraph";
 import api from "../blog/resources";

@@ -32,7 +32,7 @@ export default extendTheme({
       },
       paragraph: {
         default: "blackAlpha.800",
-        _dark: "whiteAlpha.600",
+        _dark: "whiteAlpha.800",
       },
       footer: {
         default: "whiteAlpha.900",

@@ -3,7 +3,7 @@ import type {AppProps} from "next/app";
 import {AnimatePresence} from "framer-motion";
 import {NextPage} from "next";
 
-import Layout from "../app/layouts/MainLayout";
+import Layout from "../app/layouts/IndexLayout";
 import Chakra from "../ui/structure/chakra";
 import Fonts from "../lib/fonts";
 

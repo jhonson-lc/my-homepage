@@ -1,7 +1,7 @@
 import React from "react";
 import {SimpleGrid} from "@chakra-ui/react";
 
-import Layout from "../../app/layouts/ArticleLayout";
+import Layout from "../../app/layouts/HeadLayout";
 import Section from "../../components/Section";
 import {Blog} from "../../blog/types";
 import ItemPost from "../components/GridItemPost";

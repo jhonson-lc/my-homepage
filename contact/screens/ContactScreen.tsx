@@ -11,7 +11,7 @@ import {MdPhone, MdEmail, MdLocationOn, MdOutlineEmail} from "react-icons/md";
 
 import FormControl from "../components/FormControl";
 import InputInformation from "../components/InputInformation";
-import Layout from "../../app/layouts/ArticleLayout";
+import Layout from "../../app/layouts/HeadLayout";
 import Section from "../../components/Section";
 
 export default function ContactScreen() {

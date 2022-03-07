@@ -2,7 +2,7 @@ import React from "react";
 import {Stack, Text, Link, Image} from "@chakra-ui/react";
 import {GetStaticProps, GetStaticPaths} from "next";
 
-import Layout from "../../app/layouts/ArticleLayout";
+import Layout from "../../app/layouts/HeadLayout";
 import P from "../../work/components/Paragraph";
 import {
   TitleNavigation,

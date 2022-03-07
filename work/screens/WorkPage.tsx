@@ -3,7 +3,7 @@ import {SimpleGrid} from "@chakra-ui/react";
 
 import ItemWork from "../components/GridItemWork";
 import Section from "../../components/Section";
-import Layout from "../../app/layouts/ArticleLayout";
+import Layout from "../../app/layouts/HeadLayout";
 import {Work} from "../types";
 
 interface Props {
