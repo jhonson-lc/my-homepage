@@ -37,7 +37,6 @@ const ItemPost: React.FC<Props | any> = ({blog}) => {
           <Image
             borderBottomRadius="none"
             h={140}
-            loading="lazy"
             objectFit="cover"
             rounded="lg"
             src={blog.properties.image.files[0]?.file.url}
