@@ -53,8 +53,8 @@ const IndexPage: NextPage<Props> = ({blogs}) => {
         <Section title="About me">
           <P>
             I&apos;m a versatile developer and productive about learning new
-            technologies, combining speed and functionality in web development I
-            am currently studying{" "}
+            technologies, combining speed and functionality in web development.
+            I&apos;m currently studying{" "}
             <Text as="ins" color="secondary" fontWeight="500">
               Software Engineering
             </Text>
