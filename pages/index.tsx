@@ -52,13 +52,13 @@ const IndexPage: NextPage<Props> = ({blogs}) => {
         </Stack>
         <Section title="About me">
           <P>
-            Soy un desarrollador versátil y apasionado por aprender nuevas
-            tecnologías, combinar la rapidez y la funcionalidad en desarrollo
-            web. Actualmente estoy estudiando{" "}
+            I&apos;m a versatile developer and productive about learning new
+            technologies, combining speed and functionality in web development I
+            am currently studying{" "}
             <Text as="ins" color="secondary" fontWeight="500">
-              Ingeniería en Software
+              Software Engineering
             </Text>
-            , pero me mantengo aprendiendo y desarrollando proyectos.
+            , but I keep learning and developing projects.
           </P>
           <Button href="/work" label="My portfolio" />
         </Section>
