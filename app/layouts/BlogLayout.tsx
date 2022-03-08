@@ -18,7 +18,7 @@ const BlogLayout: React.FC<Props> = ({blog, banner, children}) => {
   const urlBanner = banner.filter((url) => url && url);
 
   return (
-    <Layout title="Blog">
+    <Layout title={blog.title}>
       <Stack spacing={8}>
         <Heading color="heading" fontSize={50}>
           {blog.title}
@@ -43,20 +43,18 @@ const BlogLayout: React.FC<Props> = ({blog, banner, children}) => {
                 />
               }
             >
-              <Text variant="information">Por Jhon Lescano</Text>
+              <Text variant="information">By Jhon Lescano</Text>
               <Text variant="information">{formatDate(blog.publishedAt)}</Text>
             </Stack>
           </Stack>
-          <Text variant="information">
-            {Math.round(blog.readingTime.minutes)} minutos de lectura
-          </Text>
+          <Text variant="information">{blog.readingTime.text}</Text>
         </Stack>
         <Image src={urlBanner[0]} />
         {children}
         <Stack direction="row" justifyContent="end" w="100%">
           <Button
             href="/blog"
-            label="Volver"
+            label="Go back"
             leftIcon={<ArrowForwardIcon transform="rotate(180deg)" />}
             rightIcon=""
           />
