@@ -45,12 +45,12 @@ const IndexPage: NextPage<Props> = ({blogs}) => {
               fontWeight="regular"
               letterSpacing="tighter"
             >
-              Desarrollador Frontend ( Estudiante / Autodidacta / Apasionado )
+              FrontEnd Developer ( Student / Self-Taught / Productive )
             </Text>
           </Stack>
           <Avatar size={32} />
         </Stack>
-        <Section title="Trabajo">
+        <Section title="About me">
           <P>
             Soy un desarrollador versátil y apasionado por aprender nuevas
             tecnologías, combinar la rapidez y la funcionalidad en desarrollo
@@ -60,16 +60,16 @@ const IndexPage: NextPage<Props> = ({blogs}) => {
             </Text>
             , pero me mantengo aprendiendo y desarrollando proyectos.
           </P>
-          <Button href="/work" label="Mi Portafolio" />
+          <Button href="/work" label="My portfolio" />
         </Section>
-        <Section title="Últimos posts">
+        <Section title="Latest posts">
           <SimpleGrid columns={1} gap={5} w="100%">
             <ItemPost blog={blogs[0]} />
             <ItemPost blog={blogs[1]} />
           </SimpleGrid>
-          <Button href="/blog" label="Ver todo" />
+          <Button href="/blog" label="View all" />
         </Section>
-        <Section title="Proyectos">
+        <Section title="Projects">
           <SimpleGrid
             columns={[1, 1, 2]}
             gap={10}
@@ -77,7 +77,7 @@ const IndexPage: NextPage<Props> = ({blogs}) => {
             w="100%"
           >
             <Stack as="article" direction="column" justifyContent="flex-start">
-              <ParameterWork title="Proyecto">
+              <ParameterWork title="Project">
                 <Text variant="information">Gif Finder</Text>
               </ParameterWork>
               <WorkImage
@@ -89,7 +89,7 @@ const IndexPage: NextPage<Props> = ({blogs}) => {
               />
             </Stack>
             <Stack as="article" direction="column" justifyContent="flex-start">
-              <ParameterWork title="Proyecto">
+              <ParameterWork title="Project">
                 <Text variant="information">Netflix Clone UI</Text>
               </ParameterWork>
               <WorkImage
@@ -101,7 +101,7 @@ const IndexPage: NextPage<Props> = ({blogs}) => {
               />
             </Stack>
           </SimpleGrid>
-          <Button href="/work" label="Ver todo el trabajo" />
+          <Button href="/work" label="View all" />
         </Section>
       </Stack>
     </Layout>

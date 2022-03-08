@@ -28,13 +28,13 @@ export const SOCIAL_MEDIAS: LinkNav[] = [
 ];
 
 export const LINKS_NAV: LinkNav[] = [
-  {href: "/", text: "Inicio"},
-  {href: "/work", text: "Trabajo"},
+  {href: "/", text: "Home"},
+  {href: "/work", text: "Work"},
   {href: "/blog", text: "Blog"},
-  {href: "/contact", text: "Contacto"},
+  {href: "/contact", text: "Contact"},
   {
     href: "https://github.com/jhonson-lc",
-    text: "Ver Código",
+    text: "View Source",
     icon: BsGithub,
   },
 ];

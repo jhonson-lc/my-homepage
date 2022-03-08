@@ -33,11 +33,11 @@ const ItemWork: React.FC<Props> = ({work, i}) => {
       transition={{duration: 0.5, delay: i * 0.3}}
       variants={variants}
     >
-      <ParameterWork title="Proyecto">
+      <ParameterWork title="Project">
         <Text variant="information">{work.title}</Text>
       </ParameterWork>
       {work.build && (
-        <ParameterWork title="Creado con">
+        <ParameterWork title="Build with">
           {<BuildWork build={work.build} />}
         </ParameterWork>
       )}
