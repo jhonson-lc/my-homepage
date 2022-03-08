@@ -21,8 +21,8 @@ const WorkScreen: React.FC<Props> = ({works}) => {
           w="100%"
         >
           {works &&
-            works.map((work) => {
-              return <ItemWork key={work.id} work={work} />;
+            works.map((work, i) => {
+              return <ItemWork key={work.id} i={i} work={work} />;
             })}
         </SimpleGrid>
       </Section>
