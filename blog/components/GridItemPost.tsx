@@ -24,34 +24,31 @@ const ItemPost: React.FC<Props | any> = ({blog}) => {
   const LinkBoxM = motion(LinkBox);
 
   return (
-    <LinkBoxM
-      as="article"
-      borderRadius="lg"
-      borderWidth="1px"
-      rounded="md"
-      shadow="md"
-      whileHover={{scale: 0.99}}
-    >
+    <LinkBoxM as="article" shadow="md" whileHover={{scale: 0.99}}>
       <Stack>
         {blog.properties.image.files[0]?.file.url && (
           <Image
-            borderBottomRadius="none"
+            borderRadius="lg"
+            // eslint-disable-next-line react/jsx-sort-props
+            borderBottomRadius="0"
             h={140}
             objectFit="cover"
-            rounded="lg"
             src={blog.properties.image.files[0]?.file.url}
             w="100%"
           />
         )}
       </Stack>
       <Stack
-        borderTopRadius="none"
+        borderRadius="lg"
+        borderTopRadius={0}
+        borderWidth="1px"
+        // eslint-disable-next-line react/jsx-sort-props
+        borderTopWidth={0}
         direction="column"
         h="100%"
         maxH={170}
         p={5}
         pos="relative"
-        rounded="lg"
       >
         <Box
           as="time"
