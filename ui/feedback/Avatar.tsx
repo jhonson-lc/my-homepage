@@ -1,18 +1,18 @@
 import React from "react";
-import {Image} from "@chakra-ui/react";
-import {motion} from "framer-motion";
+import { Image } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 interface Props {
   size?: number;
 }
 
 const variants = {
-  initial: {opacity: 0},
-  enter: {opacity: 1},
-  exit: {opacity: 0},
+  initial: { opacity: 0 },
+  enter: { opacity: 1 },
+  exit: { opacity: 0 },
 };
 
-const Avatar: React.FC<Props> = ({size = 24}) => {
+const Avatar: React.FC<Props> = ({ size = 24 }) => {
   const ImageM = motion(Image);
 
   return (
@@ -25,7 +25,7 @@ const Avatar: React.FC<Props> = ({size = 24}) => {
       h={size}
       initial="initial"
       src="../images/foto.png"
-      transition={{duration: 0.5}}
+      transition={{ duration: 0.5 }}
       variants={variants}
       w={size}
     />

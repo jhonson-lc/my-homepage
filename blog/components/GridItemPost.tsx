@@ -1,9 +1,16 @@
 import React from "react";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import NextLink from "next/link";
 import formatDate from "utils/formatDate";
 import convertBlogURL from "utils/convertBlogURL";
-import {Image, Text, Stack, Box, LinkOverlay, LinkBox} from "@chakra-ui/react";
+import {
+  Image,
+  Text,
+  Stack,
+  Box,
+  LinkOverlay,
+  LinkBox,
+} from "@chakra-ui/react";
 
 import P from "../../work/components/Paragraph";
 
@@ -20,11 +27,11 @@ interface Props {
   };
 }
 
-const ItemPost: React.FC<Props | any> = ({blog}) => {
+const ItemPost: React.FC<Props | any> = ({ blog }) => {
   const LinkBoxM = motion(LinkBox);
 
   return (
-    <LinkBoxM as="article" shadow="md" whileHover={{scale: 0.99}}>
+    <LinkBoxM as="article" shadow="md" whileHover={{ scale: 0.99 }}>
       <Stack>
         {blog.properties.image.files[0]?.file.url && (
           <Image

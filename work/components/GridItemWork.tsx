@@ -1,10 +1,10 @@
 import React from "react";
-import {Text, Stack} from "@chakra-ui/react";
-import {motion} from "framer-motion";
+import { Text, Stack } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
-import {Work} from "../types";
+import { Work } from "../types";
 
-import {ParameterWork, BuildWork} from "./Work";
+import { ParameterWork, BuildWork } from "./Work";
 import WorkImage from "./WorkImage";
 
 interface Props {
@@ -13,12 +13,12 @@ interface Props {
 }
 
 const variants = {
-  initial: {opacity: 0, y: 50},
-  enter: {opacity: 1, y: 0},
-  exit: {opacity: 0, y: -50},
+  initial: { opacity: 0, y: 50 },
+  enter: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -50 },
 };
 
-const ItemWork: React.FC<Props> = ({work, i}) => {
+const ItemWork: React.FC<Props> = ({ work, i }) => {
   const StackM = motion(Stack);
 
   return (
@@ -30,7 +30,7 @@ const ItemWork: React.FC<Props> = ({work, i}) => {
       initial="initial"
       justifyContent="flex-start"
       spacing={3}
-      transition={{duration: 0.5, delay: i * 0.3}}
+      transition={{ duration: 0.5, delay: i * 0.3 }}
       variants={variants}
     >
       <ParameterWork title="Project">

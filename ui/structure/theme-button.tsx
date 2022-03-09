@@ -4,11 +4,11 @@ import {
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
-import {FaMoon} from "react-icons/fa";
-import {BsSunFill} from "react-icons/bs";
+import { FaMoon } from "react-icons/fa";
+import { BsSunFill } from "react-icons/bs";
 
-function ThemeButton({size}: {size: number}) {
-  const {colorMode, toggleColorMode} = useColorMode();
+function ThemeButton({ size }: { size: number }) {
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <Tooltip
@@ -17,8 +17,8 @@ function ThemeButton({size}: {size: number}) {
       label={colorMode === "light" ? "Dark mode" : "Light mode"}
     >
       <IconButton
-        _focus={{boxShadow: "none"}}
-        _hover={{borderColor: "secondary"}}
+        _focus={{ boxShadow: "none" }}
+        _hover={{ borderColor: "secondary" }}
         aria-label="Theme button"
         border="2px"
         borderColor={useColorModeValue("gray.400", "whiteAlpha.400")}

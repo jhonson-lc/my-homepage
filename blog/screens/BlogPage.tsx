@@ -1,16 +1,16 @@
 import React from "react";
-import {SimpleGrid} from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
 
 import Layout from "../../app/layouts/HeadLayout";
 import Section from "../../components/Section";
-import {Blog} from "../../blog/types";
+import { Blog } from "../../blog/types";
 import ItemPost from "../components/GridItemPost";
 
 interface Props {
   blogs: Blog[];
 }
 
-const BlogPage: React.FC<Props> = ({blogs}) => {
+const BlogPage: React.FC<Props> = ({ blogs }) => {
   return (
     <Layout title="Blog">
       <Section title="Posts">

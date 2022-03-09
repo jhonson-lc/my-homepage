@@ -1,11 +1,11 @@
 import React from "react";
-import {Text} from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 
 interface Props {
   limitLines?: number;
 }
 
-const Paragraph: React.FC<Props> = ({children, limitLines}) => {
+const Paragraph: React.FC<Props> = ({ children, limitLines }) => {
   return (
     <Text
       align="justify"

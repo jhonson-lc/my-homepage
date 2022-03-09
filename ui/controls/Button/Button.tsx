@@ -1,9 +1,9 @@
 import React from "react";
-import {Button as ChakraButton, Link} from "@chakra-ui/react";
+import { Button as ChakraButton, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
-import {ArrowForwardIcon} from "@chakra-ui/icons";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 
-const Button = ({label = "default", href, ...props}) => {
+const Button = ({ label = "default", href, ...props }) => {
   return (
     <NextLink passHref href={href}>
       <Link>

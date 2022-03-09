@@ -1,20 +1,20 @@
 import React from "react";
 import formatDate from "utils/formatDate";
-import {Text, Divider, Heading, Stack, Image} from "@chakra-ui/react";
-import {ArrowForwardIcon} from "@chakra-ui/icons";
+import { Text, Divider, Heading, Stack, Image } from "@chakra-ui/react";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 import Layout from "../../app/layouts/HeadLayout";
 import Button from "../../ui/controls/Button/Button";
 import Avatar from "../../ui/feedback/Avatar";
 
-import {Blog} from ".contentlayer/generated/types";
+import { Blog } from ".contentlayer/generated/types";
 
 interface Props {
   blog: Blog;
   banner: [string];
 }
 
-const BlogLayout: React.FC<Props> = ({blog, banner, children}) => {
+const BlogLayout: React.FC<Props> = ({ blog, banner, children }) => {
   const urlBanner = banner.filter((url) => url && url);
 
   return (
@@ -24,8 +24,8 @@ const BlogLayout: React.FC<Props> = ({blog, banner, children}) => {
           {blog.title}
         </Heading>
         <Stack
-          alignItems={{base: "flex-start", sm: "center"}}
-          direction={{base: "column", md: "row"}}
+          alignItems={{ base: "flex-start", sm: "center" }}
+          direction={{ base: "column", md: "row" }}
           gap={4}
           justifyContent="space-between"
         >

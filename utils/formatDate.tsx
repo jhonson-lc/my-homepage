@@ -1,5 +1,5 @@
-import {format, parseISO} from "date-fns";
-import {Box} from "@chakra-ui/react";
+import { format, parseISO } from "date-fns";
+import { Box } from "@chakra-ui/react";
 
 export default function formatDate(value: string) {
   return (

@@ -1,14 +1,14 @@
 import React from "react";
-import {GetStaticProps} from "next";
+import { GetStaticProps } from "next";
 
 import BlogPage from "../blog/screens/BlogPage";
-import {Blog} from "../blog/types";
+import { Blog } from "../blog/types";
 import api from "../blog/resources";
 
 interface Props {
   blogs: Blog[];
 }
-const IndexBlog: React.FC<Props> = ({blogs}) => {
+const IndexBlog: React.FC<Props> = ({ blogs }) => {
   return <BlogPage blogs={blogs} />;
 };
 

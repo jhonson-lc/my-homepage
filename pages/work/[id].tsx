@@ -1,6 +1,6 @@
 import React from "react";
-import {Stack, Text, Link, Image} from "@chakra-ui/react";
-import {GetStaticProps, GetStaticPaths} from "next";
+import { Stack, Text, Link, Image } from "@chakra-ui/react";
+import { GetStaticProps, GetStaticPaths } from "next";
 
 import Layout from "../../app/layouts/HeadLayout";
 import P from "../../work/components/Paragraph";
@@ -9,14 +9,14 @@ import {
   ParameterWork,
   BuildWork,
 } from "../../work/components/Work";
-import {Work} from "../../work/types";
+import { Work } from "../../work/types";
 import api from "../../work/resources";
 
 interface Props {
   work: Work;
 }
 
-const SingleWork: React.FC<Props> = ({work}) => {
+const SingleWork: React.FC<Props> = ({ work }) => {
   return (
     <Layout key={work.id} title={work.title}>
       <Stack alignItems="flex-start" direction="column" spacing={5} w="100%">
@@ -51,8 +51,8 @@ const SingleWork: React.FC<Props> = ({work}) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({params}) => {
-  const {works} = api.list();
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { works } = api.list();
   const work = works.find((work) => work.id === params.id);
 
   return {
@@ -64,7 +64,7 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const {works} = api.list();
+  const { works } = api.list();
 
   const paths = works.map((item) => {
     return {

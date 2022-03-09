@@ -1,12 +1,12 @@
 import React from "react";
 import Link from "next/link";
-import {Flex, Image, useColorModeValue} from "@chakra-ui/react";
+import { Flex, Image, useColorModeValue } from "@chakra-ui/react";
 
 interface Props {
   size?: number;
 }
 
-const Logo: React.FC<Props> = ({size = 24, ...props}) => {
+const Logo: React.FC<Props> = ({ size = 24, ...props }) => {
   const logoImg = `/images/logo${useColorModeValue("", "-dark")}.svg`;
 
   return (

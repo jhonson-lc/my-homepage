@@ -1,4 +1,4 @@
-import {IconType} from "react-icons";
+import { IconType } from "react-icons";
 
 export interface LinkNav {
   href?: string;
@@ -7,5 +7,5 @@ export interface LinkNav {
   path?: string;
   target?: string;
   onClose?: any;
-  font?: {size: any; weight: any};
+  font?: { size: any; weight: any };
 }

@@ -1,20 +1,20 @@
 import React from "react";
-import {GetStaticProps} from "next";
+import { GetStaticProps } from "next";
 
 import WorkScreen from "../work/screens/WorkPage";
 import api from "../work/resources";
-import {Work} from "../work/types";
+import { Work } from "../work/types";
 
 interface Props {
   works: Work[];
 }
 
-const IndexWork: React.FC<Props> = ({works}) => {
+const IndexWork: React.FC<Props> = ({ works }) => {
   return <WorkScreen works={works} />;
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const {works} = api.list();
+  const { works } = api.list();
 
   return {
     props: {

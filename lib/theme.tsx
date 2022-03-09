@@ -1,5 +1,5 @@
-import {extendTheme} from "@chakra-ui/react";
-import {mode} from "@chakra-ui/theme-tools";
+import { extendTheme } from "@chakra-ui/react";
+import { mode } from "@chakra-ui/theme-tools";
 
 export default extendTheme({
   fonts: {
@@ -79,14 +79,14 @@ export default extendTheme({
           borderRadius: "none",
           variant: "ghost",
           color: "primary",
-          _hover: {textDecoration: "underline"},
+          _hover: { textDecoration: "underline" },
         },
       },
     },
     Link: {
       baseStyle: (props: any) => ({
         color: mode("#3d7aed", "#bb86fc")(props),
-        _hover: {textDecoration: "none"},
+        _hover: { textDecoration: "none" },
       }),
     },
     Switch: {
@@ -95,7 +95,7 @@ export default extendTheme({
       },
     },
     DrawerCloseButton: {
-      _focus: {boxShadow: "none"},
+      _focus: { boxShadow: "none" },
       variant: "solid",
     },
   },

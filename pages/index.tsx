@@ -1,35 +1,34 @@
-import type {NextPage} from "next";
-
-import {SimpleGrid, Stack, Text} from "@chakra-ui/react";
-import {GetServerSideProps} from "next";
+import type { NextPage } from "next";
+import { SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { GetServerSideProps } from "next";
 
 import Section from "../components/Section";
 import Layout from "../app/layouts/HeadLayout";
 import Button from "../ui/controls/Button/Button";
 import P from "../work/components/Paragraph";
 import api from "../blog/resources";
-import {Blog} from "../blog/types";
+import { Blog } from "../blog/types";
 import Avatar from "../ui/feedback/Avatar";
 import ItemPost from "../blog/components/GridItemPost";
-import {ParameterWork} from "../work/components/Work";
+import { ParameterWork } from "../work/components/Work";
 import WorkImage from "../work/components/WorkImage";
 
 interface Props {
   blogs: Blog[];
 }
 
-const IndexPage: NextPage<Props> = ({blogs}) => {
+const IndexPage: NextPage<Props> = ({ blogs }) => {
   return (
     <Layout title="Home">
       <Stack spacing={10}>
         <Stack
           align="center"
-          direction={{base: "column", sm: "row"}}
+          direction={{ base: "column", sm: "row" }}
           justifyContent="space-between"
         >
-          <Stack order={{base: "2", sm: "0"}} pos="relative">
+          <Stack order={{ base: "2", sm: "0" }} pos="relative">
             <Text
-              align={{base: "center", sm: "left"}}
+              align={{ base: "center", sm: "left" }}
               color="secondary"
               fontSize={32}
               fontWeight="600"

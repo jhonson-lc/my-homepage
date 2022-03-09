@@ -15,23 +15,23 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
-import {GiHamburgerMenu} from "react-icons/gi";
-import {motion} from "framer-motion";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { motion } from "framer-motion";
 
 import Logo from "../../ui/static/Logo";
 import ThemeButton from "../../ui/structure/theme-button";
 
-import {LINKS_NAV} from "./constants";
+import { LINKS_NAV } from "./constants";
 import LinkItem from "./LinkItem";
 import ListOfSocial from "./ListOfSocial";
 
-function Navbar({path}: any) {
-  const {isOpen, onOpen, onClose} = useDisclosure();
+function Navbar({ path }: any) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Box
       as={motion.nav}
-      css={{backdropFilter: "blur(20px)"}}
+      css={{ backdropFilter: "blur(20px)" }}
       p={2}
       position="sticky"
       top="0"
@@ -50,8 +50,8 @@ function Navbar({path}: any) {
           <ThemeButton size={24} />
           <Menu>
             <MenuButton
-              _focus={{boxShadow: "none"}}
-              _hover={{transform: "scale(1.1)"}}
+              _focus={{ boxShadow: "none" }}
+              _hover={{ transform: "scale(1.1)" }}
               aria-label="Options"
               as={IconButton}
               display="flex"
@@ -80,7 +80,7 @@ function Navbar({path}: any) {
                 w="300px"
               >
                 <ModalCloseButton
-                  _focus={{boxShadow: "none"}}
+                  _focus={{ boxShadow: "none" }}
                   _hover={{
                     bg: "none",
                     fontSize: "25px",
@@ -95,11 +95,11 @@ function Navbar({path}: any) {
                 />
                 <ModalBody as={Stack} bg="background" p={14} spacing={6}>
                   <Stack>
-                    {LINKS_NAV.map(({href, text, icon}) => {
+                    {LINKS_NAV.map(({ href, text, icon }) => {
                       return (
                         <LinkItem
                           key={href}
-                          font={{size: 20, weight: 900}}
+                          font={{ size: 20, weight: 900 }}
                           href={href}
                           path={path}
                           onClose={onClose}

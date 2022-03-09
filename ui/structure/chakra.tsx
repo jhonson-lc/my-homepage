@@ -4,7 +4,7 @@ import {
   cookieStorageManager,
   localStorageManager,
 } from "@chakra-ui/react";
-import {GetServerSidePropsContext} from "next";
+import { GetServerSidePropsContext } from "next";
 
 import theme from "../../lib/theme";
 
@@ -12,7 +12,7 @@ interface ChakraProps {
   cookies?: string;
 }
 
-const Chakra: React.FC<ChakraProps> = ({children, cookies}) => {
+const Chakra: React.FC<ChakraProps> = ({ children, cookies }) => {
   return (
     <ChakraProvider
       colorModeManager={
@@ -25,7 +25,7 @@ const Chakra: React.FC<ChakraProps> = ({children, cookies}) => {
   );
 };
 
-export function getServerSideProps({req}: GetServerSidePropsContext) {
+export function getServerSideProps({ req }: GetServerSidePropsContext) {
   return {
     props: {
       cookies: req.headers.cookie ?? "",

@@ -7,7 +7,7 @@ import {
   Input,
   InputLeftElement,
 } from "@chakra-ui/react";
-import {IconType} from "react-icons";
+import { IconType } from "react-icons";
 
 interface Props {
   label: string;
@@ -15,7 +15,7 @@ interface Props {
   help?: string;
 }
 
-const FormControl: React.FC<Props> = ({label, icon, help, children}) => {
+const FormControl: React.FC<Props> = ({ label, icon, help, children }) => {
   return (
     <ChakraFormControl isRequired>
       <FormLabel display="inline-block">{label}</FormLabel>

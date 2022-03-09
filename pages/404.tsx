@@ -9,7 +9,7 @@ import {
   Divider,
   Button,
 } from "@chakra-ui/react";
-import {ExternalLinkIcon} from "@chakra-ui/icons";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 const NotFound: React.FC = () => {
   return (

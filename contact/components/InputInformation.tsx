@@ -1,14 +1,14 @@
 import React from "react";
-import {Button} from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 
 interface Props {
   icon: any;
 }
 
-const InputInformation: React.FC<Props> = ({icon, children}) => {
+const InputInformation: React.FC<Props> = ({ icon, children }) => {
   return (
     <Button
-      _hover={{border: "2px", borderColor: "primary"}}
+      _hover={{ border: "2px", borderColor: "primary" }}
       color="secondary"
       leftIcon={icon}
       size="md"
