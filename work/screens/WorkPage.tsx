@@ -13,13 +13,8 @@ interface Props {
 const WorkScreen: React.FC<Props> = ({ works }) => {
   return (
     <Layout title="Work">
-      <Section title="Trabajos">
-        <SimpleGrid
-          columns={[1, 1, 2]}
-          gridGap={24}
-          justifyItems="center"
-          w="100%"
-        >
+      <Section title="Works">
+        <SimpleGrid columns={[1, 1, 2]} gridGap={16} w="100%">
           {works &&
             works.map((work, i) => {
               return <ItemWork key={work.id} i={i} work={work} />;

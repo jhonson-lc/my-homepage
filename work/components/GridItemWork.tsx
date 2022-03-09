@@ -32,6 +32,7 @@ const ItemWork: React.FC<Props> = ({ work, i }) => {
       spacing={3}
       transition={{ duration: 0.5, delay: i * 0.3 }}
       variants={variants}
+      w="100%"
     >
       <ParameterWork title="Project">
         <Text variant="information">{work.title}</Text>

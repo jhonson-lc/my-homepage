@@ -10,7 +10,7 @@ interface Props {
 
 const WorkImage: React.FC<Props> = ({ work }) => {
   return (
-    <Stack h="100%" justifyContent="flex-end">
+    <Stack alignItems="end" direction="row" h="100%" justifyContent="center">
       <NextLink passHref href={`/work/${work.id}`}>
         <Image
           _hover={{ transform: "scale(1.04)" }}

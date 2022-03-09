@@ -31,7 +31,12 @@ const ItemPost: React.FC<Props | any> = ({ blog }) => {
   const LinkBoxM = motion(LinkBox);
 
   return (
-    <LinkBoxM as="article" shadow="md" whileHover={{ scale: 0.99 }}>
+    <LinkBoxM
+      as="article"
+      rounded="lg"
+      shadow="md"
+      whileHover={{ scale: 0.99 }}
+    >
       <Stack>
         {blog.properties.image.files[0]?.file.url && (
           <Image
@@ -52,8 +57,6 @@ const ItemPost: React.FC<Props | any> = ({ blog }) => {
         // eslint-disable-next-line react/jsx-sort-props
         borderTopWidth={0}
         direction="column"
-        h="100%"
-        maxH={170}
         p={5}
         pos="relative"
       >
@@ -86,9 +89,6 @@ const ItemPost: React.FC<Props | any> = ({ blog }) => {
           <P limitLines={3}>
             {blog?.properties.description.rich_text[0]?.plain_text}
           </P>
-          <Text color="secondary" variant="information">
-            Leer más ...
-          </Text>
         </Stack>
       </Stack>
     </LinkBoxM>
