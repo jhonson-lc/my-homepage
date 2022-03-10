@@ -49,7 +49,7 @@ const BlogLayout: React.FC<Props> = ({ blog, banner, children }) => {
           </Stack>
           <Text variant="information">{blog.readingTime.text}</Text>
         </Stack>
-        <Image src={urlBanner[0]} />
+        <Image loading="lazy" src={urlBanner[0]} />
         {children}
         <Stack direction="row" justifyContent="end" w="100%">
           <Button

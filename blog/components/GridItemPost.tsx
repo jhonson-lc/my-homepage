@@ -44,6 +44,7 @@ const ItemPost: React.FC<Props | any> = ({ blog }) => {
             // eslint-disable-next-line react/jsx-sort-props
             borderBottomRadius="0"
             h={140}
+            loading="lazy"
             objectFit="cover"
             src={blog.properties.image.files[0]?.file.url}
             w="100%"
