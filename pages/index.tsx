@@ -1,23 +1,26 @@
 import type { NextPage } from "next";
 import { SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import { GetServerSideProps } from "next";
+import Skills from "components/Skills";
 
 import Section from "../components/Section";
 import Layout from "../app/layouts/HeadLayout";
 import Button from "../ui/controls/Button/Button";
 import P from "../work/components/Paragraph";
 import api from "../blog/resources";
+import apiWork from "../work/resources";
 import { Blog } from "../blog/types";
+import { Work } from "../work/types";
 import Avatar from "../ui/feedback/Avatar";
 import ItemPost from "../blog/components/GridItemPost";
-import { ParameterWork } from "../work/components/Work";
-import WorkImage from "../work/components/WorkImage";
+import ItemWork from "../work/components/GridItemWork";
 
 interface Props {
   blogs: Blog[];
+  works: Work[];
 }
 
-const IndexPage: NextPage<Props> = ({ blogs }) => {
+const IndexPage: NextPage<Props> = ({ blogs, works }) => {
   return (
     <Layout title="Home">
       <Stack spacing={10}>
@@ -61,13 +64,6 @@ const IndexPage: NextPage<Props> = ({ blogs }) => {
           </P>
           <Button href="/work" label="My portfolio" />
         </Section>
-        <Section title="Latest posts">
-          <SimpleGrid columns={1} gap={5} w="100%">
-            <ItemPost blog={blogs[0]} />
-            <ItemPost blog={blogs[1]} />
-          </SimpleGrid>
-          <Button href="/blog" label="View all" />
-        </Section>
         <Section title="Projects">
           <SimpleGrid
             columns={[1, 1, 2]}
@@ -75,32 +71,22 @@ const IndexPage: NextPage<Props> = ({ blogs }) => {
             justifyItems="center"
             w="100%"
           >
-            <Stack as="article" direction="column" justifyContent="flex-start">
-              <ParameterWork title="Project">
-                <Text variant="information">Gif Finder</Text>
-              </ParameterWork>
-              <WorkImage
-                work={{
-                  id: "gif-finder",
-                  title: "Gif Finder",
-                  thumbnail: "../images/works/giffinder.png",
-                }}
-              />
-            </Stack>
-            <Stack as="article" direction="column" justifyContent="flex-start">
-              <ParameterWork title="Project">
-                <Text variant="information">Netflix Clone UI</Text>
-              </ParameterWork>
-              <WorkImage
-                work={{
-                  id: "netflix-clone",
-                  title: "Netflix Clone UI",
-                  thumbnail: "../images/works/netflix.png",
-                }}
-              />
-            </Stack>
+            {works.slice(0, 2).map((work, i) => {
+              return <ItemWork key={work.id} i={i} work={work} />;
+            })}
           </SimpleGrid>
           <Button href="/work" label="View all" />
+        </Section>
+        <Section title="Skills">
+          <Skills />
+        </Section>
+        <Section title="Latest posts">
+          <SimpleGrid columns={1} gap={5} w="100%">
+            {blogs.map((blog) => {
+              return <ItemPost key={blog.id} blog={blog} />;
+            })}
+          </SimpleGrid>
+          <Button href="/blog" label="View all" />
         </Section>
       </Stack>
     </Layout>
@@ -109,11 +95,13 @@ const IndexPage: NextPage<Props> = ({ blogs }) => {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const blogs = await api.list();
+  const { works } = apiWork.list();
 
   return {
     props: {
       revalidate: 1,
       blogs: blogs,
+      works,
     },
   };
 };

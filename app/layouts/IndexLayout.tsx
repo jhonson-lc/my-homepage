@@ -21,7 +21,7 @@ const Layout: React.FC<Props> = ({ children, router }) => {
 
       <NavBar path={router.asPath} />
 
-      <Container maxW="container.sm" pt={38}>
+      <Container maxW="container.sm" pt={20}>
         {children}
       </Container>
 

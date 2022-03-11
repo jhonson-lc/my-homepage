@@ -17,13 +17,17 @@ const LinkItem: React.FC<LinkNav> = ({
     <NextLink passHref href={href}>
       <Link
         _focus={{ boxShadow: "none" }}
-        _hover={{ textDecoration: !active ? "underline" : "" }}
+        _hover={{ bg: !active ? "hover" : "" }}
+        borderColor="primary"
+        borderWidth={active ? "2px" : "0"}
         color={active ? "primary" : "inherit"}
         display="inline-block"
         fontSize={font?.size}
         fontWeight={font?.weight}
         pos="relative"
-        textDecoration={active ? "underline" : "none"}
+        px={2}
+        py={1}
+        rounded="md"
         onClick={onClose}
       >
         {children}
