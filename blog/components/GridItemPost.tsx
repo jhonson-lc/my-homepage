@@ -29,7 +29,6 @@ interface Props {
 
 const ItemPost: React.FC<Props | any> = ({ blog }) => {
   const LinkBoxM = motion(LinkBox);
-
   return (
     <LinkBoxM
       as="article"
@@ -38,18 +37,16 @@ const ItemPost: React.FC<Props | any> = ({ blog }) => {
       whileHover={{ scale: 0.99 }}
     >
       <Stack>
-        {blog.properties.image.files[0]?.file.url && (
-          <Image
-            borderRadius="lg"
-            // eslint-disable-next-line react/jsx-sort-props
-            borderBottomRadius="0"
-            h={140}
-            loading="lazy"
-            objectFit="cover"
-            src={blog.properties.image.files[0]?.file.url}
-            w="100%"
-          />
-        )}
+        <Image
+          borderRadius="lg"
+          // eslint-disable-next-line react/jsx-sort-props
+          borderBottomRadius="0"
+          h={140}
+          loading="lazy"
+          objectFit="cover"
+          src={`../../images/blogs/${blog.properties.image.rich_text[0]?.plain_text}`}
+          w="100%"
+        />
       </Stack>
       <Stack
         borderRadius="lg"

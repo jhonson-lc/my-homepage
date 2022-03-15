@@ -11,12 +11,9 @@ import { Blog } from ".contentlayer/generated/types";
 
 interface Props {
   blog: Blog;
-  banner: [string];
 }
 
-const BlogLayout: React.FC<Props> = ({ blog, banner, children }) => {
-  const urlBanner = banner.filter((url) => url && url);
-
+const BlogLayout: React.FC<Props> = ({ blog, children }) => {
   return (
     <Layout title={blog.title}>
       <Stack spacing={8}>
@@ -49,7 +46,7 @@ const BlogLayout: React.FC<Props> = ({ blog, banner, children }) => {
           </Stack>
           <Text variant="information">{blog.readingTime.text}</Text>
         </Stack>
-        <Image loading="lazy" src={urlBanner[0]} />
+        <Image loading="lazy" src={`../../images/blogs/${blog.image}`} />
         {children}
         <Stack direction="row" justifyContent="end" w="100%">
           <Button

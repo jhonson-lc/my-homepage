@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { SimpleGrid, Stack, Text } from "@chakra-ui/react";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import Skills from "components/Skills";
 
 import Section from "../components/Section";
@@ -93,7 +93,7 @@ const IndexPage: NextPage<Props> = ({ blogs, works }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const blogs = await api.list();
   const { works } = apiWork.list();
 
