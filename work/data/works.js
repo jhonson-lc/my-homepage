@@ -44,6 +44,17 @@ const works = [
     thumbnail: "../images/works/landingpage.png",
   },
   {
+    id: "landing-page-v2",
+    type: "work",
+    title: "Landing Page V2",
+    build: ["html", "css", "vanilla js"],
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus augue, dapibus at nisi ac, feugiat imperdiet nibh. Pellentesque sit amet euismod sem. Donec vel pellentesque massa. Praesent auctor elit id libero fringilla tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. ",
+    platform: ["Windows", "macOS", "Linux", "iOS", "Android"],
+    siteurl: "https://landing-page-v2-ten.vercel.app/",
+    thumbnail: "../images/works/landingpagev2.png",
+  },
+  {
     id: "ecommerce-shoes",
     type: "work",
     title: "Ecommerce Shoes",
