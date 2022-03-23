@@ -12,7 +12,6 @@ const Button = ({ label = "default", href, ...props }) => {
           fontSize="sm"
           fontWeight="regular"
           maxW="min-content"
-          rightIcon={<ArrowForwardIcon />}
           variant="link"
           {...props}
         >

@@ -52,7 +52,7 @@ const IndexPage: NextPage<Props> = ({ blogs, works }) => {
           </Stack>
           <Avatar size={32} />
         </Stack>
-        <Section title="About me">
+        <Section hrefB="/work" labelB="My portfolio" title="About me">
           <P>
             I&apos;m a versatile developer and productive about learning new
             technologies, combining speed and functionality in web development.
@@ -62,9 +62,8 @@ const IndexPage: NextPage<Props> = ({ blogs, works }) => {
             </Text>
             , but I keep learning and developing projects.
           </P>
-          <Button href="/work" label="My portfolio" />
         </Section>
-        <Section title="Projects">
+        <Section hrefB="/work" labelB="View all" title="Projects">
           <SimpleGrid
             columns={[1, 1, 2]}
             gap={10}
@@ -75,18 +74,16 @@ const IndexPage: NextPage<Props> = ({ blogs, works }) => {
               return <ItemWork key={work.id} i={i} work={work} />;
             })}
           </SimpleGrid>
-          <Button href="/work" label="View all" />
         </Section>
         <Section title="Skills">
           <Skills />
         </Section>
-        <Section title="Latest posts">
+        <Section hrefB="/blog" labelB="View all" title="Latest posts">
           <SimpleGrid columns={1} gap={5} w="100%">
-            {blogs.map((blog) => {
+            {blogs.slice(0, 2).map((blog) => {
               return <ItemPost key={blog.id} blog={blog} />;
             })}
           </SimpleGrid>
-          <Button href="/blog" label="View all" />
         </Section>
       </Stack>
     </Layout>

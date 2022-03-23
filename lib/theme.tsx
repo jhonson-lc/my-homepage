@@ -52,11 +52,7 @@ export default extendTheme({
     Heading: {
       variants: {
         "title-section": {
-          textDecoration: "underline",
           fontSize: 25,
-          textUnderlineOffset: 5,
-          textDecorationColor: "secondary",
-          textDecorationThickness: 2,
           marginTop: 3,
           marginBottom: 3,
         },
