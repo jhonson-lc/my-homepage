@@ -24,7 +24,7 @@ const Avatar: React.FC<Props> = ({ size = 24 }) => {
       filter="grayscale(100%)"
       h={size}
       initial="initial"
-      src="../images/foto.png"
+      src="/profile.png"
       transition={{ duration: 0.5 }}
       variants={variants}
       w={size}

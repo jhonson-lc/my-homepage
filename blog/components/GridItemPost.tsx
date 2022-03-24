@@ -4,6 +4,7 @@ import NextLink from "next/link";
 import formatDate from "utils/formatDate";
 import convertBlogURL from "utils/convertBlogURL";
 import { Image, Stack, Box, LinkOverlay, LinkBox } from "@chakra-ui/react";
+import Link from "next/link";
 
 import P from "../../work/components/Paragraph";
 
@@ -29,18 +30,23 @@ const ItemPost: React.FC<Props | any> = ({ blog }) => {
       shadow="md"
       whileHover={{ scale: 0.99 }}
     >
-      <Stack>
+      <Link
+        href={`/blog/${convertBlogURL(
+          blog?.properties.name.title[0]?.plain_text,
+        )}`}
+      >
         <Image
+          borderBottomRadius="0"
           borderRadius="lg"
           // eslint-disable-next-line react/jsx-sort-props
-          borderBottomRadius="0"
+          cursor="pointer"
           h={140}
           loading="lazy"
           objectFit="cover"
           src={`../../images/blogs/${blog.properties.image.rich_text[0]?.plain_text}`}
           w="100%"
         />
-      </Stack>
+      </Link>
       <Stack
         borderRadius="lg"
         borderTopRadius={0}

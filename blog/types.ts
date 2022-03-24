@@ -3,6 +3,7 @@ export interface Blog {
   tags: string;
   name: string;
   createdAt: string;
+  slug: string;
   description: string;
 }
 

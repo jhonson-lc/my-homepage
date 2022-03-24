@@ -15,7 +15,7 @@ interface Props {
 
 const BlogLayout: React.FC<Props> = ({ blog, children }) => {
   return (
-    <Layout title={blog.title}>
+    <Layout title={blog.title} url={`blog/${blog.slug}`}>
       <Stack spacing={8}>
         <Heading color="heading" fontSize={50}>
           {blog.title}

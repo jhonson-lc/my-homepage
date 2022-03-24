@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Logo: React.FC<Props> = ({ size = 24, ...props }) => {
-  const logoImg = `/images/logo${useColorModeValue("", "-dark")}.svg`;
+  const logoImg = `/logo${useColorModeValue("", "-dark")}.svg`;
 
   return (
     <Link href="/">

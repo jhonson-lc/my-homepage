@@ -18,7 +18,7 @@ interface Props {
 
 const SingleWork: React.FC<Props> = ({ work }) => {
   return (
-    <Layout key={work.id} title={work.title}>
+    <Layout key={work.id} title={work.title} url={`work/${work.id}`}>
       <Stack alignItems="flex-start" direction="column" spacing={5} w="100%">
         <TitleNavigation title={work.title} />
         <ParameterWork title="Project">
