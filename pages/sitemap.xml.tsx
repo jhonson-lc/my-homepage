@@ -7,11 +7,27 @@ export function generateSiteMap(blogs: Blog[]) {
       <url>
           <loc>https://mejhon.dev</loc>
       </url>
+      <url>
+            <loc>https://mejhon.dev/</loc>
+            <lastmod>2022-03-24T21:24:19+00:00</lastmod>
+        </url>
+        <url>
+            <loc>https://mejhon.dev/work</loc>
+            <lastmod>2022-03-24T21:24:19+00:00</lastmod>
+        </url>
+        <url>
+            <loc>https://mejhon.dev/blog</loc>
+            <lastmod>2022-03-24T21:24:19+00:00</lastmod>
+        </url>
+        <url>
+            <loc>https://mejhon.dev/contact</loc>
+            <lastmod>2022-03-24T21:24:19+00:00</lastmod>
+        </url>
       ${blogs
         .map(({ slug }) => {
           return `
               <url>
-                  <loc>${`https:mejhon.dev/${slug}`}</loc>
+                  <loc>${`https://mejhon.dev/${slug}`}</loc>
               </url>
           `;
         })
