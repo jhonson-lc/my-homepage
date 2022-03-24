@@ -27,7 +27,7 @@ export function generateSiteMap(blogs: singleBlog[]) {
         .map((blog) => {
           return `
               <url>
-                  <loc>${`https://mejhon.dev/${blog?.properties.slug.rich_text[0]?.plain_text}`}</loc>
+                  <loc>${`https://mejhon.dev/blog/${blog?.properties.slug.rich_text[0]?.plain_text}`}</loc>
               </url>
           `;
         })
