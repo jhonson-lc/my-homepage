@@ -18,7 +18,7 @@ const works = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus augue, dapibus at nisi ac, feugiat imperdiet nibh. Pellentesque sit amet euismod sem. Donec vel pellentesque massa. Praesent auctor elit id libero fringilla tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. ",
     platform: ["Windows", "macOS", "Linux", "iOS", "Android"],
-    siteurl: "https://my-homepage-delta.vercel.app/",
+    siteurl: "https://mejhon.dev/",
     thumbnail: "../images/works/myportfolio.png",
   },
   {
