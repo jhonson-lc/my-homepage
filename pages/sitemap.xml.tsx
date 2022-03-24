@@ -1,7 +1,7 @@
 import api from "../blog/resources";
 import { Blog } from "../blog/types";
 
-export function generateSiteMap(blogs: Blog[]) {
+export function generateSiteMap({ blogs }: { blogs: Blog[] }) {
   return `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
@@ -50,7 +50,9 @@ export async function getServerSideProps({ res }) {
   res.end();
 
   return {
-    props: {},
+    props: {
+      blogs: blogs,
+    },
   };
 }
 
