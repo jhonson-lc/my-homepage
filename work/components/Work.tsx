@@ -1,10 +1,14 @@
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { Flex, Text, Link, Badge, useColorModeValue } from "@chakra-ui/react";
 import NextLink from "next/link";
-import { ReactNode } from "react";
 import { colors } from "work/constants";
 
-export const TitleNavigation = ({ title }: { title: string }) => {
+interface Props {
+  title?: string;
+  build?: string[];
+}
+
+export const TitleNavigation: React.FC<Props> = ({ title }) => {
   return (
     <Flex alignItems="center" gap={1} mb={8} w="100%">
       <NextLink passHref href="/work">
@@ -20,13 +24,7 @@ export const TitleNavigation = ({ title }: { title: string }) => {
   );
 };
 
-export const ParameterWork: React.FC = ({
-  title,
-  children,
-}: {
-  title: string;
-  children: ReactNode;
-}) => {
+export const ParameterWork: React.FC<Props> = ({ title, children }) => {
   return (
     <Flex alignItems="center" gap={2} justifyContent="flex-start" wrap="wrap">
       <Badge colorScheme={useColorModeValue("teal", "cyan")} fontSize="sm">
@@ -37,7 +35,7 @@ export const ParameterWork: React.FC = ({
   );
 };
 
-export const BuildWork = ({ build }: { build: string[] }) => {
+export const BuildWork: React.FC<Props> = ({ build }) => {
   return (
     <>
       {build.map((item) => {
