@@ -1,7 +1,7 @@
 import api from "../blog/resources";
-import { Blog } from "../blog/types";
+import { singleBlog } from "../blog/types";
 
-export function generateSiteMap({ blogs }: { blogs: Blog[] }) {
+export function generateSiteMap(blogs: singleBlog[]) {
   return `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
@@ -24,10 +24,10 @@ export function generateSiteMap({ blogs }: { blogs: Blog[] }) {
             <lastmod>2022-03-24T21:24:19+00:00</lastmod>
         </url>
       ${blogs
-        .map(({ slug }) => {
+        .map((blog) => {
           return `
               <url>
-                  <loc>${`https://mejhon.dev/${slug}`}</loc>
+                  <loc>${`https://mejhon.dev/${blog?.properties.slug.rich_text[0]?.plain_text}`}</loc>
               </url>
           `;
         })
@@ -50,9 +50,7 @@ export async function getServerSideProps({ res }) {
   res.end();
 
   return {
-    props: {
-      blogs: blogs,
-    },
+    props: {},
   };
 }
 

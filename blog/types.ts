@@ -3,7 +3,6 @@ export interface Blog {
   tags: string;
   name: string;
   createdAt: string;
-  slug: string;
   description: string;
 }
 
@@ -11,6 +10,7 @@ export interface singleBlog {
   id: string;
   properties: {
     createdAt: any;
+    slug: any;
     description: any;
     name: any;
     tags: any;

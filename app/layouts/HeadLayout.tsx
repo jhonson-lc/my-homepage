@@ -33,10 +33,6 @@ const Layout: React.FC<Props> = ({ children, title, url }) => {
           <link href={META.favicon} rel="icon" />
           <link href={META.appleicon} rel="apple-touch-icon" />
           {url && <link href={`${META.url}/${url}`} rel="canonical" />}
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap"
-            rel="stylesheet"
-          />
           <title>{`${title} | ${META.title}`}</title>
           <meta content={META.theme} name="theme-color" />
           <meta content={META.description} name="description" />
