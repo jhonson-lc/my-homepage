@@ -1,5 +1,16 @@
 const works = [
   {
+    id: "spaciart-ecuador",
+    type: "work",
+    title: "Spaciart Ecuador",
+    build: ["react", "chakra-ui", "framer-motion", "typescript"],
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus augue, dapibus at nisi ac, feugiat imperdiet nibh. Pellentesque sit amet euismod sem. Donec vel pellentesque massa. Praesent auctor elit id libero fringilla tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. ",
+    platform: ["Windows", "macOS", "Linux", "iOS", "Android"],
+    siteurl: "https://muebles-spaciartecuador.com/",
+    thumbnail: "../images/works/spaciartecuador.png",
+  },
+  {
     id: "my-portfolio",
     type: "work",
     title: "My Portfolio",

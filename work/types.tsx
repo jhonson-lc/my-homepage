@@ -7,3 +7,8 @@ export interface Work {
   platform?: string[];
   description?: string;
 }
+
+export interface ColorBadge {
+  stack: string;
+  color: string;
+}

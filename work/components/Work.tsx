@@ -1,6 +1,8 @@
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { Flex, Text, Link, Badge, useColorModeValue } from "@chakra-ui/react";
 import NextLink from "next/link";
+import { ReactNode } from "react";
+import { colors } from "work/constants";
 
 export const TitleNavigation = ({ title }: { title: string }) => {
   return (
@@ -18,7 +20,13 @@ export const TitleNavigation = ({ title }: { title: string }) => {
   );
 };
 
-export const ParameterWork: React.FC<Parameter> = ({ title, children }) => {
+export const ParameterWork: React.FC = ({
+  title,
+  children,
+}: {
+  title: string;
+  children: ReactNode;
+}) => {
   return (
     <Flex alignItems="center" gap={2} justifyContent="flex-start" wrap="wrap">
       <Badge colorScheme={useColorModeValue("teal", "cyan")} fontSize="sm">
@@ -51,30 +59,4 @@ export const BuildWork = ({ build }: { build: string[] }) => {
       })}
     </>
   );
-};
-
-const colors: ColorBadge[] = [
-  { stack: "html", color: "red" },
-  { stack: "css", color: "blue" },
-  { stack: "vanilla js", color: "yellow" },
-  { stack: "javascript", color: "yellow" },
-  { stack: "react.js", color: "linkedin" },
-  { stack: "wouter", color: "green" },
-  { stack: "framer-motion", color: "cyan" },
-  { stack: "typescript", color: "linkedin" },
-  { stack: "next.js", color: "gray" },
-  { stack: "chakra-ui", color: "teal" },
-  { stack: "dark mode", color: "purple" },
-  { stack: "tailwindcss", color: "teal" },
-  { stack: "styled-components", color: "pink" },
-];
-
-type Parameter = {
-  title: string;
-  children: any;
-};
-
-type ColorBadge = {
-  stack: string;
-  color: string;
 };
