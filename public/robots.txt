@@ -1,4 +1,4 @@
-User-agent: *
+User-Agent: *
 Disallow:
 
 Sitemap: https://mejhon.dev/sitemap.xml
