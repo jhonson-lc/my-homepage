@@ -8,7 +8,7 @@ const works = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus augue, dapibus at nisi ac, feugiat imperdiet nibh. Pellentesque sit amet euismod sem. Donec vel pellentesque massa. Praesent auctor elit id libero fringilla tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. ",
     platform: ["Windows", "macOS", "Linux", "iOS", "Android"],
     siteurl: "https://muebles-spaciartecuador.com/",
-    thumbnail: "../images/works/spaciartecuador.png",
+    thumbnail: "/images/works/spaciartecuador.png",
   },
   {
     id: "my-portfolio",
@@ -19,7 +19,7 @@ const works = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus augue, dapibus at nisi ac, feugiat imperdiet nibh. Pellentesque sit amet euismod sem. Donec vel pellentesque massa. Praesent auctor elit id libero fringilla tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. ",
     platform: ["Windows", "macOS", "Linux", "iOS", "Android"],
     siteurl: "https://mejhon.dev/",
-    thumbnail: "../images/works/myportfolio.png",
+    thumbnail: "/images/works/myportfolio.png",
   },
   {
     id: "netflix-clone",
@@ -30,7 +30,7 @@ const works = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus augue, dapibus at nisi ac, feugiat imperdiet nibh. Pellentesque sit amet euismod sem. Donec vel pellentesque massa. Praesent auctor elit id libero fringilla tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. ",
     platform: ["Windows", "macOS", "Linux", "iOS", "Android"],
     siteurl: "https://netflix-clone-nu-liart.vercel.app/",
-    thumbnail: "../images/works/netflix.png",
+    thumbnail: "/images/works/netflix.png",
   },
   {
     id: "gif-finder",
@@ -41,7 +41,7 @@ const works = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus augue, dapibus at nisi ac, feugiat imperdiet nibh. Pellentesque sit amet euismod sem. Donec vel pellentesque massa. Praesent auctor elit id libero fringilla tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. ",
     platform: ["Windows", "macOS", "Linux", "iOS", "Android"],
     siteurl: "https://gif-finder-five.vercel.app/",
-    thumbnail: "../images/works/giffinder.png",
+    thumbnail: "/images/works/giffinder.png",
   },
   {
     id: "landing-page",
@@ -52,7 +52,7 @@ const works = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus augue, dapibus at nisi ac, feugiat imperdiet nibh. Pellentesque sit amet euismod sem. Donec vel pellentesque massa. Praesent auctor elit id libero fringilla tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. ",
     platform: ["Windows", "macOS", "Linux", "iOS", "Android"],
     siteurl: "https://landing-page-jhonson-lc.vercel.app/",
-    thumbnail: "../images/works/landingpage.png",
+    thumbnail: "/images/works/landingpage.png",
   },
   {
     id: "landing-page-v2",
@@ -63,7 +63,7 @@ const works = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus augue, dapibus at nisi ac, feugiat imperdiet nibh. Pellentesque sit amet euismod sem. Donec vel pellentesque massa. Praesent auctor elit id libero fringilla tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. ",
     platform: ["Windows", "macOS", "Linux", "iOS", "Android"],
     siteurl: "https://landing-page-v2-ten.vercel.app/",
-    thumbnail: "../images/works/landingpagev2.png",
+    thumbnail: "/images/works/landingpagev2.png",
   },
   {
     id: "ecommerce-shoes",
@@ -74,7 +74,7 @@ const works = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus augue, dapibus at nisi ac, feugiat imperdiet nibh. Pellentesque sit amet euismod sem. Donec vel pellentesque massa. Praesent auctor elit id libero fringilla tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. ",
     platform: ["Windows", "macOS", "Linux", "iOS", "Android"],
     siteurl: "https://ecommerce-five-silk.vercel.app/",
-    thumbnail: "../images/works/ecommerce.png",
+    thumbnail: "/images/works/ecommerce.png",
   },
   {
     id: "api-countries",
@@ -85,7 +85,7 @@ const works = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus augue, dapibus at nisi ac, feugiat imperdiet nibh. Pellentesque sit amet euismod sem. Donec vel pellentesque massa. Praesent auctor elit id libero fringilla tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. ",
     platform: ["Windows", "macOS", "Linux", "iOS", "Android"],
     siteurl: "https://restcountries-api.vercel.app/",
-    thumbnail: "../images/works/countries.png",
+    thumbnail: "/images/works/countries.png",
   },
   {
     id: "form-validation",
@@ -96,7 +96,7 @@ const works = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus augue, dapibus at nisi ac, feugiat imperdiet nibh. Pellentesque sit amet euismod sem. Donec vel pellentesque massa. Praesent auctor elit id libero fringilla tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. ",
     platform: ["Windows", "macOS", "Linux", "iOS", "Android"],
     siteurl: "https://form-validation-pi.vercel.app/",
-    thumbnail: "../images/works/formvalidation.png",
+    thumbnail: "/images/works/formvalidation.png",
   },
   {
     id: "api-rickandmorty",
@@ -107,7 +107,7 @@ const works = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus augue, dapibus at nisi ac, feugiat imperdiet nibh. Pellentesque sit amet euismod sem. Donec vel pellentesque massa. Praesent auctor elit id libero fringilla tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. ",
     platform: ["Windows", "macOS", "Linux", "iOS", "Android"],
     siteurl: "https://rickandmorty-api-umber.vercel.app/",
-    thumbnail: "../images/works/rickandmorty.png",
+    thumbnail: "/images/works/rickandmorty.png",
   },
 ];
 

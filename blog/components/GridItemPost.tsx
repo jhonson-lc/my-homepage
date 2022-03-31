@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import NextLink from "next/link";
 import formatDate from "utils/formatDate";
 import convertBlogURL from "utils/convertBlogURL";
-import { Image, Stack, Box, LinkOverlay, LinkBox } from "@chakra-ui/react";
+import { Stack, Box, LinkOverlay, LinkBox } from "@chakra-ui/react";
 import Link from "next/link";
+import Image from "next/image";
+import styled from "@emotion/styled";
 
 import P from "../../work/components/Paragraph";
 
@@ -21,12 +23,19 @@ interface Props {
   };
 }
 
+const WrapperImage = styled.div`
+  cursor: pointer;
+  img#blog-image {
+    border-radius: 20px 20px 0 0;
+  }
+`;
+
 const ItemPost: React.FC<Props | any> = ({ blog }) => {
   const LinkBoxM = motion(LinkBox);
   return (
     <LinkBoxM
       as="article"
-      rounded="lg"
+      rounded="20px"
       shadow="md"
       whileHover={{ scale: 0.99 }}
     >
@@ -35,20 +44,18 @@ const ItemPost: React.FC<Props | any> = ({ blog }) => {
           blog?.properties.name.title[0]?.plain_text,
         )}`}
       >
-        <Image
-          borderBottomRadius="0"
-          borderRadius="lg"
-          // eslint-disable-next-line react/jsx-sort-props
-          cursor="pointer"
-          h={140}
-          loading="lazy"
-          objectFit="cover"
-          src={`../../images/blogs/${blog.properties.image.rich_text[0]?.plain_text}`}
-          w="100%"
-        />
+        <WrapperImage>
+          <Image
+            height={140}
+            id="blog-image"
+            objectFit="cover"
+            src={`/images/blogs/${blog.properties.image.rich_text[0]?.plain_text}`}
+            width={700}
+          />
+        </WrapperImage>
       </Link>
       <Stack
-        borderRadius="lg"
+        borderRadius="20px"
         borderTopRadius={0}
         borderWidth="1px"
         // eslint-disable-next-line react/jsx-sort-props

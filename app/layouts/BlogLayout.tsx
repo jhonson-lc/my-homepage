@@ -1,7 +1,8 @@
 import React from "react";
 import formatDate from "utils/formatDate";
-import { Text, Divider, Heading, Stack, Image } from "@chakra-ui/react";
+import { Text, Divider, Heading, Stack, Box } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
+import Image from "next/image";
 
 import Layout from "../../app/layouts/HeadLayout";
 import Button from "../../ui/controls/Button/Button";
@@ -27,7 +28,7 @@ const BlogLayout: React.FC<Props> = ({ blog, children }) => {
           justifyContent="space-between"
         >
           <Stack direction="row">
-            <Avatar size={8} />
+            <Avatar size={33} />
             <Stack
               alignItems="center"
               direction="row"
@@ -46,7 +47,14 @@ const BlogLayout: React.FC<Props> = ({ blog, children }) => {
           </Stack>
           <Text variant="information">{blog.readingTime.text}</Text>
         </Stack>
-        <Image loading="lazy" src={`../../images/blogs/${blog.image}`} />
+        <Box h="300px" position="relative" w="full">
+          <Image
+            layout="fill"
+            loading="lazy"
+            objectFit="cover"
+            src={`/images/blogs/${blog.image}`}
+          />
+        </Box>
         {children}
         <Stack direction="row" justifyContent="end" w="100%">
           <Button

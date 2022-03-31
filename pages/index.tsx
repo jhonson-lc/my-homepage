@@ -50,7 +50,7 @@ const IndexPage: NextPage<Props> = ({ blogs, works }) => {
               FrontEnd Developer ( Student / Self-Taught / Productive )
             </Text>
           </Stack>
-          <Avatar size={32} />
+          <Avatar />
         </Stack>
         <Section hrefB="/work" labelB="My portfolio" title="About me">
           <P>
