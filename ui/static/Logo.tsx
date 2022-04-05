@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { Flex, Image, useColorModeValue } from "@chakra-ui/react";
+import Image from "next/image";
+import { Flex, useColorModeValue } from "@chakra-ui/react";
 
 interface Props {
   size?: number;
@@ -12,14 +13,16 @@ const Logo: React.FC<Props> = ({ size = 24, ...props }) => {
   return (
     <Link href="/">
       <a>
-        <Flex {...props} align="center" cursor="pointer" display="inline-flex">
-          <Image
-            alt="Logo"
-            h={size}
-            objectFit="contain"
-            src={logoImg}
-            w={size}
-          />
+        <Flex
+          h={size}
+          w={size}
+          {...props}
+          align="center"
+          cursor="pointer"
+          display="inline-flex"
+          position="relative"
+        >
+          <Image alt="Logo" layout="fill" src={logoImg} />
         </Flex>
       </a>
     </Link>

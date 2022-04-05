@@ -24,12 +24,15 @@ const Avatar: React.FC<Props> = ({ size = 110, scale }) => {
       borderRadius="100%"
       exit="exit"
       filter="grayscale(100%)"
+      h={size}
       initial="initial"
+      pos="relative"
       transform={`scale(${scale})`}
       transition={{ duration: 0.5 }}
       variants={variants}
+      w={size}
     >
-      <Image height={size} src="/profile.png" width={size} />
+      <Image alt="Jhon" layout="fill" src="/profile.png" />
     </BoxM>
   );
 };

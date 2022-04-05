@@ -25,7 +25,6 @@ const SkillImage = ({ image, name }) => {
   return (
     <Stack alignItems="center" direction="column">
       {image}
-      {image.length && <Image h={12} src={image} w={12} />}
       <Text fontSize="xs" variant="information">
         {name}
       </Text>
