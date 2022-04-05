@@ -24,6 +24,9 @@ interface Props {
 }
 
 const WrapperImage = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100px;
   cursor: pointer;
   img#blog-image {
     border-radius: 20px 20px 0 0;
@@ -47,11 +50,10 @@ const ItemPost: React.FC<Props | any> = ({ blog }) => {
         <WrapperImage>
           <Image
             alt={blog?.properties.name.title[0]?.plain_text}
-            height={140}
             id="blog-image"
+            layout="fill"
             objectFit="cover"
             src={`/images/blogs/${blog.properties.image.rich_text[0]?.plain_text}`}
-            width={700}
           />
         </WrapperImage>
       </Link>
