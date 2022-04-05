@@ -5,7 +5,6 @@ import Skills from "components/Skills";
 
 import Section from "../components/Section";
 import Layout from "../app/layouts/HeadLayout";
-import Button from "../ui/controls/Button/Button";
 import P from "../work/components/Paragraph";
 import api from "../blog/resources";
 import apiWork from "../work/resources";
@@ -17,10 +16,10 @@ import ItemWork from "../work/components/GridItemWork";
 
 interface Props {
   blogs: Blog[];
-  works: Work[];
+  worksList: Work[];
 }
 
-const IndexPage: NextPage<Props> = ({ blogs, works }) => {
+const IndexPage: NextPage<Props> = ({ blogs, worksList }) => {
   return (
     <Layout title="Home">
       <Stack spacing={10}>
@@ -70,7 +69,7 @@ const IndexPage: NextPage<Props> = ({ blogs, works }) => {
             justifyItems="center"
             w="100%"
           >
-            {works.slice(0, 2).map((work, i) => {
+            {worksList.map((work, i) => {
               return <ItemWork key={work.id} i={i} work={work} />;
             })}
           </SimpleGrid>
@@ -80,7 +79,7 @@ const IndexPage: NextPage<Props> = ({ blogs, works }) => {
         </Section>
         <Section hrefB="/blog" labelB="View all" title="Latest posts">
           <SimpleGrid columns={1} gap={5} w="100%">
-            {blogs.slice(0, 2).map((blog) => {
+            {blogs.map((blog) => {
               return <ItemPost key={blog.id} blog={blog} />;
             })}
           </SimpleGrid>
@@ -91,14 +90,17 @@ const IndexPage: NextPage<Props> = ({ blogs, works }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const blogs = await api.list();
+  const blogsList = await api.list();
   const { works } = apiWork.list();
+
+  const blogs = blogsList.slice(0, 2);
+  const worksList = works.slice(0, 2);
 
   return {
     props: {
       revalidate: 1,
       blogs: blogs,
-      works,
+      worksList,
     },
   };
 };
