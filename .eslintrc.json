@@ -26,6 +26,7 @@
     "rules": {
       "no-console":"warn",
       "react/prop-types":"off",
+      "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
       "react/react-in-jsx-scope":"off",
       "prettier/prettier": [
         "error",

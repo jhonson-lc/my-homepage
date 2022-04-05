@@ -1,4 +1,4 @@
-import { Stack, Link, Icon, Badge, Tooltip } from "@chakra-ui/react";
+import { Stack, Link, Badge, Tooltip } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { motion } from "framer-motion";
 

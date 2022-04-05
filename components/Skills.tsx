@@ -1,11 +1,9 @@
-import { Stack, Image, Text } from "@chakra-ui/react";
+import { Stack, Text } from "@chakra-ui/react";
 import React from "react";
 
 import { skills } from "./constants";
 
-interface Props {}
-
-const Skills: React.FC<Props> = () => {
+const Skills: React.FC = () => {
   return (
     <Stack direction="row" gap={3} justifyContent="center" w="100%" wrap="wrap">
       {skills.map((skill) => {
