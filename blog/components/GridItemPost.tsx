@@ -46,6 +46,7 @@ const ItemPost: React.FC<Props | any> = ({ blog }) => {
       >
         <WrapperImage>
           <Image
+            alt={blog?.properties.name.title[0]?.plain_text}
             height={140}
             id="blog-image"
             objectFit="cover"
