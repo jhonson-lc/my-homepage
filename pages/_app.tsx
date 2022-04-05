@@ -6,10 +6,10 @@ import Layout from "../app/layouts/IndexLayout";
 import Chakra from "../ui/structure/chakra";
 import Fonts from "../lib/fonts";
 
-const App: NextPage<AppProps> = ({ Component, pageProps, router }) => {
+const App: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (
     <Chakra>
-      <Layout router={router}>
+      <Layout>
         <Fonts />
         <AnimatePresence exitBeforeEnter initial={false}>
           <Component {...pageProps} />

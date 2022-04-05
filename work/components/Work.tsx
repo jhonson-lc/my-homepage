@@ -26,7 +26,13 @@ export const TitleNavigation: React.FC<Props> = ({ title }) => {
 
 export const ParameterWork: React.FC<Props> = ({ title, children }) => {
   return (
-    <Flex alignItems="center" gap={2} justifyContent="flex-start" wrap="wrap">
+    <Flex
+      alignItems="center"
+      gap={2}
+      justifyContent="flex-start"
+      pos="relative"
+      wrap="wrap"
+    >
       <Badge colorScheme={useColorModeValue("teal", "cyan")} fontSize="sm">
         {title}:{" "}
       </Badge>

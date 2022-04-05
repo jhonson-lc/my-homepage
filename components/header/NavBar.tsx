@@ -1,5 +1,6 @@
 import { Box, Container, Stack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 import Logo from "../../ui/static/Logo";
 import ThemeButton from "../../ui/structure/theme-button";
@@ -8,11 +9,8 @@ import MenuMobile from "../../components/header/MenuMobile";
 import { LINKS_NAV } from "./constants";
 import LinkItem from "./LinkItem";
 
-interface Props {
-  path: string;
-}
-
-const Navbar: React.FC<Props> = ({ path }) => {
+const Navbar: React.FC = () => {
+  const { pathname } = useRouter();
   return (
     <Box
       as={motion.nav}
@@ -47,7 +45,7 @@ const Navbar: React.FC<Props> = ({ path }) => {
                   key={href}
                   font={{ weight: 400, size: 15 }}
                   href={href}
-                  path={path}
+                  path={pathname}
                 >
                   {text}
                 </LinkItem>
@@ -57,7 +55,7 @@ const Navbar: React.FC<Props> = ({ path }) => {
         </Box>
         <Stack alignItems="center" direction="row" spacing={5}>
           <ThemeButton size={24} />
-          <MenuMobile path={path} />
+          <MenuMobile path={pathname} />
         </Stack>
       </Container>
     </Box>

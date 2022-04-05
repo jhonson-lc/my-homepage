@@ -63,12 +63,7 @@ const IndexPage: NextPage<Props> = ({ blogs, worksList }) => {
           </P>
         </Section>
         <Section hrefB="/work" labelB="View all" title="Projects">
-          <SimpleGrid
-            columns={[1, 1, 2]}
-            gap={10}
-            justifyItems="center"
-            w="100%"
-          >
+          <SimpleGrid columns={[1, 2]} gap={10} justifyItems="center" w="100%">
             {worksList.map((work, i) => {
               return <ItemWork key={work.id} i={i} work={work} />;
             })}

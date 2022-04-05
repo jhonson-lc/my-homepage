@@ -2,9 +2,7 @@ import React from "react";
 
 import ContactScreen from "../contact/screens/ContactScreen";
 
-interface Props {}
-
-const Contact: React.FC<Props> = () => {
+const Contact: React.FC = () => {
   return <ContactScreen />;
 };
 

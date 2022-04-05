@@ -1,6 +1,8 @@
 import React from "react";
-import { Text, Stack } from "@chakra-ui/react";
+import { Text, Stack, Link, HStack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { ExternalLinkIcon, ViewIcon } from "@chakra-ui/icons";
+import NextLink from "next/link";
 
 import { Work } from "../types";
 
@@ -36,6 +38,14 @@ const ItemWork: React.FC<Props> = ({ work, i }) => {
     >
       <ParameterWork title="Project">
         <Text variant="information">{work.title}</Text>
+        <HStack pos="absolute" right="0">
+          <NextLink href={`/work/${work.id}`}>
+            <ViewIcon cursor="pointer" />
+          </NextLink>
+          <Link isExternal href={work.siteurl}>
+            <ExternalLinkIcon cursor="pointer" />
+          </Link>
+        </HStack>
       </ParameterWork>
       {work.build && (
         <ParameterWork title="Build with">
