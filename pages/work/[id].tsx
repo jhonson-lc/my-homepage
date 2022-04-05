@@ -34,7 +34,7 @@ const SingleWork: React.FC<Props> = ({ work }) => {
           </Text>
         </ParameterWork>
         <ParameterWork title="Site URL">
-          <Link href={work.siteurl} target="_blank">
+          <Link isExternal href={work.siteurl}>
             <Text variant="linkexternal">{work.siteurl}</Text>
           </Link>
         </ParameterWork>

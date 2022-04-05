@@ -1,25 +1,21 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import { SimpleGrid, Stack, Text } from "@chakra-ui/react";
-import { GetStaticProps } from "next";
 import Skills from "components/Skills";
+import { Blog } from "blog/types";
 
 import Section from "../components/Section";
 import Layout from "../app/layouts/HeadLayout";
 import P from "../work/components/Paragraph";
-import api from "../blog/resources";
-import apiWork from "../work/resources";
-import { Blog } from "../blog/types";
-import { Work } from "../work/types";
 import Avatar from "../ui/feedback/Avatar";
 import ItemPost from "../blog/components/GridItemPost";
 import ItemWork from "../work/components/GridItemWork";
+import api from "../blog/resources";
 
 interface Props {
   blogs: Blog[];
-  worksList: Work[];
 }
 
-const IndexPage: NextPage<Props> = ({ blogs, worksList }) => {
+const IndexPage: NextPage<Props> = ({ blogs }) => {
   return (
     <Layout title="Home">
       <Stack spacing={10}>
@@ -64,9 +60,22 @@ const IndexPage: NextPage<Props> = ({ blogs, worksList }) => {
         </Section>
         <Section hrefB="/work" labelB="View all" title="Projects">
           <SimpleGrid columns={[1, 2]} gap={10} justifyItems="center" w="100%">
-            {worksList.map((work, i) => {
-              return <ItemWork key={work.id} i={i} work={work} />;
-            })}
+            <ItemWork
+              work={{
+                id: "spaciart-ecuador",
+                title: "Spaciart Ecuador",
+                thumbnail: "/images/works/spaciartecuador.png",
+                build: ["react", "chakra-ui", "framer-motion", "typescript"],
+              }}
+            />
+            <ItemWork
+              work={{
+                id: "my-portfolio",
+                title: "My Portfolio",
+                thumbnail: "/images/works/myportfolio.png",
+                build: ["next.js", "chakra-ui", "framer-motion", "typescript"],
+              }}
+            />
           </SimpleGrid>
         </Section>
         <Section title="Skills">
@@ -74,7 +83,7 @@ const IndexPage: NextPage<Props> = ({ blogs, worksList }) => {
         </Section>
         <Section hrefB="/blog" labelB="View all" title="Latest posts">
           <SimpleGrid columns={1} gap={5} w="100%">
-            {blogs.map((blog) => {
+            {blogs.slice(0, 2).map((blog) => {
               return <ItemPost key={blog.id} blog={blog} />;
             })}
           </SimpleGrid>
@@ -85,17 +94,12 @@ const IndexPage: NextPage<Props> = ({ blogs, worksList }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const blogsList = await api.list();
-  const { works } = apiWork.list();
-
-  const blogs = blogsList.slice(0, 2);
-  const worksList = works.slice(0, 2);
+  const blogs = await api.list();
 
   return {
     props: {
       revalidate: 1,
       blogs: blogs,
-      worksList,
     },
   };
 };
