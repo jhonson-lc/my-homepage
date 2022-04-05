@@ -98,7 +98,7 @@ const MenuMobile: React.FC<Props> = ({ path }) => {
               })}
             </Stack>
             <Divider bg="secondary" border="none" h="1px" />
-            <ListOfSocial color="secondary" size={5} />
+            <ListOfSocial />
             <Center>
               <ThemeButton size={24} />
             </Center>

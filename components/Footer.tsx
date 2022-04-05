@@ -44,7 +44,7 @@ export default function Footer() {
         w="100%"
       >
         <Text color="paragraph">© 2020 Jhon Lescano. All rights reserved</Text>
-        <ListOfSocial color="paragraph" size={5} />
+        <ListOfSocial />
       </Stack>
     </Stack>
   );
