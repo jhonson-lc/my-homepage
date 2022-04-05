@@ -8,4 +8,6 @@ export interface LinkNav {
   target?: string;
   onClose?: any;
   font?: { size: any; weight: any };
+  color?: string;
+  name?: string;
 }

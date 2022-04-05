@@ -11,19 +11,31 @@ import { LinkNav } from "./types";
 export const SOCIAL_MEDIAS: LinkNav[] = [
   {
     href: "https://www.instagram.com/jhonson.lc/?hl=es",
-    text: "Instagram",
+    text: "IG",
+    name: "Instagram",
     icon: BsInstagram,
+    color: "purple",
   },
   {
     href: "https://www.facebook.com/jhon.cisneros.754/",
-    text: "Facebook",
+    text: "FB",
+    name: "Facebook",
     icon: BsFacebook,
+    color: "facebook",
   },
-  { href: "https://twitter.com/jhonson_lc", text: "Twitter", icon: BsTwitter },
+  {
+    href: "https://twitter.com/jhonson_lc",
+    color: "twitter",
+    text: "TW",
+    name: "Twitter",
+    icon: BsTwitter,
+  },
   {
     href: "https://www.linkedin.com/in/jhonlescano/",
-    text: "LinkedIn",
+    text: "IN",
+    name: "LinkedIn",
     icon: BsLinkedin,
+    color: "linkedin",
   },
 ];
 
