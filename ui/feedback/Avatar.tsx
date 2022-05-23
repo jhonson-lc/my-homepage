@@ -20,19 +20,18 @@ const Avatar: React.FC<Props> = ({ size = 110, scale }) => {
   return (
     <BoxM
       animate="enter"
-      bgGradient="linear(6deg, rgba(255,255,255,1) 0%, rgba(158,154,154,1) 100%)"
-      borderRadius="100%"
       exit="exit"
-      filter="grayscale(100%)"
       h={size}
       initial="initial"
+      overflow="hidden"
       pos="relative"
+      rounded="full"
       transform={`scale(${scale})`}
       transition={{ duration: 0.5 }}
       variants={variants}
       w={size}
     >
-      <Image alt="Jhon" layout="fill" src="/profile.png" />
+      <Image alt="Foto de Jhon" layout="fill" src="/profile.jpg" />
     </BoxM>
   );
 };
