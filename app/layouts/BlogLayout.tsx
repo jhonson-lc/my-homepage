@@ -3,7 +3,7 @@ import formatDate from "utils/formatDate";
 import { Text, Divider, Heading, Stack, Box } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import Image from "next/image";
-import es from "locale/es";
+import es from "date-fns/locale/es";
 import { useRouter } from "next/router";
 
 import Layout from "../../app/layouts/HeadLayout";
