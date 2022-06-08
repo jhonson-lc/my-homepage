@@ -50,3 +50,15 @@ export const LINKS_NAV: LinkNav[] = [
     icon: BsGithub,
   },
 ];
+
+export const LINKS_NAV_ES: LinkNav[] = [
+  { href: "/", text: "Inicio" },
+  { href: "/work", text: "Proyectos" },
+  { href: "/blog", text: "Blog" },
+  { href: "/contact", text: "Contacto" },
+  {
+    href: "https://github.com/jhonson-lc",
+    text: "Ver código",
+    icon: BsGithub,
+  },
+];

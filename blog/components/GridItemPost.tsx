@@ -7,6 +7,8 @@ import { Stack, Box, LinkOverlay, LinkBox } from "@chakra-ui/react";
 import Link from "next/link";
 import Image from "next/image";
 import styled from "@emotion/styled";
+import { useRouter } from "next/router";
+import es from "date-fns/locale/es";
 
 import P from "../../work/components/Paragraph";
 
@@ -34,6 +36,8 @@ const WrapperImage = styled.div`
 `;
 
 const ItemPost: React.FC<Props | any> = ({ blog }) => {
+  const { locale } = useRouter();
+  const t = locale === "es" ? es : null;
   const LinkBoxM = motion(LinkBox);
   return (
     <LinkBoxM
@@ -75,7 +79,7 @@ const ItemPost: React.FC<Props | any> = ({ blog }) => {
           right="5"
           top="2"
         >
-          {formatDate(blog?.properties.createdAt.created_time)}
+          {formatDate(blog?.properties.createdAt.created_time, t)}
         </Box>
         <NextLink
           passHref
