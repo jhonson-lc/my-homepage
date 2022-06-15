@@ -48,7 +48,7 @@ const ItemWork: React.FC<Props> = ({ work, i }) => {
         </HStack>
       </ParameterWork>
       {work.build && (
-        <ParameterWork title="Build with">
+        <ParameterWork title="Built with">
           {<BuildWork build={work.build} />}
         </ParameterWork>
       )}
