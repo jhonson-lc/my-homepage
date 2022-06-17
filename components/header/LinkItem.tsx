@@ -17,7 +17,7 @@ const LinkItem: React.FC<LinkNav> = ({
     <NextLink passHref href={href}>
       <Link
         _focus={{ boxShadow: "none" }}
-        _hover={{ bg: !active ? "hover" : "" }}
+        _hover={{ bg: !active ? "hover" : "", color: !active ? "primary" : "" }}
         borderColor="primary"
         borderWidth={active ? "2px" : "0"}
         color={active ? "primary" : "inherit"}
@@ -25,9 +25,9 @@ const LinkItem: React.FC<LinkNav> = ({
         fontSize={font?.size}
         fontWeight={font?.weight}
         pos="relative"
-        px={2}
-        py={1}
-        rounded="md"
+        px={6}
+        py={2}
+        rounded="40px"
         onClick={onClose}
       >
         {children}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Stack } from "@chakra-ui/react";
+import { Text, Stack, useColorModeValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { ChevronRightIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import Button from "components/Button";
@@ -23,6 +23,7 @@ const variants = {
 
 const ItemWork: React.FC<Props> = ({ work, i }) => {
   const StackM = motion(Stack);
+  const back = useColorModeValue("blackAlpha.50", "whiteAlpha.50");
 
   return (
     <StackM
@@ -30,7 +31,7 @@ const ItemWork: React.FC<Props> = ({ work, i }) => {
       as="article"
       backdropBlur={8}
       backdropFilter="auto"
-      bg="rgba( 255, 255, 255, 0.1 )"
+      bg={back}
       direction="column"
       exit="exit"
       gap={6}

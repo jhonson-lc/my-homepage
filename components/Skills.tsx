@@ -1,4 +1,10 @@
-import { Heading, Stack, Text, useBreakpointValue } from "@chakra-ui/react";
+import {
+  Heading,
+  Stack,
+  Text,
+  useBreakpointValue,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import React from "react";
 
 import { latestSkills, skills } from "./constants";
@@ -51,12 +57,13 @@ const Skills: React.FC = () => {
 };
 
 const SkillImage = ({ image, name }) => {
+  const back = useColorModeValue("blackAlpha.50", "whiteAlpha.50");
   return (
     <Stack
       alignItems="center"
       backdropBlur={8}
       backdropFilter="auto"
-      bg="rgba( 255, 255, 255, 0.1 )"
+      bg={back}
       direction="row"
       px="20px"
       py="10px"

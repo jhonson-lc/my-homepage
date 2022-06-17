@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
           direction="row"
           display={{ base: "none", lg: "flex" }}
           justify="center"
-          spacing={16}
+          spacing={8}
           wrap="wrap"
         >
           {LINKS_NAV.map(({ href, text }) => {
