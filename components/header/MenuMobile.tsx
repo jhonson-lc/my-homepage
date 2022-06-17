@@ -35,7 +35,7 @@ const MenuMobile: React.FC<Props> = ({ path }) => {
         _hover={{ transform: "scale(1.1)" }}
         aria-label="Options"
         as={IconButton}
-        display={{ base: "flex", md: "none" }}
+        display={{ base: "flex", lg: "none" }}
         fontSize={45}
         icon={<GiHamburgerMenu />}
         ml={5}

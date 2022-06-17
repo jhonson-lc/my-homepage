@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 interface Props {
-  size?: number;
+  height?: number;
+  width?: number;
   scale?: number;
 }
 
@@ -14,24 +15,29 @@ const variants = {
   exit: { opacity: 0 },
 };
 
-const Avatar: React.FC<Props> = ({ size = 110, scale }) => {
+const Avatar: React.FC<Props> = ({ height = 400, width = 200, scale }) => {
   const BoxM = motion(Box);
 
   return (
     <BoxM
       animate="enter"
       exit="exit"
-      h={size}
+      h={height}
       initial="initial"
       overflow="hidden"
       pos="relative"
-      rounded="full"
-      transform={`scale(${scale})`}
+      transform={`scale(${scale}) `}
       transition={{ duration: 0.5 }}
       variants={variants}
-      w={size}
+      w={width}
     >
-      <Image alt="Foto de Jhon" layout="fill" src="/profile.jpg" />
+      <Image
+        alt="Foto de Jhon"
+        layout="fill"
+        objectFit="cover"
+        objectPosition={"left"}
+        src="/profile.jpg"
+      />
     </BoxM>
   );
 };

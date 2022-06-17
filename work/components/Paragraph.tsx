@@ -3,16 +3,24 @@ import { Text } from "@chakra-ui/react";
 
 interface Props {
   limitLines?: number;
+  size?: number;
+  weight?: number;
+  line?: number;
 }
 
-const Paragraph: React.FC<Props> = ({ children, limitLines }) => {
+const Paragraph: React.FC<Props> = ({
+  children,
+  size = 36,
+  limitLines,
+  weight,
+  line = "54px",
+}) => {
   return (
     <Text
-      align="justify"
       color="paragraph"
-      fontSize="sm"
-      fontWeight="light"
-      lineHeight={1.5}
+      fontSize={{ base: size / 1.5, md: size }}
+      fontWeight={weight}
+      lineHeight={line}
       noOfLines={limitLines}
     >
       {children}

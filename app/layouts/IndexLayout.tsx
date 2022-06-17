@@ -9,7 +9,7 @@ const Layout: React.FC = ({ children }) => {
     <Box as="main" pt={10}>
       <NavBar />
 
-      <Container maxW="container.sm" pt={20}>
+      <Container maxW="container.lg" pt={20}>
         {children}
       </Container>
 

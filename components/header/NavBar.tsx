@@ -1,6 +1,7 @@
 import { Box, Container, Stack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import Button from "components/Button";
 
 import Logo from "../../ui/static/Logo";
 import ThemeButton from "../../ui/structure/theme-button";
@@ -26,36 +27,44 @@ const Navbar: React.FC = () => {
         alignItems="center"
         display="flex"
         justifyContent="space-between"
-        maxW="container.md"
+        maxW="container.xl"
         pos="relative"
       >
-        <Box alignItems="center" display="flex" gap={12}>
-          <Logo size={16} />
-          <Stack
-            align="center"
-            color="paragraph"
-            direction="row"
-            display={{ base: "none", md: "flex" }}
-            justify="center"
-            spacing={3}
-            wrap="wrap"
-          >
-            {LINKS_NAV.map(({ href, text }) => {
-              return (
-                <LinkItem
-                  key={href}
-                  font={{ weight: 400, size: 15 }}
-                  href={href}
-                  path={pathname}
-                >
-                  {text}
-                </LinkItem>
-              );
-            })}
-          </Stack>
-        </Box>
+        <Logo size={20} />
+        <Stack
+          align="center"
+          color="paragraph"
+          direction="row"
+          display={{ base: "none", lg: "flex" }}
+          justify="center"
+          spacing={16}
+          wrap="wrap"
+        >
+          {LINKS_NAV.map(({ href, text }) => {
+            return (
+              <LinkItem
+                key={href}
+                font={{ weight: 400, size: 15 }}
+                href={href}
+                path={pathname}
+              >
+                {text}
+              </LinkItem>
+            );
+          })}
+        </Stack>
         <Stack alignItems="center" direction="row" spacing={5}>
-          <ThemeButton size={24} />
+          <Box display={{ base: "none", md: "flex" }}>
+            <ThemeButton size={24} />
+          </Box>
+          <Box display={{ base: "none", md: "flex" }}>
+            <Button
+              bg="transparent"
+              color="secondary"
+              href="/login"
+              text="Join me"
+            />
+          </Box>
           <MenuMobile path={pathname} />
         </Stack>
       </Container>

@@ -1,13 +1,14 @@
 import React from "react";
-import { Text, Stack, Link, HStack } from "@chakra-ui/react";
+import { Text, Stack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { ExternalLinkIcon, ViewIcon } from "@chakra-ui/icons";
-import NextLink from "next/link";
+import { ChevronRightIcon, ExternalLinkIcon } from "@chakra-ui/icons";
+import Button from "components/Button";
+import ButtonUI from "ui/controls/Button/Button";
 
 import { Work } from "../types";
 
-import { ParameterWork, BuildWork } from "./Work";
 import WorkImage from "./WorkImage";
+import Paragraph from "./Paragraph";
 
 interface Props {
   work: Work;
@@ -27,32 +28,48 @@ const ItemWork: React.FC<Props> = ({ work, i }) => {
     <StackM
       animate="enter"
       as="article"
+      backdropBlur={8}
+      backdropFilter="auto"
+      bg="rgba( 255, 255, 255, 0.1 )"
       direction="column"
       exit="exit"
+      gap={6}
       initial="initial"
-      justifyContent="flex-start"
-      spacing={3}
+      justifyContent="space-between"
+      p={[6, 16]}
+      rounded="20px"
       transition={{ duration: 0.5, delay: i * 0.3 }}
       variants={variants}
       w="100%"
     >
-      <ParameterWork title="Project">
-        <Text variant="information">{work.title}</Text>
-        <HStack pos="absolute" right="0">
-          <NextLink href={`/work/${work.id}`}>
-            <ViewIcon cursor="pointer" />
-          </NextLink>
-          <Link isExternal href={work.siteurl}>
-            <ExternalLinkIcon cursor="pointer" />
-          </Link>
-        </HStack>
-      </ParameterWork>
-      {work.build && (
-        <ParameterWork title="Built with">
-          {<BuildWork build={work.build} />}
-        </ParameterWork>
-      )}
-      <WorkImage work={work} />
+      <Stack gap={2} spacing={0}>
+        <WorkImage work={work} />
+        <Text fontSize={[32, 36]} fontWeight={500} variant="information">
+          {work.title}
+        </Text>
+        <Paragraph line={10} size={20} weight={400}>
+          Es una empresa que ofrece a sus clientes, productos y servicios en
+          muebles de calidad
+        </Paragraph>
+      </Stack>
+      <Stack gap={4}>
+        <Stack alignItems="center" display="block">
+          <Button
+            bg="secondary"
+            external={true}
+            href={work.siteurl}
+            icon={<ExternalLinkIcon />}
+            text="Visit site"
+          />
+        </Stack>
+        <Stack alignItems="end">
+          <ButtonUI
+            href={`/work/${work.id}`}
+            label="READ MORE"
+            rightIcon={<ChevronRightIcon />}
+          />
+        </Stack>
+      </Stack>
     </StackM>
   );
 };

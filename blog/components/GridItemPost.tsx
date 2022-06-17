@@ -1,14 +1,20 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import NextLink from "next/link";
 import formatDate from "utils/formatDate";
 import convertBlogURL from "utils/convertBlogURL";
-import { Stack, Box, LinkOverlay, LinkBox } from "@chakra-ui/react";
+import {
+  Stack,
+  Button,
+  Box,
+  LinkOverlay,
+  LinkBox,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import Link from "next/link";
 import Image from "next/image";
 import styled from "@emotion/styled";
-import { useRouter } from "next/router";
-import es from "date-fns/locale/es";
+import Clipboard from "components/Clipboard";
 
 import P from "../../work/components/Paragraph";
 
@@ -25,84 +31,93 @@ interface Props {
   };
 }
 
+type BlogHover = {
+  hover: boolean;
+};
+
 const WrapperImage = styled.div`
   position: relative;
   width: 100%;
-  height: 100px;
+  height: 250px;
   cursor: pointer;
+  outline: ${(props: BlogHover) => (props.hover ? "3px solid red" : "none")};
+  border-radius: 20px;
   img#blog-image {
-    border-radius: 20px 20px 0 0;
+    border-radius: 20px;
   }
 `;
 
 const ItemPost: React.FC<Props | any> = ({ blog }) => {
-  const { locale } = useRouter();
-  const t = locale === "es" ? es : null;
   const LinkBoxM = motion(LinkBox);
+  const ButtonM = motion(Button);
+  const h = useBreakpointValue({ base: 1, lg: 0 });
+  const [hover, setHover] = React.useState<boolean>(false);
+
   return (
-    <LinkBoxM
-      as="article"
-      rounded="20px"
-      shadow="md"
-      whileHover={{ scale: 0.99 }}
-    >
-      <Link
-        href={`/blog/${convertBlogURL(
-          blog?.properties.name.title[0]?.plain_text,
-        )}`}
+    <Stack pos="relative">
+      <LinkBoxM
+        as="article"
+        rounded="20px"
+        onHoverEnd={() => setHover(false)}
+        onHoverStart={() => setHover(true)}
       >
-        <WrapperImage>
-          <Image
-            alt={blog?.properties.name.title[0]?.plain_text}
-            id="blog-image"
-            layout="fill"
-            objectFit="cover"
-            src={`/images/blogs/${blog.properties.image.rich_text[0]?.plain_text}`}
-          />
-        </WrapperImage>
-      </Link>
-      <Stack
-        borderRadius="20px"
-        borderTopRadius={0}
-        borderWidth="1px"
-        // eslint-disable-next-line react/jsx-sort-props
-        borderTopWidth={0}
-        direction="column"
-        p={5}
-        pos="relative"
-      >
-        <Box
-          as="time"
-          color="primary"
-          fontSize="sm"
-          position="absolute"
-          right="5"
-          top="2"
-        >
-          {formatDate(blog?.properties.createdAt.created_time, t)}
-        </Box>
-        <NextLink
-          passHref
+        <Link
           href={`/blog/${convertBlogURL(
             blog?.properties.name.title[0]?.plain_text,
           )}`}
         >
-          <LinkOverlay
-            color="heading"
-            fontSize="xl"
-            fontWeight="500"
-            lineHeight={5}
+          <WrapperImage hover={hover}>
+            <Image
+              alt={blog?.properties.name.title[0]?.plain_text}
+              id="blog-image"
+              layout="fill"
+              objectFit="cover"
+              src={`/images/blogs/${blog.properties.image.rich_text[0]?.plain_text}`}
+            />
+          </WrapperImage>
+        </Link>
+        <Stack direction="column" p={4} pos="relative">
+          <Box as="time" color="paragraph" fontSize={24} fontWeight={600}>
+            {formatDate(blog?.properties.createdAt.created_time)}
+          </Box>
+          <NextLink
+            passHref
+            href={`/blog/${convertBlogURL(
+              blog?.properties.name.title[0]?.plain_text,
+            )}`}
           >
-            {blog?.properties.name.title[0]?.plain_text}
-          </LinkOverlay>
-        </NextLink>
-        <Stack>
-          <P limitLines={3}>
-            {blog?.properties.description.rich_text[0]?.plain_text}
-          </P>
+            <LinkOverlay
+              color="heading"
+              fontSize={30}
+              fontWeight="600"
+              lineHeight={10}
+            >
+              {blog?.properties.name.title[0]?.plain_text}
+            </LinkOverlay>
+          </NextLink>
+          <Stack display={{ base: "none", md: "block" }}>
+            <P limitLines={1} line={1.5} size={20}>
+              {blog?.properties.description.rich_text[0]?.plain_text}
+            </P>
+          </Stack>
         </Stack>
-      </Stack>
-    </LinkBoxM>
+      </LinkBoxM>
+      <AnimatePresence>
+        <Clipboard
+          animate={{ opacity: hover ? 1 : h }}
+          as={ButtonM}
+          exit={{ opacity: 0.99 }}
+          initial={{ opacity: 0.99 }}
+          left={5}
+          position="absolute"
+          text={`https://mejhon.dev/blog/${convertBlogURL(
+            blog?.properties.name.title[0]?.plain_text,
+          )}`}
+          top={2}
+          whileHover={{ opacity: 1 }}
+        />
+      </AnimatePresence>
+    </Stack>
   );
 };
 

@@ -1,25 +1,61 @@
 import React from "react";
 import { Stack, Heading } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import Button from "ui/controls/Button/Button";
+
+import ArrowMore from "./ArrowMore";
 
 interface Props {
   title?: string;
+  subtitle?: string;
   desc?: string;
   labelB?: string;
   hrefB?: string;
 }
 
-const Section: React.FC<Props> = ({ title, children, labelB, hrefB }) => {
+const Section: React.FC<Props> = ({
+  title,
+  subtitle,
+  children,
+  labelB,
+  hrefB,
+}) => {
   const StackM = motion(Stack);
 
   return (
-    <StackM direction="column" spacing={10}>
-      <Stack alignItems="center" direction="row" justifyContent="space-between">
-        <Heading color="heading" variant="title-section">
-          {title}
-        </Heading>
-        {hrefB && <Button href={hrefB} label={labelB} />}
+    <StackM direction="column">
+      <Stack py={20}>
+        <Stack
+          alignItems="center"
+          direction={{ base: "column", md: "row" }}
+          justifyContent="space-between"
+        >
+          <Heading
+            color="heading"
+            fontSize={{ base: "38px" }}
+            fontWeight={500}
+            variant="title-section"
+          >
+            {title}
+          </Heading>
+          {hrefB && (
+            <ArrowMore
+              arrow={true}
+              direction="row"
+              href={hrefB}
+              text={labelB}
+            />
+          )}
+        </Stack>
+        {subtitle && (
+          <Heading
+            color="#575757"
+            display={{ base: "none", md: "block" }}
+            fontSize={{ base: "38px" }}
+            fontWeight={500}
+          >
+            {subtitle}
+          </Heading>
+        )}
       </Stack>
       <Stack align="flex-start" spacing={5} w="100%">
         {children}

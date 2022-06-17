@@ -36,7 +36,7 @@ export default extendTheme({
       },
       paragraph: {
         default: "blackAlpha.800",
-        _dark: "whiteAlpha.800",
+        _dark: "#bababa",
       },
       footer: {
         default: "whiteAlpha.900",
@@ -52,7 +52,7 @@ export default extendTheme({
     Heading: {
       variants: {
         "title-section": {
-          fontSize: 25,
+          fontSize: 48,
           marginTop: 3,
           marginBottom: 3,
         },

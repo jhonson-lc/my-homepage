@@ -3,8 +3,6 @@ import formatDate from "utils/formatDate";
 import { Text, Divider, Heading, Stack, Box } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import Image from "next/image";
-import es from "date-fns/locale/es";
-import { useRouter } from "next/router";
 
 import Layout from "../../app/layouts/HeadLayout";
 import Button from "../../ui/controls/Button/Button";
@@ -17,9 +15,6 @@ interface Props {
 }
 
 const BlogLayout: React.FC<Props> = ({ blog, children }) => {
-  const router = useRouter();
-  const { locale } = router;
-  const t = locale === "es" ? es : null;
   return (
     <Layout title={blog.title} url={`blog/${blog.slug}`}>
       <Stack spacing={8}>
@@ -33,23 +28,16 @@ const BlogLayout: React.FC<Props> = ({ blog, children }) => {
           justifyContent="space-between"
         >
           <Stack direction="row">
-            <Avatar size={33} />
+            <Avatar height={33} width={33} />
             <Stack
               alignItems="center"
               direction="row"
               divider={
-                <Divider
-                  border={0.5}
-                  borderColor="secondary"
-                  h={5}
-                  orientation="vertical"
-                />
+                <Divider borderColor="secondary" orientation="vertical" />
               }
             >
               <Text variant="information">By Jhon Lescano</Text>
-              <Text variant="information">
-                {formatDate(blog.publishedAt, t)}
-              </Text>
+              <Text variant="information">{formatDate(blog.publishedAt)}</Text>
             </Stack>
           </Stack>
           <Text variant="information">{blog.readingTime.text}</Text>

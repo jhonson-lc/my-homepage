@@ -1,15 +1,17 @@
 import type { GetStaticProps, NextPage } from "next";
-import { SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { Box, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import Skills from "components/Skills";
 import { Blog } from "blog/types";
+import Button from "components/Button";
+import ArrowMore from "components/ArrowMore";
 
 import Section from "../components/Section";
 import Layout from "../app/layouts/HeadLayout";
-import P from "../work/components/Paragraph";
 import Avatar from "../ui/feedback/Avatar";
 import ItemPost from "../blog/components/GridItemPost";
 import ItemWork from "../work/components/GridItemWork";
 import api from "../blog/resources";
+import Paragraph from "../work/components/Paragraph";
 
 interface Props {
   blogs: Blog[];
@@ -22,40 +24,50 @@ const IndexPage: NextPage<Props> = ({ blogs }) => {
         <Stack
           align="center"
           direction={{ base: "column", sm: "row" }}
+          gap={6}
           justifyContent="space-between"
+          w="full"
         >
-          <Stack order={{ base: "2", sm: "0" }} pos="relative">
+          <Stack
+            alignItems={{ base: "center", md: "start" }}
+            maxW={{ base: "100%", md: "50%" }}
+            order={{ base: "2", sm: "0" }}
+            pos="relative"
+            spacing={8}
+          >
             <Text
-              align={{ base: "center", sm: "left" }}
-              color="secondary"
-              fontSize={32}
-              fontWeight="600"
-              letterSpacing="tighter"
-              lineHeight={7}
-              py={2}
-            >
-              Jhon A. Lescano
-            </Text>
-            <Text
+              align={{ base: "center", md: "left" }}
               color="primary"
-              fontSize="sm"
-              fontWeight="regular"
+              fontSize={16}
+              fontWeight={600}
               letterSpacing="tighter"
             >
-              FrontEnd Developer ( Student / Self-Taught / Productive )
+              Software Engineer | React | Next.js | Java | Backend{" "}
             </Text>
+            <Paragraph>
+              Learn and implement software to help the world be better through
+              quality software.
+            </Paragraph>
+            <Stack
+              alignItems="end"
+              flexDirection={{ base: "column", md: "row" }}
+              gap={6}
+            >
+              <Button href="/blog" text="Read the blog" />
+              <Button
+                bg="transparent"
+                color="secondary"
+                href="/work"
+                text="View Projects"
+              />
+            </Stack>
           </Stack>
-          <Avatar />
+          <Box pr={{ base: 0, md: 100 }}>
+            <Avatar />
+          </Box>
         </Stack>
-        <Section hrefB="/work" labelB="My portfolio" title="About me">
-          <P>
-            I&apos;m a versatile developer and productive about learning new
-            technologies, combining speed and functionality in web development.
-            I&apos;m currently studying Software Engineering, but I keep
-            learning and developing projects.
-          </P>
-        </Section>
-        <Section hrefB="/work" labelB="View all" title="Projects">
+        <ArrowMore href="#projects" text="Read more about Jhon" />
+        <Section hrefB="/work" labelB="VIEW ALL" title="Popular Projects">
           <SimpleGrid columns={[1, 2]} gap={10} justifyItems="center" w="100%">
             <ItemWork
               work={{
@@ -77,10 +89,15 @@ const IndexPage: NextPage<Props> = ({ blogs }) => {
             />
           </SimpleGrid>
         </Section>
-        <Section title="Skills">
+        <Section hrefB="/contact" labelB="SEND MESSAGE" title="Skills">
           <Skills />
         </Section>
-        <Section hrefB="/blog" labelB="View All" title="Latest blog">
+        <Section
+          hrefB="/blog"
+          labelB="SEE THE FULL BLOG"
+          subtitle="Join me to suggesting future blogs"
+          title="Blog recomendations"
+        >
           <SimpleGrid columns={1} gap={5} w="100%">
             {blogs.slice(0, 2).map((blog) => {
               return <ItemPost key={blog.id} blog={blog} />;
