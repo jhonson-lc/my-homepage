@@ -9,6 +9,7 @@ interface Props {
   href: string;
   icon?: any;
   external?: boolean;
+  enabled?: boolean;
 }
 
 const Button: React.FC<Props> = ({
@@ -18,6 +19,7 @@ const Button: React.FC<Props> = ({
   href,
   icon,
   external,
+  enabled,
 }) => {
   const [hover, setHover] = React.useState<boolean>(false);
   return (
@@ -42,6 +44,7 @@ const Button: React.FC<Props> = ({
           borderWidth={3}
           color={color}
           fontSize={16}
+          isDisabled={enabled}
           px="35px"
           py="30px"
           rightIcon={icon}

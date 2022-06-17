@@ -61,6 +61,7 @@ const Navbar: React.FC = () => {
             <Button
               bg="transparent"
               color="secondary"
+              enabled={true}
               href="/login"
               text="Join me"
             />
