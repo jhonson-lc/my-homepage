@@ -28,7 +28,7 @@ const BlogLayout: React.FC<Props> = ({ blog, children }) => {
           justifyContent="space-between"
         >
           <Stack direction="row">
-            <Avatar height={33} width={33} />
+            <Avatar height={33} rounded={true} width={33} />
             <Stack
               alignItems="center"
               direction="row"

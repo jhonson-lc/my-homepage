@@ -13,8 +13,8 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import Image from "next/image";
-import styled from "@emotion/styled";
 import Clipboard from "components/Clipboard";
+import { WrapperImage } from "blog/styles/styles";
 
 import P from "../../work/components/Paragraph";
 
@@ -30,22 +30,6 @@ interface Props {
     };
   };
 }
-
-type BlogHover = {
-  hover: boolean;
-};
-
-const WrapperImage = styled.div`
-  position: relative;
-  width: 100%;
-  height: 250px;
-  cursor: pointer;
-  outline: ${(props: BlogHover) => (props.hover ? "3px solid red" : "none")};
-  border-radius: 20px;
-  img#blog-image {
-    border-radius: 20px;
-  }
-`;
 
 const ItemPost: React.FC<Props | any> = ({ blog }) => {
   const LinkBoxM = motion(LinkBox);
@@ -113,7 +97,8 @@ const ItemPost: React.FC<Props | any> = ({ blog }) => {
           text={`https://mejhon.dev/blog/${convertBlogURL(
             blog?.properties.name.title[0]?.plain_text,
           )}`}
-          top={2}
+          top={5}
+          transition={{ duration: 0.01 }}
           whileHover={{ opacity: 1 }}
         />
       </AnimatePresence>

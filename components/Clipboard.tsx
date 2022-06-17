@@ -18,9 +18,9 @@ const Clipboard = ({ text, ...props }) => {
   return (
     <Stack>
       <Button
-        _hover={{ outline: "3px solid red", bg: "secondary" }}
-        bg="secondary"
-        color="background"
+        _hover={{ outline: "3px solid red", bg: "white" }}
+        bg="white"
+        color="black"
         onClick={copyToClipboard}
         {...props}
       >

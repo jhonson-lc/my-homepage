@@ -17,8 +17,7 @@ const Navbar: React.FC = () => {
     <Box
       as={motion.nav}
       css={{ backdropFilter: "blur(20px)" }}
-      p={2}
-      position="sticky"
+      position="relative"
       top="0"
       width="100%"
       zIndex="1"
@@ -30,7 +29,7 @@ const Navbar: React.FC = () => {
         maxW="container.xl"
         pos="relative"
       >
-        <Logo size={20} />
+        <Logo size={22} />
         <Stack
           align="center"
           color="paragraph"
@@ -44,6 +43,7 @@ const Navbar: React.FC = () => {
             return (
               <LinkItem
                 key={href}
+                external={text === "View Source" && true}
                 font={{ weight: 400, size: 15 }}
                 href={href}
                 path={pathname}

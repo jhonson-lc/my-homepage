@@ -5,7 +5,7 @@ export interface LinkNav {
   text?: string;
   icon?: IconType;
   path?: string;
-  target?: string;
+  external?: boolean;
   onClose?: any;
   font?: { size: any; weight: any };
   color?: string;

@@ -10,6 +10,7 @@ const LinkItem: React.FC<LinkNav> = ({
   path,
   children,
   font,
+  external,
 }) => {
   const active: boolean = path === href;
 
@@ -24,6 +25,7 @@ const LinkItem: React.FC<LinkNav> = ({
         display="inline-block"
         fontSize={font?.size}
         fontWeight={font?.weight}
+        isExternal={external}
         pos="relative"
         px={6}
         py={2}

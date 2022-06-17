@@ -8,35 +8,35 @@ export default extendTheme({
   styles: {
     global: (props: any) => ({
       body: {
-        bg: mode("#fafafa", "#121212")(props),
+        bg: mode("#fafafa", "#161616")(props),
       },
     }),
   },
   semanticTokens: {
     colors: {
       background: {
-        default: "#fafafa",
-        _dark: "#121212",
+        default: "#ffffff",
+        _dark: "#000000",
       },
       primary: {
-        default: "#3d7aed",
-        _dark: "#bb86fc",
+        default: "blackAlpha.900",
+        _dark: "whiteAlpha.900",
       },
       hover: {
-        default: "blue.50",
+        default: "blackAlpha.50",
         _dark: "#bb86fc19",
       },
       secondary: {
-        default: "#121212",
-        _dark: "#fafafa",
+        default: "#000000",
+        _dark: "#ffffff",
       },
       heading: {
-        default: "blackAlpha.700",
-        _dark: "whiteAlpha.800",
+        default: "#000000",
+        _dark: "#ffffff",
       },
       paragraph: {
-        default: "blackAlpha.800",
-        _dark: "#bababa",
+        default: "rgba(0, 0, 0, 0.7)",
+        _dark: "rgba(255, 255, 255, 0.7)",
       },
       footer: {
         default: "whiteAlpha.900",

@@ -7,6 +7,7 @@ interface Props {
   height?: number;
   width?: number;
   scale?: number;
+  rounded?: boolean;
 }
 
 const variants = {
@@ -15,7 +16,12 @@ const variants = {
   exit: { opacity: 0 },
 };
 
-const Avatar: React.FC<Props> = ({ height = 400, width = 200, scale }) => {
+const Avatar: React.FC<Props> = ({
+  height = 400,
+  width = 200,
+  scale,
+  rounded,
+}) => {
   const BoxM = motion(Box);
 
   return (
@@ -26,6 +32,7 @@ const Avatar: React.FC<Props> = ({ height = 400, width = 200, scale }) => {
       initial="initial"
       overflow="hidden"
       pos="relative"
+      rounded={rounded && "full"}
       transform={`scale(${scale}) `}
       transition={{ duration: 0.5 }}
       variants={variants}

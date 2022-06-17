@@ -39,8 +39,7 @@ const IndexPage: NextPage<Props> = ({ blogs }) => {
               align={{ base: "center", md: "left" }}
               color="primary"
               fontSize={16}
-              fontWeight={600}
-              letterSpacing="tighter"
+              fontWeight={400}
             >
               Software Engineer | React | Next.js | Java | Backend{" "}
             </Text>
