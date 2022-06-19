@@ -41,7 +41,7 @@ const IndexPage: NextPage<Props> = ({ blogs }) => {
               fontSize={16}
               fontWeight={400}
             >
-              Software Engineer | React | Next.js | Java | Backend{" "}
+              Software Engineer | React | Next.js | Java | SQL{" "}
             </Text>
             <Paragraph>
               Learn and implement software to help the world be better through
