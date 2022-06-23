@@ -1,16 +1,14 @@
 import { sanityClient } from "lib/sanity-server";
 import { postSlugsQuery } from "lib/queries";
 
-import { singleBlog } from "../blog/types";
-
-export function createSitemap(blogs: singleBlog[]) {
+export function createSitemap(slugs) {
   return `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9>
-      ${blogs
-        .map((blog) => {
+      ${slugs
+        .map((slug) => {
           return `
               <url>
-                  <loc>${`https://mejhon.dev/${blog?.properties.slug.rich_text[0]?.plain_text}`}</loc>
+                  <loc>${`https://mejhon.dev/${slug}`}</loc>
               </url>
           `;
         })
