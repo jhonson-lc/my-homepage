@@ -6,6 +6,7 @@ const postFields = `
   categories,
   date,
   abstract,
+  readingTime,
   "slug": slug.current,
 `;
 
