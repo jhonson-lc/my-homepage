@@ -1,6 +1,9 @@
-const { withContentlayer } = require("next-contentlayer");
-
-module.exports = withContentlayer()({
+module.exports = ({
   swcMinify: false,
   reactStrictMode: true,
+  images: {
+    domains: [
+      'cdn.sanity.io'
+    ]
+  },
 });

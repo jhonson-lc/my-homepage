@@ -1,15 +1,14 @@
 import React from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { useMDXComponent } from "next-contentlayer/hooks";
+import { getClient } from "lib/sanity-server";
+import { postQuery } from "lib/queries";
 
 import BlogLayout from "../../app/layouts/BlogLayout";
 import components from "../../blog/components/MDXComponents";
 
-import type { Blog } from ".contentlayer/generated/types";
-import { allBlogs } from ".contentlayer/generated";
-
 interface Props {
-  blog: Blog;
+  blog: any;
 }
 
 const SingleBlog: React.FC<Props> = ({ blog }) => {
@@ -23,15 +22,23 @@ const SingleBlog: React.FC<Props> = ({ blog }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const allBlogs = [];
   return {
     paths: allBlogs.map((blog) => ({ params: { id: blog.slug } })),
     fallback: false,
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({
+  params,
+  preview = false,
+}) => {
+  const allBlogs = [];
   const blog = allBlogs.find((blog) => blog.slug === params.id);
-
+  const res = await getClient(preview).fetch(postQuery, {
+    slug: params.id,
+  });
+  console.log(res);
   return { props: { blog } };
 };
 

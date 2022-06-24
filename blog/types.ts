@@ -1,3 +1,5 @@
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
+
 export interface Blog {
   id?: string;
   tags: string;
@@ -16,3 +18,14 @@ export interface singleBlog {
     tags: any;
   };
 }
+
+export type Post = {
+  _id: string;
+  slug: string;
+  content: MDXRemoteSerializeResult;
+  title: string;
+  date: string;
+  abstract: string;
+  coverImage: string;
+  readingTime: string;
+};

@@ -1,24 +1,25 @@
 import React from "react";
 import { GetStaticProps } from "next";
+import { getClient } from "lib/sanity-server";
+import { indexQuery } from "lib/queries";
 
 import BlogPage from "../blog/screens/BlogPage";
-import { Blog } from "../blog/types";
-import api from "../blog/resources";
+import { Post } from "../blog/types";
 
 interface Props {
-  blogs: Blog[];
+  posts: Post[];
 }
-const IndexBlog: React.FC<Props> = ({ blogs }) => {
-  return <BlogPage blogs={blogs} />;
+const IndexBlog: React.FC<Props> = ({ posts }) => {
+  return <BlogPage posts={posts} />;
 };
 
-export const getStaticProps: GetStaticProps = async () => {
-  const blogs = await api.list();
+export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
+  const posts: Post[] = await getClient(preview).fetch(indexQuery);
 
   return {
     props: {
       revalidate: 1,
-      blogs: blogs,
+      posts,
     },
   };
 };

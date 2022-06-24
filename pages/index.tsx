@@ -1,23 +1,24 @@
 import type { GetStaticProps, NextPage } from "next";
 import { Box, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import Skills from "components/Skills";
-import { Blog } from "blog/types";
+import { Post } from "blog/types";
 import Button from "components/Button";
 import ArrowMore from "components/ArrowMore";
+import { getClient } from "lib/sanity-server";
+import { indexQuery } from "lib/queries";
 
 import Section from "../components/Section";
 import Layout from "../app/layouts/HeadLayout";
 import Avatar from "../ui/feedback/Avatar";
 import ItemPost from "../blog/components/GridItemPost";
 import ItemWork from "../work/components/GridItemWork";
-import api from "../blog/resources";
 import Paragraph from "../work/components/Paragraph";
 
 interface Props {
-  blogs: Blog[];
+  posts: Post[];
 }
 
-const IndexPage: NextPage<Props> = ({ blogs }) => {
+const IndexPage: NextPage<Props> = ({ posts }) => {
   return (
     <Layout title="Home">
       <Stack spacing={10}>
@@ -98,8 +99,8 @@ const IndexPage: NextPage<Props> = ({ blogs }) => {
           title="Blog recomendations"
         >
           <SimpleGrid columns={1} gap={5} w="100%">
-            {blogs.slice(0, 2).map((blog) => {
-              return <ItemPost key={blog.id} blog={blog} />;
+            {posts.slice(0, 2).map((post) => {
+              return <ItemPost key={post.slug} post={post} />;
             })}
           </SimpleGrid>
         </Section>
@@ -108,13 +109,13 @@ const IndexPage: NextPage<Props> = ({ blogs }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
-  const blogs = await api.list();
+export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
+  const posts: Post[] = await getClient(preview).fetch(indexQuery);
 
   return {
     props: {
       revalidate: 1,
-      blogs: blogs,
+      posts,
     },
   };
 };
