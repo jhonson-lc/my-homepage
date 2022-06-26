@@ -1,7 +1,6 @@
 import {
   Avatar,
   Box,
-  Image,
   Container,
   Stack,
   HStack,
