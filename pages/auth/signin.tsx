@@ -1,4 +1,4 @@
-import { Grid, Heading, Stack, Text, Image, HStack } from "@chakra-ui/react";
+import { Grid, Heading, Stack } from "@chakra-ui/react";
 import { signIn, getProviders, getSession } from "next-auth/react";
 import React from "react";
 import Button from "ui/controls/Button/Button";
@@ -10,7 +10,7 @@ interface Props {
   session: any;
 }
 
-const SignIn: React.FC<Props> = ({ session }) => {
+const SignIn: React.FC<Props> = () => {
   return (
     <Stack as={Grid} gap={8} h="85vh" placeItems="center" w="full">
       <Heading>Iniciar Session</Heading>

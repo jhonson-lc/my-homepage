@@ -5,9 +5,9 @@ import { ArrowForwardIcon } from "@chakra-ui/icons";
 import Image from "next/image";
 import { Post } from "blog/types";
 import { urlForImage } from "lib/sanity";
+import Button from "components/Button";
 
 import Layout from "../../app/layouts/HeadLayout";
-import Button from "../../ui/controls/Button/Button";
 import Avatar from "../../ui/feedback/Avatar";
 
 interface Props {
@@ -54,9 +54,8 @@ const BlogLayout: React.FC<Props> = ({ post, children }) => {
         <Stack direction="row" justifyContent="end" w="100%">
           <Button
             href="/blog"
-            label="Go back"
-            leftIcon={<ArrowForwardIcon transform="rotate(180deg)" />}
-            rightIcon=""
+            icon={<ArrowForwardIcon transform="rotate(180deg)" />}
+            text="Go back"
           />
         </Stack>
       </Stack>

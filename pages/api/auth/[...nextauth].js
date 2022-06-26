@@ -30,7 +30,6 @@ export default NextAuth({
   },
   callbacks: {
     async jwt(token, account) {
-      console.log(token, account);
       if (account.accessToken) {
         token.accessToken = account.accessToken;
       }
