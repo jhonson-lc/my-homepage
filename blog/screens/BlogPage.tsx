@@ -1,7 +1,6 @@
 import React from "react";
 import { SimpleGrid } from "@chakra-ui/react";
 import { Post } from "blog/types";
-import { Text } from "@chakra-ui/react";
 
 import Layout from "../../app/layouts/HeadLayout";
 import Section from "../../components/Section";
