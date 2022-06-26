@@ -33,9 +33,10 @@ const Button: React.FC<Props> = ({
             position: "absolute",
             rounded: "40px",
             outline: `${hover ? "2px" : "0px"} solid red`,
-            transform: `${hover ? "scaleX(1.05) scaleY(1.2)" : "scale(1)"}`,
+            transform: `${hover ? "scaleX(1.08) scaleY(1.16)" : "scale(1)"}`,
             transition: "transform 0.2s ease-in-out",
           }}
+          _focus={{ boxShadow: "none" }}
           _hover={{
             bg: bg,
             border: "3px solid transparent",

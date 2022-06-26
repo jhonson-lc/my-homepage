@@ -1,4 +1,4 @@
-import { Icon, Text, Stack, Box, useColorModeValue } from "@chakra-ui/react";
+import { Text, Stack, Box, useColorModeValue } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { motion } from "framer-motion";
 import React from "react";
@@ -18,7 +18,6 @@ const ArrowMore: React.FC<Props> = ({
   direction = "column",
 }) => {
   const Circle = motion(Box);
-  const IconM = motion(Icon);
   const c = useColorModeValue("black", "white");
   return (
     <NextLink passHref href={href}>
@@ -28,19 +27,23 @@ const ArrowMore: React.FC<Props> = ({
         gap={6}
         transition="all 0.2s ease-in-out"
       >
-        <Text>{text}</Text>
+        <Text pt={2}>{text}</Text>
         <Circle whileHover={{ scale: 1.1 }}>
-          <IconM
+          <Circle
             _hover={{ outline: `3px solid ${c}` }}
-            as={BsArrowDown}
+            alignItems="center"
             cursor="pointer"
+            display="flex"
             h={16}
-            outlineColor="secondary"
-            p={2}
+            justifyContent="center"
             rounded="full"
             transform={arrow && "rotate(-90deg)"}
             w={16}
-          />
+          >
+            <Box transform="scale(2.5)">
+              <BsArrowDown />
+            </Box>
+          </Circle>
         </Circle>
       </Stack>
     </NextLink>

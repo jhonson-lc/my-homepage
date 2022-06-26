@@ -46,7 +46,7 @@ export const LINKS_NAV: LinkNav[] = [
   { href: "/contact", text: "Contact" },
   {
     href: "https://github.com/jhonson-lc",
-    text: "View Source",
+    text: "Source",
     icon: BsGithub,
   },
 ];

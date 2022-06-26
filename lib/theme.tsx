@@ -24,7 +24,7 @@ export default extendTheme({
       },
       hover: {
         default: "blackAlpha.50",
-        _dark: "#bb86fc19",
+        _dark: "whiteAlpha.50",
       },
       secondary: {
         default: "#000000",

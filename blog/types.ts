@@ -1,31 +1,26 @@
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 
-export interface Blog {
-  id?: string;
-  tags: string;
-  name: string;
-  createdAt: string;
-  description: string;
-}
-
-export interface singleBlog {
-  id: string;
-  properties: {
-    createdAt: any;
-    slug: any;
-    description: any;
-    name: any;
-    tags: any;
-  };
-}
-
 export type Post = {
   _id: string;
   slug: string;
   content: MDXRemoteSerializeResult;
+  categories: Category[];
+  author: Author;
   title: string;
   date: string;
   abstract: string;
   coverImage: string;
   readingTime: string;
+};
+
+export type Category = {
+  _id: string;
+  title: string;
+};
+
+export type Author = {
+  _id: string;
+  slug: string;
+  name: string;
+  image: string;
 };

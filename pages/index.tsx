@@ -98,7 +98,7 @@ const IndexPage: NextPage<Props> = ({ posts }) => {
           subtitle="Join me to suggesting future blogs"
           title="Blog recomendations"
         >
-          <SimpleGrid columns={1} gap={5} w="100%">
+          <SimpleGrid columns={[1, 2, 2]} gap={5} w="100%">
             {posts.slice(0, 2).map((post) => {
               return <ItemPost key={post.slug} post={post} />;
             })}

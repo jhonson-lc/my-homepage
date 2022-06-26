@@ -1,9 +1,14 @@
 import React from "react";
-import { Text, Stack, useColorModeValue } from "@chakra-ui/react";
+import {
+  Text,
+  Button as ButtonUI,
+  Stack,
+  useColorModeValue,
+  Box,
+} from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { ChevronRightIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import Button from "components/Button";
-import ButtonUI from "ui/controls/Button/Button";
 
 import { Work } from "../types";
 
@@ -37,7 +42,7 @@ const ItemWork: React.FC<Props> = ({ work, i }) => {
       gap={6}
       initial="initial"
       justifyContent="space-between"
-      p={[6, 16]}
+      p={[6, 12]}
       rounded="20px"
       transition={{ duration: 0.5, delay: i * 0.3 }}
       variants={variants}
@@ -45,13 +50,15 @@ const ItemWork: React.FC<Props> = ({ work, i }) => {
     >
       <Stack gap={2} spacing={0}>
         <WorkImage work={work} />
-        <Text fontSize={[32, 36]} fontWeight={500} variant="information">
+        <Text fontSize={[28, 32]} fontWeight={500} variant="information">
           {work.title}
         </Text>
-        <Paragraph line={10} size={20} weight={400}>
-          Es una empresa que ofrece a sus clientes, productos y servicios en
-          muebles de calidad
-        </Paragraph>
+        <Box display={{ base: "none", lg: "block" }}>
+          <Paragraph line={10} size={16} weight={300}>
+            Es una empresa que ofrece a sus clientes, productos y servicios en
+            muebles de calidad
+          </Paragraph>
+        </Box>
       </Stack>
       <Stack gap={4}>
         <Stack alignItems="center" display="block">
@@ -65,10 +72,13 @@ const ItemWork: React.FC<Props> = ({ work, i }) => {
         </Stack>
         <Stack alignItems="end">
           <ButtonUI
-            href={`/work/${work.id}`}
-            label="READ MORE"
+            _focus={{ boxShadow: "none" }}
+            _hover={{ bg: "none", color: "red.500" }}
             rightIcon={<ChevronRightIcon />}
-          />
+            variant="ghost"
+          >
+            READ MORE
+          </ButtonUI>
         </Stack>
       </Stack>
     </StackM>

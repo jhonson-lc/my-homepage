@@ -16,11 +16,13 @@ const Clipboard = ({ text, ...props }) => {
     });
   };
   return (
-    <Stack>
+    <Stack zIndex={100000000000}>
       <Button
         _hover={{ outline: "3px solid red", bg: "white" }}
         bg="white"
         color="black"
+        outline="0px solid red"
+        transition="all 0.2s ease-in-out"
         onClick={copyToClipboard}
         {...props}
       >

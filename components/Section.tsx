@@ -23,7 +23,7 @@ const Section: React.FC<Props> = ({
 
   return (
     <StackM direction="column">
-      <Stack py={20}>
+      <Stack py={12} spacing={0}>
         <Stack
           alignItems="center"
           direction={{ base: "column", md: "row" }}
@@ -50,8 +50,8 @@ const Section: React.FC<Props> = ({
           <Heading
             color="#575757"
             display={{ base: "none", md: "block" }}
-            fontSize={{ base: "38px" }}
-            fontWeight={500}
+            fontSize={{ base: "32px" }}
+            fontWeight={400}
           >
             {subtitle}
           </Heading>

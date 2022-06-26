@@ -23,7 +23,7 @@ const Layout: React.FC<Props> = ({ children, title, url }) => {
     <BoxM
       animate="enter"
       exit="exit"
-      initial="initial"
+      initial={false}
       pos="relative"
       transition={{ duration: 0.4, ease: "easeInOut" }}
       variants={variants}
