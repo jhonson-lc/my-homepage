@@ -1,7 +1,6 @@
 import {
   Heading,
   HeadingProps,
-  LinkProps,
   ListItem,
   OrderedList,
   Stack,
@@ -9,14 +8,11 @@ import {
   UnorderedList,
 } from "@chakra-ui/react";
 
-import Button from "../../ui/controls/Button/Button";
-
 const components = {
   h1: (props: HeadingProps) => <Heading color="secondary" py={6} {...props} />,
   h2: (props: HeadingProps) => (
     <Heading color="secondary" fontSize={24} py={6} {...props} />
   ),
-  a: (props: LinkProps) => <Button href="/blog" label="Volver" {...props} />,
   p: ({ children }) => (
     <Text align="justify" color="paragraph" fontSize={16} fontWeight={300}>
       {children}
