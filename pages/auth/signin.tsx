@@ -1,9 +1,10 @@
-import { Grid, Heading, Stack } from "@chakra-ui/react";
+import { Grid, Text, Heading, HStack, Stack } from "@chakra-ui/react";
 import { signIn, getProviders, getSession } from "next-auth/react";
 import React from "react";
 import Button from "ui/controls/Button/Button";
 import { FcGoogle } from "react-icons/fc";
 import { BsGithub } from "react-icons/bs";
+import SignUp from "session/screens/SignUp";
 
 interface Props {
   providers: any;
@@ -11,21 +12,39 @@ interface Props {
 }
 
 const SignIn: React.FC<Props> = () => {
+  const [page, setPage] = React.useState<string>("signin");
+
+  if (page === "signup") return <SignUp onClick={() => setPage("signin")} />;
   return (
     <Stack as={Grid} gap={8} h="85vh" placeItems="center" w="full">
-      <Heading>Iniciar Session</Heading>
-      <Button
-        icon={<BsGithub />}
-        text="GitHub"
-        onClick={() => signIn("github")}
-      />
-      <Button
-        icon={<FcGoogle />}
-        text="Google"
-        onClick={() => signIn("google")}
-      />
-      <Button text="Facebook" />
-      <Button text="Instagram" />
+      <Stack gap={4}>
+        <Heading textAlign={"center"}>Welcome Back!</Heading>
+        <Button
+          icon={<BsGithub />}
+          text="Sign in with GitHub"
+          onClick={() => signIn("github")}
+        />
+        <Button
+          icon={<FcGoogle />}
+          text="Sign in with Google"
+          onClick={() => signIn("google")}
+        />
+        <Button text="Sign in with Apple" />
+        <Button text="Sign in with Facebook" />
+        <Button text="Sign in with Twitter" />
+        <HStack>
+          <Text>No tienes cuenta?</Text>
+          <Text
+            _hover={{ textDecoration: "underline" }}
+            color="blue"
+            cursor="pointer"
+            fontWeight={600}
+            onClick={() => setPage("signup")}
+          >
+            Crear una cuenta
+          </Text>
+        </HStack>
+      </Stack>
     </Stack>
   );
 };

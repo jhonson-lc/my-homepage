@@ -6,6 +6,7 @@ interface Props {
   color?: string;
   bg?: string;
   icon?: any;
+  type?: "reset" | "submit" | "button";
   enabled?: boolean;
   onClick?: () => void;
 }
@@ -15,6 +16,7 @@ const Button: React.FC<Props> = ({
   color = "background",
   bg = "primary",
   icon,
+  type,
   enabled,
   onClick,
 }) => {
@@ -29,7 +31,7 @@ const Button: React.FC<Props> = ({
         position: "absolute",
         rounded: "40px",
         outline: `${hover ? "2px" : "0px"} solid red`,
-        transform: `${hover ? "scaleX(1.08) scaleY(1.16)" : "scale(1)"}`,
+        transform: `${hover ? "scaleX(1.04) scaleY(1.16)" : "scale(1)"}`,
         transition: "transform 0.2s ease-in-out",
       }}
       _focus={{
@@ -44,10 +46,11 @@ const Button: React.FC<Props> = ({
       color={color}
       fontSize={16}
       isDisabled={enabled}
-      px="35px"
-      py="30px"
+      px="30px"
+      py="20px"
       rightIcon={icon}
       rounded={40}
+      type={type ? type : "button"}
       onClick={onClick}
       onMouseEnter={() => {
         setHover(true);

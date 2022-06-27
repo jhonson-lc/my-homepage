@@ -62,36 +62,3 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
-
-model Comments {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  content   String?
-  userId    String
-  post      Posts?   @relation(fields: [postId], references: [id])
-  postId    String?
-}
-
-model Views {
-  id     String  @id @default(cuid())
-  count  BigInt  @default(1)
-  post   Posts?  @relation(fields: [postId], references: [id])
-  postId String?
-}
-
-model Likes {
-  id     String  @id @default(cuid())
-  count  BigInt  @default(1)
-  post   Posts?  @relation(fields: [postId], references: [id])
-  postId String?
-}
-
-model Posts {
-  id        String     @id @default(cuid())
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
-  comments  Comments[]
-  views     Views[]
-  likes     Likes[]
-}

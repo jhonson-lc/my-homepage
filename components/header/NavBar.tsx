@@ -3,7 +3,6 @@ import {
   Box,
   Container,
   Stack,
-  HStack,
   Menu,
   MenuButton,
   MenuList,
@@ -14,7 +13,7 @@ import { useRouter } from "next/router";
 import Button from "components/Button";
 import React from "react";
 import { useSession, signOut } from "next-auth/react";
-import { GoSignIn } from "react-icons/go";
+import Link from "next/link";
 
 import Logo from "../../ui/static/Logo";
 import ThemeButton from "../../ui/structure/theme-button";
@@ -75,7 +74,7 @@ const Navbar: React.FC = () => {
         </Stack>
         <Stack alignItems="center" direction="row" spacing={5}>
           <Box display={{ base: "none", lg: "flex" }}>
-            <ThemeButton size={26} />
+            <ThemeButton size={24} />
           </Box>
           <MenuMobile path={pathname} />
           {!session ? (
@@ -84,26 +83,23 @@ const Navbar: React.FC = () => {
                 bg="transparent"
                 color="secondary"
                 href="/auth/signin"
-                text="Join me"
+                text="Get Started"
               />
             </Box>
           ) : (
             <Menu isLazy>
               <MenuButton>
-                <HStack cursor="pointer">
-                  <Avatar src={session.user.image} />
-                  <Box>
-                    {session.user.name.substring(
-                      0,
-                      session.user.name.indexOf(" "),
-                    )}
-                  </Box>
-                </HStack>
+                <Avatar
+                  border="1px solid white"
+                  size="md"
+                  src={session.user.image}
+                />
               </MenuButton>
               <MenuList bg="hover">
-                <MenuItem icon={<GoSignIn />} onClick={() => signOut()}>
-                  Cerrar Sesión
+                <MenuItem>
+                  <Link href="/profile">Profile</Link>
                 </MenuItem>
+                <MenuItem onClick={() => signOut()}>Cerrar Sesión</MenuItem>
               </MenuList>
             </Menu>
           )}

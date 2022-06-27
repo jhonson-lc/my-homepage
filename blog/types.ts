@@ -5,6 +5,7 @@ export type Post = {
   slug: string;
   content: MDXRemoteSerializeResult;
   categories: Category[];
+  comments: Comments[];
   author: Author;
   title: string;
   date: string;
@@ -23,4 +24,20 @@ export type Author = {
   slug: string;
   name: string;
   image: string;
+};
+
+export type Comments = {
+  approved: boolean;
+  comment: string;
+  email: string;
+  name: string;
+  post: {
+    _ref: string;
+    _type: string;
+  };
+  _createdAt: string;
+  _updatedAt: string;
+  _id: string;
+  _type: string;
+  _rev: string;
 };
