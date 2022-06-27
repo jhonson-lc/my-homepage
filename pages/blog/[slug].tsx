@@ -240,6 +240,7 @@ export const getStaticProps: GetStaticProps = async ({
       },
       source: p,
     },
+    revalidate: 1,
   };
 };
 
