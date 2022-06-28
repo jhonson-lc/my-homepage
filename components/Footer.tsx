@@ -1,7 +1,5 @@
 import { Container, Stack, Text, Divider } from "@chakra-ui/react";
 
-import Logo from "../ui/static/Logo";
-
 import LinkItem from "./header/LinkItem";
 import ListOfSocial from "./header/ListOfSocial";
 import { LINKS_NAV } from "./header/constants";
