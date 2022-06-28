@@ -99,7 +99,7 @@ const Navbar: React.FC = () => {
                 <MenuItem>
                   <Link href="/profile">Profile</Link>
                 </MenuItem>
-                <MenuItem onClick={() => signOut()}>Cerrar Sesión</MenuItem>
+                <MenuItem onClick={() => signOut()}>Logout</MenuItem>
               </MenuList>
             </Menu>
           )}

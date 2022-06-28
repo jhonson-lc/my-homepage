@@ -123,7 +123,9 @@ const SingleBlog: React.FC<Props> = ({ post, source }) => {
       </Stack>
       <Stack gap={4}>
         <Box>
-          <Text color="red">Enjoyed this article?</Text>
+          <Text color="red" fontWeight={500}>
+            Enjoyed this article?
+          </Text>
           <Heading>Leave a comment below!</Heading>
         </Box>
         {submitted && open && (
@@ -165,9 +167,7 @@ const SingleBlog: React.FC<Props> = ({ post, source }) => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <Stack
                 alignItems="start"
-                border="1px solid black"
-                borderColor="hover"
-                boxShadow="lg"
+                bg="hover"
                 direction="column"
                 p={4}
                 rounded="10px"

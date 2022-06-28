@@ -3,7 +3,7 @@ import { signIn, getProviders, getSession } from "next-auth/react";
 import React from "react";
 import Button from "ui/controls/Button/Button";
 import { FcGoogle } from "react-icons/fc";
-import { BsGithub } from "react-icons/bs";
+import { BsFacebook, BsGithub } from "react-icons/bs";
 import SignUp from "session/screens/SignUp";
 
 interface Props {
@@ -29,14 +29,16 @@ const SignIn: React.FC<Props> = () => {
           text="Sign in with Google"
           onClick={() => signIn("google")}
         />
-        <Button text="Sign in with Apple" />
-        <Button text="Sign in with Facebook" />
-        <Button text="Sign in with Twitter" />
+        <Button
+          icon={<BsFacebook color="#1778F2" />}
+          text="Sign up with Facebook"
+          onClick={() => signIn("facebook")}
+        />
         <HStack>
           <Text>No tienes cuenta?</Text>
           <Text
             _hover={{ textDecoration: "underline" }}
-            color="blue"
+            color="red"
             cursor="pointer"
             fontWeight={600}
             onClick={() => setPage("signup")}

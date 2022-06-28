@@ -3,7 +3,7 @@ import { Grid, Text, Heading, HStack, Stack } from "@chakra-ui/react";
 import { signIn } from "next-auth/react";
 import Button from "ui/controls/Button/Button";
 import { FcGoogle } from "react-icons/fc";
-import { BsGithub } from "react-icons/bs";
+import { BsFacebook, BsGithub } from "react-icons/bs";
 
 interface Props {
   onClick: () => void;
@@ -24,13 +24,16 @@ const SignUp: React.FC<Props> = ({ onClick }) => {
           text="Sign up with Google"
           onClick={() => signIn("google")}
         />
-        <Button text="Sign up with Apple" />
-        <Button text="Sign up with Facebook" />
+        <Button
+          icon={<BsFacebook color="#1778F2" />}
+          text="Sign up with Facebook"
+          onClick={() => signIn("facebook")}
+        />
         <HStack>
           <Text>Ya tienes una cuenta?</Text>
           <Text
             _hover={{ textDecoration: "underline" }}
-            color="blue"
+            color="red"
             cursor="pointer"
             fontWeight={600}
             onClick={onClick}
