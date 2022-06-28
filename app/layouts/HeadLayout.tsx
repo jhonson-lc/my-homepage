@@ -1,15 +1,8 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
-import { motion } from "framer-motion";
 import Head from "next/head";
 
 import { META } from "../constants/config";
-
-const variants = {
-  initial: { opacity: 0, x: 0, y: 20 },
-  enter: { opacity: 1, x: 0, y: 0 },
-  exit: { opacity: 0, x: 0, y: 20 },
-};
 
 interface Props {
   title: string;
@@ -17,17 +10,8 @@ interface Props {
 }
 
 const Layout: React.FC<Props> = ({ children, title, url }) => {
-  const BoxM = motion(Box);
-
   return (
-    <BoxM
-      animate="enter"
-      exit="exit"
-      initial={false}
-      pos="relative"
-      transition={{ duration: 0.4, ease: "easeInOut" }}
-      variants={variants}
-    >
+    <Box pos="relative">
       <>
         <Head>
           <link href={META.favicon} rel="icon" />
@@ -58,7 +42,7 @@ const Layout: React.FC<Props> = ({ children, title, url }) => {
         </Head>
         {children}
       </>
-    </BoxM>
+    </Box>
   );
 };
 

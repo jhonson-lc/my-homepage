@@ -39,10 +39,5 @@ export default NextAuth({
       return data;
     },
   },
-  jwt: {
-    encryption: true,
-    secret: process.env.NEXT_AUTH_SECRET,
-  },
-  session: { jwt: true },
   secret: process.env.NEXT_AUTH_SECRET,
 });

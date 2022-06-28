@@ -17,7 +17,6 @@ export default function Footer() {
       mt={10}
     >
       <Stack alignItems="center">
-        <Logo size={10} />
         <Stack
           align="center"
           color="paragraph"

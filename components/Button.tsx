@@ -34,7 +34,7 @@ const Button: React.FC<Props> = ({
             bg: bg,
             ring: "2px",
             borderColor: "background",
-            ringColor: "red",
+            ringColor: "primary",
             ringOffset: "2px",
             ringOffsetColor: "background",
           }}
