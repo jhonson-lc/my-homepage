@@ -1,18 +1,9 @@
-import {
-  Avatar,
-  Box,
-  Container,
-  Stack,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-} from "@chakra-ui/react";
+import { Avatar, Box, Container, Stack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Button from "components/Button";
 import React from "react";
-import { useSession, signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 
 import Logo from "../../ui/static/Logo";
@@ -87,21 +78,14 @@ const Navbar: React.FC = () => {
               />
             </Box>
           ) : (
-            <Menu isLazy>
-              <MenuButton>
-                <Avatar
-                  border="1px solid white"
-                  size="md"
-                  src={session.user.image}
-                />
-              </MenuButton>
-              <MenuList bg="hover">
-                <MenuItem>
-                  <Link href="/profile">Profile</Link>
-                </MenuItem>
-                <MenuItem onClick={() => signOut()}>Logout</MenuItem>
-              </MenuList>
-            </Menu>
+            <Link href="/profile">
+              <Avatar
+                border="1px solid white"
+                cursor="pointer"
+                size="md"
+                src={session.user.image}
+              />
+            </Link>
           )}
         </Stack>
       </Container>

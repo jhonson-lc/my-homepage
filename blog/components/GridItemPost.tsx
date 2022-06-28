@@ -42,17 +42,26 @@ const ItemPost: React.FC<Props> = ({ post }) => {
       onMouseLeave={() => setHover(false)}
     >
       <Stack direction="column" gap={2}>
-        <WrapperImage hover={hover}>
-          <Image
-            alt={post.title}
-            id="blog-image"
-            layout="fill"
-            objectFit="cover"
-            priority={true}
-            quality={100}
-            src={urlForImage(post.coverImage).url()}
-          />
-        </WrapperImage>
+        <Box
+          ring={hover ? "2px" : "0px"}
+          ringColor="red"
+          ringOffset={hover ? "2px" : "0px"}
+          ringOffsetColor="background"
+          rounded="20px"
+          transition="all 0.2s ease-in-out"
+        >
+          <WrapperImage>
+            <Image
+              alt={post.title}
+              id="blog-image"
+              layout="fill"
+              objectFit="cover"
+              priority={true}
+              quality={100}
+              src={urlForImage(post.coverImage).url()}
+            />
+          </WrapperImage>
+        </Box>
         <NextLink passHref href={`/blog/${post.slug}`}>
           <LinkOverlay
             color="heading"

@@ -8,6 +8,8 @@ interface Props {
   bg?: string;
   href: string;
   icon?: any;
+  x?: number;
+  y?: number;
   external?: boolean;
   enabled?: boolean;
 }
@@ -18,44 +20,33 @@ const Button: React.FC<Props> = ({
   bg = "primary",
   href,
   icon,
+  x = 10,
+  y = 8,
   external,
   enabled,
 }) => {
-  const [hover, setHover] = React.useState<boolean>(false);
   return (
     <NextLink passHref href={href}>
       <Link isExternal={external}>
         <ButtonChakra
-          _after={{
-            content: "''",
-            height: "100%",
-            width: "100%",
-            position: "absolute",
-            rounded: "40px",
-            outline: `${hover ? "2px" : "0px"} solid red`,
-            transform: `${hover ? "scaleX(1.06) scaleY(1.18)" : "scale(1)"}`,
-            transition: "transform 0.2s ease-in-out",
-          }}
           _focus={{ boxShadow: "none" }}
           _hover={{
             bg: bg,
-            border: "3px solid transparent",
+            ring: "2px",
+            borderColor: "background",
+            ringColor: "red",
+            ringOffset: "2px",
+            ringOffsetColor: "background",
           }}
           bg={bg}
-          borderWidth={3}
+          borderWidth={2}
           color={color}
           fontSize={16}
           isDisabled={enabled}
-          px="35px"
-          py="30px"
+          px={x}
+          py={y}
           rightIcon={icon}
           rounded={40}
-          onMouseEnter={() => {
-            setHover(true);
-          }}
-          onMouseLeave={() => {
-            setHover(false);
-          }}
         >
           {text}
         </ButtonChakra>

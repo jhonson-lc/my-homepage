@@ -30,15 +30,19 @@ export default NextAuth({
   pages: {
     signIn: "/auth/signin",
   },
-  jwt: {
-    encryption: true,
-  },
   callbacks: {
-    async jwt(token, account) {
-      if (account.accessToken) {
-        token.accessToken = account.accessToken;
+    async session(session) {
+      const { user, session: data } = session;
+      if (data) {
+        data.userId = user.id;
       }
-      return token;
+      return data;
     },
   },
+  jwt: {
+    encryption: true,
+    secret: process.env.NEXT_AUTH_SECRET,
+  },
+  session: { jwt: true },
+  secret: process.env.NEXT_AUTH_SECRET,
 });
