@@ -2,7 +2,7 @@
 
 # My homepage (mejhon.dev)
 
-- [Next.js](https://nextjs.org/):**as the React framework**
+- [Next.js](https://nextjs.org/): **as the React framework**
 - [Prisma](https://prisma.io/): **as the ORM for database access**
 - [PlanetScale](https://planetscale.com): **as the database**
 - [Sanity](https://www.sanity.io/): **as the CMS**
@@ -22,12 +22,10 @@
 - `pages/sitemap.xml.tsx` - Automatically generated sitemap.
 - `prisma/*` - My Prisma schema, which uses a PlanetScale MySQL database.
 - `public/*` - Static assets including fonts and images.
-- `session/*` - Components, types and screens of the work entity
+- `session/*` - Components, types and screens of the session entity
 - `work/*` - Components, types and screens of the work entity
 
 ## Running Locally
-
-This application requires Node.js v16.13+.
 
 ```bash
 $ git clone https://github.com/jhonson-lc/my-homepage.git
