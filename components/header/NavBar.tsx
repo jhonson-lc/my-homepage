@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
             return (
               <LinkItem
                 key={href}
-                external={text === "View Source" && true}
+                external={text === "Source" && true}
                 font={{ weight: 400, size: 15 }}
                 href={href}
                 path={pathname}

@@ -25,7 +25,12 @@ export default function Footer() {
         >
           {LINKS_NAV.map(({ href, text }) => {
             return (
-              <LinkItem key={href} font={{ weight: 400, size: 15 }} href={href}>
+              <LinkItem
+                key={href}
+                external={text === "Source" && true}
+                font={{ weight: 400, size: 15 }}
+                href={href}
+              >
                 {text}
               </LinkItem>
             );
