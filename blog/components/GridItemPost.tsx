@@ -80,7 +80,7 @@ const ItemPost: React.FC<Props> = ({ post }) => {
           </P>
         </Stack>
         <Stack direction="row">
-          <Avatar size="md" src={urlForImage(post.author.image).url()} />
+          <Avatar size="md" src={post.author.image} />
           <VStack align="start" spacing={0}>
             <Text fontWeight={400}>{post.author.name}</Text>
             <Box as="time" color="primary" fontSize={12} fontWeight={300}>

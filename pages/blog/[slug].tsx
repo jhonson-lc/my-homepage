@@ -23,7 +23,6 @@ import {
   AlertTitle,
   CloseButton,
   Spinner,
-  IconButton,
   useDisclosure,
   Drawer,
   DrawerOverlay,
@@ -33,6 +32,7 @@ import {
   DrawerBody,
   VStack,
   Collapse,
+  Icon,
 } from "@chakra-ui/react";
 import { serialize } from "next-mdx-remote/serialize";
 import { useSession } from "next-auth/react";
@@ -55,7 +55,6 @@ const SingleBlog: React.FC<Props> = ({ post, source }) => {
   const { data: session } = useSession();
   const [open, setOpen] = React.useState<boolean>(true);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
 
   const {
     handleSubmit,
@@ -81,8 +80,7 @@ const SingleBlog: React.FC<Props> = ({ post, source }) => {
     setLoading(true);
     const data = {
       _id: post._id,
-      name: session.user.name,
-      email: session.user.email,
+      user: session,
       comment: values.comment,
     };
     fetch("/api/createComment", {
@@ -123,21 +121,32 @@ const SingleBlog: React.FC<Props> = ({ post, source }) => {
           }
         />
       </Container>
-      <Stack direction="row" justifyContent={"start"} w="full">
-        <IconButton
-          ref={btnRef}
-          aria-label="Comment"
-          icon={<ChatIcon />}
-          onClick={() => handleClick()}
-        />
-      </Stack>
-      <Drawer
-        finalFocusRef={btnRef}
-        isOpen={isOpen}
-        placement="right"
-        size="sm"
-        onClose={onClose}
+      <Stack
+        bottom={0}
+        direction="row"
+        justifyContent="center"
+        pos="sticky"
+        w="full"
       >
+        <Stack
+          alignItems={"center"}
+          bg="secondary"
+          color="background"
+          cursor="pointer"
+          direction="row"
+          justifyContent={"center"}
+          maxW={32}
+          mb={4}
+          px={8}
+          py={2}
+          rounded="40px"
+          onClick={() => handleClick()}
+        >
+          <Icon as={ChatIcon} />
+          <Text>{post.comments.length}</Text>
+        </Stack>
+      </Stack>
+      <Drawer isOpen={isOpen} placement="right" size="sm" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent bg="background">
           <DrawerCloseButton />
@@ -253,9 +262,9 @@ const SingleBlog: React.FC<Props> = ({ post, source }) => {
                   <Box key={comment._id}>
                     <Stack>
                       <HStack justify="start">
-                        <Avatar />
+                        <Avatar src={comment.author.image} />
                         <VStack align="start" spacing={0}>
-                          <Text fontWeight={500}>{comment.name}</Text>
+                          <Text fontWeight={500}>{comment.author.name}</Text>
                           <Text fontSize={12}>
                             {formatDistance(
                               Date.now(),

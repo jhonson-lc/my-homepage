@@ -1,7 +1,7 @@
 import { previewClient } from "lib/sanity-server";
 
 export default async function createComment(req, res) {
-  const { _id, name, email, comment } = JSON.parse(req.body);
+  const { _id, user, comment } = JSON.parse(req.body);
   try {
     await previewClient.create({
       _type: "comments",
@@ -9,9 +9,11 @@ export default async function createComment(req, res) {
         _ref: _id,
         _type: "reference",
       },
-      name,
-      email,
       comment,
+      author: {
+        _type: "reference",
+        _ref: user.userId,
+      },
     });
   } catch (error) {
     return res.status(500).json({ error: error.message });

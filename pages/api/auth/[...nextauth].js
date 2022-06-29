@@ -4,6 +4,7 @@ import GitHubProvider from "next-auth/providers/github";
 import FacebookProvider from "next-auth/providers/facebook";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import prisma from "lib/prisma";
+import { previewClient } from "lib/sanity-server";
 
 export default NextAuth({
   adapter: PrismaAdapter(prisma),
@@ -33,6 +34,15 @@ export default NextAuth({
   callbacks: {
     async session(session) {
       const { user, session: data } = session;
+      await previewClient.createOrReplace({
+        _id: user.id,
+        _type: "author",
+        name: user.name,
+        slug: {
+          current: user.name.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
+        },
+        image: user.image,
+      });
       if (data) {
         data.userId = user.id;
       }

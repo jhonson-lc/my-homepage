@@ -35,6 +35,7 @@ export type Comments = {
     _ref: string;
     _type: string;
   };
+  author: Author;
   _createdAt: string;
   _updatedAt: string;
   _id: string;

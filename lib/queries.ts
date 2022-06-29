@@ -30,7 +30,15 @@ export const indexQuery = `
 export const postQuery = `
 {
   "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) [0] {
-    "comments": *[_type == "comments" && post._ref == ^._id && approved == true],
+    "comments": *[_type == "comments" && post._ref == ^._id && approved == true ]{
+      "author": author {
+        _type == "reference" => @->,
+        _type != "reference" => @
+      },
+      _id,
+      comment,
+      _createdAt,
+    },
     content,
     ${postFields}
   }

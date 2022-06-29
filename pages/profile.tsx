@@ -15,6 +15,7 @@ import Button from "ui/controls/Button/Button";
 import FormControl from "ui/form/FormControl";
 import Paragraph from "work/components/Paragraph";
 import { FiLogOut } from "react-icons/fi";
+import { useRouter } from "next/router";
 
 interface Props {
   session: any;
@@ -28,6 +29,7 @@ const Profile: React.FC<Props> = ({ session }) => {
   } = useForm();
   const [name, setName] = React.useState<string>(session.user.name);
   const toast = useToast();
+  const router = useRouter();
 
   const onSubmit = (values: any) => {
     const data = {
@@ -46,6 +48,7 @@ const Profile: React.FC<Props> = ({ session }) => {
         duration: 9000,
         isClosable: true,
       });
+      router.reload();
     });
   };
   return (
