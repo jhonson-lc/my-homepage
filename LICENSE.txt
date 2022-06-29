@@ -1,0 +1,7 @@
+Copyright (c) 2021, Contributors
+
+Permission to modify and/or use this software
+as inspiration, do not copy it directly and
+crediting the author in all copies.
+
+No confusing license and help others learn.
