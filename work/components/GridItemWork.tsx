@@ -9,6 +9,7 @@ import {
 import { motion } from "framer-motion";
 import { ChevronRightIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import Button from "components/Button";
+import Link from "next/link";
 
 import { Work } from "../types";
 
@@ -71,14 +72,16 @@ const ItemWork: React.FC<Props> = ({ work, i }) => {
           />
         </Stack>
         <Stack alignItems="end">
-          <ButtonUI
-            _focus={{ boxShadow: "none" }}
-            _hover={{ bg: "none", color: "red.500" }}
-            rightIcon={<ChevronRightIcon />}
-            variant="ghost"
-          >
-            READ MORE
-          </ButtonUI>
+          <Link href={`/work/${work.id}`}>
+            <ButtonUI
+              _focus={{ boxShadow: "none" }}
+              _hover={{ bg: "none", color: "red.500" }}
+              rightIcon={<ChevronRightIcon />}
+              variant="ghost"
+            >
+              READ MORE
+            </ButtonUI>
+          </Link>
         </Stack>
       </Stack>
     </StackM>

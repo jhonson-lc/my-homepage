@@ -53,7 +53,7 @@ const Profile: React.FC<Props> = ({ session }) => {
   };
   return (
     <Stack
-      align="start"
+      align={{ base: "center", md: "start" }}
       direction={{ base: "column", sm: "row" }}
       gap={6}
       justifyContent="space-between"

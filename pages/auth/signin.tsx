@@ -22,25 +22,37 @@ const SignIn: React.FC<Props> = () => {
         <Button
           icon={<BsGithub />}
           text="Sign in with GitHub"
-          onClick={() => signIn("github")}
+          onClick={() =>
+            signIn("github", {
+              callbackUrl: `${window.location.origin}/profile`,
+            })
+          }
         />
         <Button
           icon={<FcGoogle />}
           text="Sign in with Google"
-          onClick={() => signIn("google")}
+          onClick={() =>
+            signIn("google", {
+              callbackUrl: `${window.location.origin}/profile`,
+            })
+          }
         />
         <Button
           icon={<BsFacebook color="#1778F2" />}
           text="Sign up with Facebook"
-          onClick={() => signIn("facebook")}
+          onClick={() =>
+            signIn("facebook", {
+              callbackUrl: `${window.location.origin}/profile`,
+            })
+          }
         />
         <HStack>
           <Text>No tienes cuenta?</Text>
           <Text
             _hover={{ textDecoration: "underline" }}
-            color="red"
+            color="primary"
             cursor="pointer"
-            fontWeight={600}
+            fontWeight={700}
             onClick={() => setPage("signup")}
           >
             Crear una cuenta

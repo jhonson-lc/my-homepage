@@ -54,7 +54,7 @@ export const BuildWork: React.FC<Props> = ({ build }) => {
             key={item}
             borderRadius="none"
             colorScheme={c[0]}
-            fontSize={9}
+            fontSize={12}
             variant="outline"
           >
             {item}

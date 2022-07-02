@@ -49,7 +49,7 @@ const IndexPage: NextPage<Props> = ({ posts }) => {
               quality software.
             </Paragraph>
             <Stack
-              alignItems="end"
+              alignItems={{ base: "center", md: "end" }}
               flexDirection={{ base: "column", md: "row" }}
               gap={6}
             >
@@ -57,12 +57,12 @@ const IndexPage: NextPage<Props> = ({ posts }) => {
               <Button
                 bg="transparent"
                 color="secondary"
-                href="/work"
-                text="View Projects"
+                href="/auth/signin"
+                text="Create an account"
               />
             </Stack>
           </Stack>
-          <Box pr={{ base: 0, md: 100 }}>
+          <Box pr={{ base: 0, md: 12, lg: 100 }}>
             <Avatar />
           </Box>
         </Stack>

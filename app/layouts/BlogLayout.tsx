@@ -18,7 +18,7 @@ const BlogLayout: React.FC<Props> = ({ post, children }) => {
   return (
     <Layout title={post.title} url={`blog/${post.slug}`}>
       <Stack spacing={8}>
-        <Heading color="heading" fontSize={50}>
+        <Heading color="heading" fontSize={{ base: 24, md: 50 }}>
           {post.title}
         </Heading>
         <Stack

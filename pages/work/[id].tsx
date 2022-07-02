@@ -22,24 +22,26 @@ const SingleWork: React.FC<Props> = ({ work }) => {
       <Stack alignItems="flex-start" direction="column" spacing={5} w="100%">
         <TitleNavigation title={work.title} />
         <ParameterWork title="Project">
-          <Text variant="information">{work.title}</Text>
+          <Text>{work.title}</Text>
         </ParameterWork>
         <ParameterWork title="Build with">
           {work.build && <BuildWork build={work.build} />}
         </ParameterWork>
         <ParameterWork title="Platform">
-          <Text variant="information">
+          <Text>
             {work.platform &&
               work.platform.reduce((text, item) => text.concat(`${item}/`), ``)}
           </Text>
         </ParameterWork>
         <ParameterWork title="Site URL">
           <Link isExternal href={work.siteurl}>
-            <Text variant="linkexternal">{work.siteurl}</Text>
+            <Text>{work.siteurl}</Text>
           </Link>
         </ParameterWork>
         <ParameterWork title="Description">
-          <P>{work.description}</P>
+          <P line={1.5} size={16}>
+            {work.description}
+          </P>
         </ParameterWork>
         <ParameterWork title="Screenshots">
           <Stack spacing={10}>

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Button as ButtonChakra } from "@chakra-ui/react";
+import { Text, Button as ButtonChakra, HStack } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 
 interface Props {
@@ -65,7 +65,10 @@ const Logo: React.FC<Props> = ({ size = 24, ...props }) => {
         p={8}
         {...props}
       >
-        Jhon A. Lescano
+        <HStack>
+          <Text>Jhon</Text>
+          <Text display={{ base: "none", md: "block" }}> A. Lescano</Text>
+        </HStack>
       </Button>
     </Link>
   );
