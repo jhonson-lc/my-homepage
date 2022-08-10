@@ -30,17 +30,14 @@ const Layout = ({ children, ...customMeta }) => {
           <meta content={meta.author} property="og:site_name" />
           <meta content={meta.title} property="og:title" />
           <meta content={meta.description} property="og:description" />
-          <meta content={meta.banner?.url} property="og:image" />
-          <meta content={meta.banner?.format} property="og:image:type" />
-          <meta content={meta.banner?.width} property="og:image:width" />
-          <meta content={meta.banner?.height} property="og:image:height" />
+          <meta content={meta.image} property="og:image" />
           <meta content={meta.title} property="og:image:alt" />
           <meta content="summary_large_image" name="twitter:card" />
           <meta content={meta.twitter} name="twitter:site" />
           <meta content={meta.twitter} name="twitter:creator" />
           <meta content={meta.title} name="twitter:title" />
           <meta content={meta.description} name="twitter:description" />
-          <meta content={meta.banner?.url} property="twitter:image" />
+          <meta content={meta.image} property="twitter:image" />
           {meta.date && (
             <meta content={meta.date} property="article:published_time" />
           )}

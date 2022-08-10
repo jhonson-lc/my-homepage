@@ -10,11 +10,6 @@ export const META = {
   author: "Jhon Lescano",
   twitter: "@jhonson_lc",
   url: "https://mejhon.dev",
-  banner: {
-    url: "/og-image.svg",
-    format: "image/svg",
-    width: "1200",
-    height: "630",
-  },
+  image: "/og-image.svg",
   type: "website",
 };
