@@ -16,6 +16,7 @@ import FormControl from "ui/form/FormControl";
 import Paragraph from "work/components/Paragraph";
 import { FiLogOut } from "react-icons/fi";
 import { useRouter } from "next/router";
+import Layout from "app/layouts/Layout";
 
 interface Props {
   session: any;
@@ -52,62 +53,83 @@ const Profile: React.FC<Props> = ({ session }) => {
     });
   };
   return (
-    <Stack
-      align={{ base: "center", md: "start" }}
-      direction={{ base: "column", sm: "row" }}
-      gap={6}
-      justifyContent="space-between"
-      w="full"
-    >
-      <Stack order={{ base: "2", sm: "0" }} pos="relative" spacing={8} w="full">
-        <Paragraph>Your profile</Paragraph>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <Text color="paragraph" fontSize={16} pl={4}>
-            Name
-          </Text>
-          <FormControl
-            error={errors.name && "Este campo es requerido"}
-            name="name"
-          >
-            <HStack bg="hover" maxW={500} px={4} py={6} rounded="10px" w="full">
-              <Input
-                fontSize={16}
-                placeholder="Name"
-                {...register("name", {
-                  required: true,
-                })}
-                type="text"
-                value={name}
-                variant="unstyled"
-                onChange={(e) => setName(e.target.value)}
-              />
-            </HStack>
-          </FormControl>
-          <Text color="paragraph" fontSize={16} pl={4}>
-            Email
-          </Text>
-          <FormControl>
-            <HStack bg="hover" maxW={500} px={4} py={6} rounded="10px" w="full">
-              <Input
-                isReadOnly
-                cursor="not-allowed"
-                fontSize={16}
-                type="text"
-                value={session.user.email}
-                variant="unstyled"
-              />
-            </HStack>
-          </FormControl>
-          <Box pt={8}>
-            <Button text="Save changes" type="submit" />
-          </Box>
-        </form>
+    <Layout title="Profile - Jhon Lescano">
+      <Stack
+        align={{ base: "center", md: "start" }}
+        direction={{ base: "column", sm: "row" }}
+        gap={6}
+        justifyContent="space-between"
+        w="full"
+      >
+        <Stack
+          order={{ base: "2", sm: "0" }}
+          pos="relative"
+          spacing={8}
+          w="full"
+        >
+          <Paragraph>Your profile</Paragraph>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <Text color="paragraph" fontSize={16} pl={4}>
+              Name
+            </Text>
+            <FormControl
+              error={errors.name && "Este campo es requerido"}
+              name="name"
+            >
+              <HStack
+                bg="hover"
+                maxW={500}
+                px={4}
+                py={6}
+                rounded="10px"
+                w="full"
+              >
+                <Input
+                  fontSize={16}
+                  placeholder="Name"
+                  {...register("name", {
+                    required: true,
+                  })}
+                  type="text"
+                  value={name}
+                  variant="unstyled"
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </HStack>
+            </FormControl>
+            <Text color="paragraph" fontSize={16} pl={4}>
+              Email
+            </Text>
+            <FormControl>
+              <HStack
+                bg="hover"
+                maxW={500}
+                px={4}
+                py={6}
+                rounded="10px"
+                w="full"
+              >
+                <Input
+                  isReadOnly
+                  cursor="not-allowed"
+                  fontSize={16}
+                  type="text"
+                  value={session.user.email}
+                  variant="unstyled"
+                />
+              </HStack>
+            </FormControl>
+            <Box pt={8}>
+              <Button text="Save changes" type="submit" />
+            </Box>
+          </form>
+        </Stack>
+        <Stack gap={12} pr={{ base: 0, md: 100 }}>
+          <Button icon={<FiLogOut />} text="logout" onClick={() => signOut()} />
+          <Avatar h={200} src={session.user.image} w={200} />
+        </Stack>
       </Stack>
-      <Stack gap={12} pr={{ base: 0, md: 100 }}>
-        <Button icon={<FiLogOut />} text="logout" onClick={() => signOut()} />
-        <Avatar h={200} src={session.user.image} w={200} />
-      </Stack>
-    </Stack>
+    </Layout>
   );
 };
 

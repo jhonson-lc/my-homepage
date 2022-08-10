@@ -2,8 +2,7 @@ import React from "react";
 import { Stack, Text, Link, Image } from "@chakra-ui/react";
 import { GetStaticProps, GetStaticPaths } from "next";
 
-import Layout from "../../app/layouts/HeadLayout";
-import P from "../../work/components/Paragraph";
+import Layout from "../../app/layouts/Layout";
 import {
   TitleNavigation,
   ParameterWork,
@@ -18,32 +17,40 @@ interface Props {
 
 const SingleWork: React.FC<Props> = ({ work }) => {
   return (
-    <Layout key={work.id} title={work.title} url={`work/${work.id}`}>
+    <Layout
+      key={work.id}
+      description={work.description}
+      image={work.thumbnail}
+      title={`${work.title} - Jhon Lescano`}
+      type="article"
+    >
       <Stack alignItems="flex-start" direction="column" spacing={5} w="100%">
         <TitleNavigation title={work.title} />
         <ParameterWork title="Project">
-          <Text>{work.title}</Text>
+          <Text color="paragraph" fontSize={14}>
+            {work.title}
+          </Text>
         </ParameterWork>
         <ParameterWork title="Build with">
           {work.build && <BuildWork build={work.build} />}
         </ParameterWork>
         <ParameterWork title="Platform">
-          <Text>
+          <Text color="paragraph" fontSize={14}>
             {work.platform &&
               work.platform.reduce((text, item) => text.concat(`${item}/`), ``)}
           </Text>
         </ParameterWork>
         <ParameterWork title="Site URL">
           <Link isExternal href={work.siteurl}>
-            <Text>{work.siteurl}</Text>
+            <Text fontSize={14}>{work.siteurl}</Text>
           </Link>
         </ParameterWork>
         <ParameterWork title="Description">
-          <P line={1.5} size={16}>
+          <Text color="paragraph" fontSize={14}>
             {work.description}
-          </P>
+          </Text>
         </ParameterWork>
-        <ParameterWork title="Screenshots">
+        <ParameterWork title="Screenshot">
           <Stack spacing={10}>
             <Image alt={work.title} src={work.thumbnail} />
           </Stack>

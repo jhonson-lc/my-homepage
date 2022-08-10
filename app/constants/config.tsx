@@ -1,7 +1,7 @@
 export const META = {
   favicon: "/favicon.ico",
   theme: "#FFFFFF",
-  title: "Jhon Lescano",
+  title: "Jhon Lescano - Software Engineer",
   description:
     "I'm Jhon Lescano, a frontend developer from Quito,Ecuador. I'm currently studying Software Engineering",
   appleicon: "/logo192.jpg",
@@ -16,4 +16,5 @@ export const META = {
     width: "1200",
     height: "630",
   },
+  type: "website",
 };

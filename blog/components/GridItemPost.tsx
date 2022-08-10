@@ -75,7 +75,7 @@ const ItemPost: React.FC<Props> = ({ post }) => {
       </Stack>
       <Stack direction="column" gap={2} mt={6}>
         <Stack display={{ base: "none", md: "block" }}>
-          <P limitLines={2} line={1.5} size={16} weight={200}>
+          <P limitLines={2} line={1.5} size={16} weight={300}>
             {post.abstract}
           </P>
         </Stack>

@@ -6,6 +6,7 @@ import { Text, HStack, Image, Input, Stack, Box } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { mdxToHtml } from "utils/readingMdx";
 import Paragraph from "work/components/Paragraph";
+import Layout from "app/layouts/Layout";
 
 import { Post } from "../blog/types";
 import BlogPage from "../blog/screens/BlogPage";
@@ -21,7 +22,10 @@ const IndexBlog: React.FC<Props> = ({ posts }) => {
   });
 
   return (
-    <Stack>
+    <Layout
+      description="I hope to help you with great articles about software industry, programming, tech, and my personal life."
+      title="Blog - Jhon Lescano"
+    >
       <Stack
         align="center"
         direction={{ base: "column", sm: "row" }}
@@ -64,7 +68,7 @@ const IndexBlog: React.FC<Props> = ({ posts }) => {
           No posts found
         </Text>
       )}
-    </Stack>
+    </Layout>
   );
 };
 

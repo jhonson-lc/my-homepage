@@ -67,6 +67,16 @@ const Navbar: React.FC = () => {
           <Box display={{ base: "none", lg: "flex" }}>
             <ThemeButton size={24} />
           </Box>
+          <Box display="none">
+            <Button
+              bg="transparent"
+              color="primary"
+              href="/curriculum-vitae"
+              text="CV"
+              x={4}
+              y={2}
+            />
+          </Box>
           <MenuMobile path={pathname} />
           {!session ? (
             <Box display={{ base: "none", md: "flex" }}>

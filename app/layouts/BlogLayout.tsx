@@ -7,8 +7,9 @@ import { Post } from "blog/types";
 import { urlForImage } from "lib/sanity";
 import Button from "components/Button";
 
-import Layout from "../../app/layouts/HeadLayout";
 import Avatar from "../../ui/feedback/Avatar";
+
+import Layout from "./Layout";
 
 interface Props {
   post: Post;
@@ -16,7 +17,13 @@ interface Props {
 
 const BlogLayout: React.FC<Props> = ({ post, children }) => {
   return (
-    <Layout title={post.title} url={`blog/${post.slug}`}>
+    <Layout
+      date={new Date(post.date).toISOString()}
+      description={post.abstract}
+      image={urlForImage(post.coverImage).url()}
+      title={`${post.title} - Jhon Lescano`}
+      type="article"
+    >
       <Stack spacing={8}>
         <Heading color="heading" fontSize={{ base: 24, md: 50 }}>
           {post.title}

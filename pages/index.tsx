@@ -6,9 +6,10 @@ import Button from "components/Button";
 import ArrowMore from "components/ArrowMore";
 import { getClient } from "lib/sanity-server";
 import { indexQuery } from "lib/queries";
+import works from "work/data/works";
 
 import Section from "../components/Section";
-import Layout from "../app/layouts/HeadLayout";
+import Layout from "../app/layouts/Layout";
 import Avatar from "../ui/feedback/Avatar";
 import ItemPost from "../blog/components/GridItemPost";
 import ItemWork from "../work/components/GridItemWork";
@@ -20,7 +21,7 @@ interface Props {
 
 const IndexPage: NextPage<Props> = ({ posts }) => {
   return (
-    <Layout title="Home">
+    <Layout>
       <Stack spacing={10}>
         <Stack
           align="center"
@@ -67,26 +68,12 @@ const IndexPage: NextPage<Props> = ({ posts }) => {
           </Box>
         </Stack>
         <ArrowMore href="#projects" text="Read more about Jhon" />
-        <Section hrefB="/work" labelB="VIEW ALL" title="Popular Projects">
-          <SimpleGrid columns={[1, 2]} gap={10} justifyItems="center" w="100%">
-            <ItemWork
-              work={{
-                id: "spaciart-ecuador",
-                title: "Spaciart Ecuador",
-                thumbnail: "/images/works/spaciartecuador.png",
-                build: ["react", "chakra-ui", "framer-motion", "typescript"],
-                siteurl: "https://muebles-spaciartecuador.com/",
-              }}
-            />
-            <ItemWork
-              work={{
-                id: "my-portfolio",
-                title: "My Portfolio",
-                thumbnail: "/images/works/myportfolio.png",
-                build: ["next.js", "chakra-ui", "framer-motion", "typescript"],
-                siteurl: "https://mejhon.dev/",
-              }}
-            />
+        <Section hrefB="/work" labelB="VIEW ALL" title="Latest Projects">
+          <div id="projects" />
+          <SimpleGrid columns={[1, 2]} gridGap={16} w="100%">
+            {works.slice(0, 2).map((work, i) => {
+              return <ItemWork key={work.id} i={i} work={work} />;
+            })}
           </SimpleGrid>
         </Section>
         <Section hrefB="/contact" labelB="SEND MESSAGE" title="Skills">

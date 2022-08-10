@@ -8,6 +8,7 @@ interface Props {
 const InputInformation: React.FC<Props> = ({ icon, children }) => {
   return (
     <Button
+      _focus={{ boxShadow: "none" }}
       _hover={{ border: "2px", borderColor: "primary" }}
       color="secondary"
       leftIcon={icon}

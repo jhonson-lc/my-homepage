@@ -10,14 +10,14 @@ import React from "react";
 import { latestSkills, skills } from "./constants";
 
 const Skills: React.FC = () => {
-  const g = useBreakpointValue({ base: 8, lg: 20 });
+  const g = useBreakpointValue({ base: 4, lg: 12 });
   return (
     <Stack gap={16}>
       <Stack
         direction="row"
         gap={g}
         justifyContent="center"
-        w="100%"
+        w="full"
         wrap="wrap"
       >
         {skills.map((skill) => {
@@ -65,8 +65,8 @@ const SkillImage = ({ image, name }) => {
       backdropFilter="auto"
       bg={back}
       direction="row"
-      px="20px"
-      py="10px"
+      px="16px"
+      py="8px"
       rounded="40px"
     >
       {image}

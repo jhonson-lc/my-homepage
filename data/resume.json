@@ -1,0 +1,143 @@
+{
+    "basics": {
+      "name": "Jhon Lescano",
+      "label": "Ingeniero en Software",
+      "image": "",
+      "email": "jhoncisneros11@gmail.com",
+      "phone": "098 165 7629",
+      "website": "https://mejhon.dev",
+      "summary": "Soy ingeniero de software (en proceso) y desarrollador fullstack, versátil y productivo en el aprendizaje de nuevas tecnologías, combinando las mejores prácticas y funcionalidades con las últimas innovaciones en desarrollo web.",
+      "location": {
+        "address": "Tabacundo - La Esperanza",
+        "postalCode": "171010",
+        "city": "Quito",
+        "countryCode": "EC",
+        "region": "Pichincha"
+      },
+      "profiles": [{
+        "network": "Twitter",
+        "username": "jhonson-lc",
+        "url": "https://twitter.com/jhonson-lc"
+      }]
+    },
+    "work": [{
+      "company": "Spaciart Ecuador",
+      "position": "Desarrollador web",
+      "website":"https://muebles-spaciartecuador.com",
+      "startDate": "2021-08-12",
+      "endDate": "2021-09-12",
+      "summary": "Desarrollo de su aplicación web, con el objetivo de que los clientes puedan comprar sus productos.",
+      "highlights": [
+        "Primera aplicación web"
+      ]
+    },{
+      "company": "Complejo turístico El Rincón del Cuy",
+      "position": "Desarrollador web",
+      "website":"https://muebles-spaciartecuador.com",
+      "startDate": "2021-08-12",
+      "endDate": "2021-09-12",
+      "summary": "Desarrollo de su aplicación web, con el objetivo de que los clientes puedan conocer todos los servicios que ofrece el complejo",
+      "highlights": [
+        "Primera aplicación web"
+      ]
+    }],
+    "volunteer": [{
+      "organization": "Organization",
+      "position": "Volunteer",
+      "url": "https://organization.com/",
+      "startDate": "2012-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Description…",
+      "highlights": [
+        "Awarded 'Volunteer of the Month'"
+      ]
+    }],
+    "education": [{
+      "institution": "Universidad Técnica de Ambato",
+      "url": "https://uta.edu.ec/",
+      "area": "Ingeniería en Software",
+      "studyType": "Bachelor",
+      "startDate": "2019-01-01",
+      "endDate": "2025-01-01",
+      "score": "4.0",
+      "courses": [
+        "DB1101 - Basic SQL"
+      ]
+    }],
+    "awards": [{
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }],
+    "certificates": [{
+      "name": "Certificate",
+      "date": "2021-11-07",
+      "issuer": "Company",
+      "url": "https://certificate.com"
+    }],
+    "publications": [{
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014-10-01",
+      "url": "https://publication.com",
+      "summary": "Description…"
+    }],
+   "programmingLanguages":["Java","TypeScript","PHP","JavaScript","SQL"],
+    "skills": [{
+      "name": "Next.js",
+      "level": "Master",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    },{
+      "name":"React.js"
+    },{
+      "name":"Chakra UI"
+    },{
+      "name":"MySQL"
+    },{
+      "name":"Prisma ORM"
+    }],
+    "languages": [{
+      "language": "Español",
+      "fluency": "Nativo",
+      "points":5
+    },{
+      "language": "Inglés",
+      "fluency": "Intermedio",
+      "points":3
+    }],
+    "interests": [{
+      "name": "Productivo",
+      "keywords": [
+        "Ferrets",
+        "Unicorns"
+      ]
+    }],
+    "references": [{
+      "name": "Jane Doe",
+      "reference": "Reference…"
+    }],
+    "projects": [{
+      "heading": "WorkSearch",
+      "summary": "El presente proyecto busca ayudar a personas que se encuentran en estado de desempleo, brindándoles una forma de encontrar alguna actividad remunerada.",
+      "highlights": [
+        "Metodologia aplicada: Scrum",
+        "Proyecto final Software"
+      ],
+      "keywords": [
+        "HTML"
+      ],
+      "startDate": "2022-06-24",
+      "endDate": "2021-08-24",
+      "url": "https://sistema-empleos.vercel.app/",
+      "roles": [
+        "Desarrollador web"
+      ],
+      "entity": "Entity",
+      "type": "application"
+    }]
+  }

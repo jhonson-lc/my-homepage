@@ -40,7 +40,7 @@ const ItemWork: React.FC<Props> = ({ work, i }) => {
       bg={back}
       direction="column"
       exit="exit"
-      gap={6}
+      gap={2}
       initial="initial"
       justifyContent="space-between"
       p={[6, 12]}
@@ -56,12 +56,11 @@ const ItemWork: React.FC<Props> = ({ work, i }) => {
         </Text>
         <Box display={{ base: "none", lg: "block" }}>
           <Paragraph line={10} size={16} weight={300}>
-            Es una empresa que ofrece a sus clientes, productos y servicios en
-            muebles de calidad
+            {work.description}
           </Paragraph>
         </Box>
       </Stack>
-      <Stack gap={4}>
+      <Stack gap={2}>
         <Stack alignItems="center" display="block">
           <Button
             bg="secondary"

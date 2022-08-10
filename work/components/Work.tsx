@@ -33,9 +33,14 @@ export const ParameterWork: React.FC<Props> = ({ title, children }) => {
       pos="relative"
       wrap="wrap"
     >
-      <Badge colorScheme={useColorModeValue("teal", "cyan")} fontSize="sm">
-        {title}:{" "}
+      <Badge
+        colorScheme={useColorModeValue("teal", "cyan")}
+        fontSize="md"
+        variant="outline"
+      >
+        {title}
       </Badge>
+      {": "}
       {children}
     </Flex>
   );
@@ -55,7 +60,7 @@ export const BuildWork: React.FC<Props> = ({ build }) => {
             borderRadius="none"
             colorScheme={c[0]}
             fontSize={12}
-            variant="outline"
+            variant="subtle"
           >
             {item}
           </Badge>
