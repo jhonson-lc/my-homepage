@@ -65,8 +65,9 @@ const SkillImage = ({ image, name }) => {
       backdropFilter="auto"
       bg={back}
       direction="row"
+      minH={14}
       px="16px"
-      py="8px"
+      py="4px"
       rounded="40px"
     >
       {image}
