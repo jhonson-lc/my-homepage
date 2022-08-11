@@ -18,6 +18,10 @@ export default extendTheme({
         default: "#ffffff",
         _dark: "#000000",
       },
+      back: {
+        default: "blackAlpha.50",
+        _dark: "whiteAlpha.50",
+      },
       primary: {
         default: "blackAlpha.900",
         _dark: "whiteAlpha.900",
