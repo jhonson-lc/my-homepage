@@ -32,7 +32,7 @@ const works = [
     id: "spaciart-ecuador",
     type: "work",
     title: "Spaciart Ecuador",
-    build: ["react", "chakra-ui", "framer-motion", "typescript"],
+    build: ["next.js", "chakra-ui", "framer-motion", "typescript"],
     description:
       "A website for a local furniture store in Ecuador, where you can buy and sell your own furniture.",
     platform: ["Windows", "macOS", "Linux", "iOS", "Android"],
