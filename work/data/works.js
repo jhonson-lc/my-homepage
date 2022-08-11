@@ -29,6 +29,28 @@ const works = [
     thumbnail: "/images/works/rincondelcuy.png",
   },
   {
+    id: "crud-login-php",
+    type: "work",
+    title: "CRUD Login PHP",
+    build: ["PHP", "HTML5", "CSS3", "JQuery", "IReport", "FPDF"],
+    description:
+      "A simple CRUD application with login and register. It's a simple PHP application",
+    platform: ["Windows", "macOS", "Linux"],
+    siteurl: "https://crudylogin-php.herokuapp.com/",
+    thumbnail: "/images/works/crudyloginphp.png",
+  },
+  {
+    id: "registro-asistencia",
+    type: "work",
+    title: "Registro de asistencia",
+    build: ["Java", "MySQL", "IReport"],
+    description:
+      "A simple application to register the attendance of the teachers",
+    platform: ["Windows", "macOS"],
+    siteurl: "https://github.com/jhonson-lc/registro-asistencia",
+    thumbnail: "/images/works/registroasistencia.png",
+  },
+  {
     id: "spaciart-ecuador",
     type: "work",
     title: "Spaciart Ecuador",
