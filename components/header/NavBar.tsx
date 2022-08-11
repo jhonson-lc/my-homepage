@@ -67,27 +67,28 @@ const Navbar: React.FC = () => {
           <Box display={{ base: "none", lg: "flex" }}>
             <ThemeButton size={24} />
           </Box>
-          <Box display="none">
+          <Box display={{ base: "none", lg: "block" }}>
             <Button
               bg="transparent"
               color="primary"
               href="/curriculum-vitae"
               text="CV"
-              x={4}
-              y={2}
+              x={3}
+              y={6}
+            />
+          </Box>
+          <Box display={{ base: "block", lg: "none" }}>
+            <Button
+              bg="transparent"
+              color="primary"
+              href="https://drive.google.com/uc?id=1mcfrMQP5Vhby9i_3xnNvA8h_sTCW7N6B&export=download"
+              text="CV"
+              x={3}
+              y={6}
             />
           </Box>
           <MenuMobile path={pathname} />
-          {!session ? (
-            <Box display={{ base: "none", md: "flex" }}>
-              <Button
-                bg="transparent"
-                color="secondary"
-                href="/auth/signin"
-                text="Get Started"
-              />
-            </Box>
-          ) : (
+          {session && (
             <Link href="/profile">
               <Avatar
                 border="1px solid white"

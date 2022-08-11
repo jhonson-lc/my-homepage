@@ -2,18 +2,20 @@ import {
   Box,
   Divider,
   Flex,
-  Tag,
   Text,
   Heading,
-  ListItem,
-  UnorderedList,
   Stack,
   HStack,
   Center,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import { AtSignIcon, EmailIcon, PhoneIcon, LinkIcon } from "@chakra-ui/icons";
 import StarRating from "react-svg-star-rating";
 import Layout from "app/layouts/Layout";
+import type { NextPage } from "next";
+import Button from "ui/controls/Button/Button";
+import jsPDF, { jsPDFOptions } from "jspdf";
+import html2canvas from "html2canvas";
 
 import styles from "../styles/StarRating.module.css";
 import {
@@ -25,7 +27,7 @@ import {
 import data from "../data/resume.json";
 import { H3, H4, TimeSpan } from "../components/Resume";
 
-function App() {
+const Curriculum: NextPage = () => {
   const { name, email, phone, website, location } = data.basics;
   const { address } = location;
 
@@ -38,13 +40,33 @@ function App() {
   const personalProjects: ProjectType[] = data.projects;
   const qualifications = data.interests;
 
+  const options: jsPDFOptions = {
+    orientation: "p",
+    unit: "pt",
+    format: "a4",
+  };
+
+  const createPDF = async () => {
+    const pdf = new jsPDF(options);
+    const data = await html2canvas(document.querySelector("#curriculum-vitae"));
+    const img = data.toDataURL("image/png");
+    const imgProperties = pdf.getImageProperties(img);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
+    pdf.addImage(img, "PNG", 0, 0, pdfWidth, pdfHeight - 75);
+    pdf.save("curriculum-Lescano-Jhon.pdf");
+  };
+
   return (
     <Layout
       description="I believe in web development as a powerful communication tool to reflect life projects, communicate ventures and ideas."
       title="Curriculum Vitae - Jhon Lescano"
     >
-      <Center>
-        <Box bg="#ffffff" margin="5" p={6} w="866px">
+      <Center display={{ base: "none", lg: "flex" }}>
+        <Button text="Descargar CV en PDF" onClick={() => createPDF()} />
+      </Center>
+      <Center display={{ base: "none", lg: "block" }} id="curriculum-vitae">
+        <Stack bg="#ffffff" m={4} p={12} width="866px">
           <header>
             <Heading as="h2" fontSize="4xl" letterSpacing="wider">
               {name}
@@ -80,13 +102,13 @@ function App() {
           </header>
           <Box marginY="7">
             <H3 content="Resumen" />
-            <Text>{summary}</Text>
+            <Text py={2}>{summary}</Text>
           </Box>
-          <Stack flexDirection={"row"} gap={12} w="full">
+          <Stack flexDirection={"row"} gap={12} spacing={0} w="full">
             <Stack w="50%">
               <Box>
                 <H3 content="Experiencia" />
-                <Divider />
+                <Divider py={2} />
                 {works.map(
                   ({
                     company,
@@ -96,107 +118,103 @@ function App() {
                     summary,
                     highlights,
                   }) => (
-                    <>
+                    <Stack key={company}>
                       <H4 content={company} />
                       <Text fontSize="md">{position}</Text>
                       <TimeSpan endDate={endDate} startDate={startDate} />
                       <Text marginY="3">{summary}</Text>
-                      <UnorderedList>
-                        {highlights.map((highlight) => (
-                          <ListItem key={highlight} fontSize="sm">
-                            {highlight}
-                          </ListItem>
-                        ))}
-                      </UnorderedList>
-                    </>
+                      {highlights.map((highlight) => (
+                        <Text key={highlight} fontSize="sm">
+                          - {highlight}
+                        </Text>
+                      ))}
+                    </Stack>
                   ),
                 )}
               </Box>
               <Box>
                 <H3 content="Formación académica" />
-                <Divider />
+                <Divider py={2} />
                 {educations.map(({ institution, area, startDate, endDate }) => (
-                  <>
+                  <Stack key={institution}>
                     <H4 content={institution} />
                     <Text fontSize="md">{area}</Text>
                     <TimeSpan endDate={endDate} startDate={startDate} />
-                  </>
+                  </Stack>
                 ))}
               </Box>
               <Box>
                 <H3 content="Lenguajes de programación" />
-                <Divider />
-                {programingLanguages.map((language) => (
-                  <Tag key={language} margin="0.5">
-                    {language}
-                  </Tag>
-                ))}
+                <Divider py={2} />
+                <SimpleGrid columns={2} w="full">
+                  {programingLanguages.map((language) => (
+                    <Text key={language}>- {language}</Text>
+                  ))}
+                </SimpleGrid>
               </Box>
               <Box>
                 <H3 content="Habilidades" />
-                <Divider />
+                <Divider py={2} />
                 {qualifications.map((qualification) => (
-                  <Tag key={qualification.name} margin="0.5">
-                    {qualification.name}
-                  </Tag>
+                  <Text key={qualification.name}>- {qualification.name}</Text>
                 ))}
               </Box>
             </Stack>
             <Stack w="50%">
               <Box>
                 <H3 content="Proyectos" />
-                <Divider />
+                <Divider py={2} />
                 {personalProjects.map(({ heading, summary, highlights }) => (
-                  <>
+                  <Stack key={heading}>
                     <H4 content={heading} />
                     <Text fontSize="md" marginBottom="3">
                       {summary}
                     </Text>
-                    <UnorderedList>
-                      {highlights.map((highlight) => (
-                        <ListItem key={highlight} fontSize="sm">
-                          {highlight}
-                        </ListItem>
-                      ))}
-                    </UnorderedList>
-                  </>
+                    {highlights.map((highlight) => (
+                      <Text key={highlight} fontSize="sm">
+                        - {highlight}
+                      </Text>
+                    ))}
+                  </Stack>
                 ))}
               </Box>
-              <Box>
+              <Stack>
                 <H3 content="Tecnologías" />
-                <Divider />
-                {techStacks.map((stack) => (
-                  <Tag key={stack.name} margin="0.5">
-                    {stack.name}
-                  </Tag>
-                ))}
-              </Box>
+                <Divider py={2} />
+                <SimpleGrid columns={2} w="full">
+                  {techStacks.map((stack) => (
+                    <Text key={stack.name}>- {stack.name}</Text>
+                  ))}
+                </SimpleGrid>
+              </Stack>
               <Box w="100%">
                 <H3 content="Idiomas" />
-                <Divider />
+                <Divider py={2} />
                 {naturalLanguages.map(({ language, fluency, points }) => (
                   <HStack key={language} justifyContent="space-between">
                     <Text fontSize="md">{language}</Text>
                     <HStack>
-                      <Text>{fluency}</Text>
-                      <StarRating
-                        isReadOnly
-                        activeColor={"#000000"}
-                        containerClassName={styles.star}
-                        initialRating={points}
-                        size={15}
-                        unit="float"
-                      />
+                      <Text fontSize="sm">{fluency}</Text>
+                      <Box pt={3}>
+                        <StarRating
+                          isReadOnly
+                          activeColor={"#000000"}
+                          containerClassName={styles.star}
+                          initialRating={points}
+                          size={15}
+                          unit="float"
+                        />
+                      </Box>
                     </HStack>
                   </HStack>
                 ))}
               </Box>
             </Stack>
           </Stack>
-        </Box>
+        </Stack>
       </Center>
     </Layout>
   );
-}
+};
 
-export default App;
+export default Curriculum;

@@ -4,11 +4,11 @@
       "label": "Ingeniero en Software",
       "image": "",
       "email": "jhoncisneros11@gmail.com",
-      "phone": "098 165 7629",
+      "phone": "+593 098 165 7629",
       "website": "https://mejhon.dev",
-      "summary": "Soy ingeniero de software (en proceso) y desarrollador fullstack, versátil y productivo en el aprendizaje de nuevas tecnologías, combinando las mejores prácticas y funcionalidades con las últimas innovaciones en desarrollo web.",
+      "summary": "Soy ingeniero de software (en proceso) y desarrollador fullstack, versátil y productivo en el aprendizaje de nuevas tecnologías, combinando las mejores prácticas y funcionalidades con las últimas innovaciones en desarrollo web. Todos los proyectos están en mi portafolio.",
       "location": {
-        "address": "Tabacundo - La Esperanza",
+        "address": " Quito, Ecuador",
         "postalCode": "171010",
         "city": "Quito",
         "countryCode": "EC",
@@ -22,23 +22,26 @@
     },
     "work": [{
       "company": "Spaciart Ecuador",
-      "position": "Desarrollador web",
+      "position": "Desarrollador Frontend",
       "website":"https://muebles-spaciartecuador.com",
-      "startDate": "2021-08-12",
-      "endDate": "2021-09-12",
+      "startDate": "03-08-2021",
+      "endDate": "Presente",
       "summary": "Desarrollo de su aplicación web, con el objetivo de que los clientes puedan comprar sus productos.",
       "highlights": [
-        "Primera aplicación web"
+        "Rediseño de su sitio web",
+        "Mantenimiendo de su sitio web"
       ]
     },{
       "company": "Complejo turístico El Rincón del Cuy",
-      "position": "Desarrollador web",
-      "website":"https://muebles-spaciartecuador.com",
-      "startDate": "2021-08-12",
-      "endDate": "2021-09-12",
+      "position": "Desarrollador Frontend",
+      "website":"https://web-rincon-del-cuy.vercel.app/",
+      "startDate": "06-03-2022",
+      "endDate": "Presente",
       "summary": "Desarrollo de su aplicación web, con el objetivo de que los clientes puedan conocer todos los servicios que ofrece el complejo",
       "highlights": [
-        "Primera aplicación web"
+        "Desarrollar su sitio web",
+        "Botón de reserva con un formulario completo",
+        "Mantenimiendo de su sitio web"
       ]
     }],
     "volunteer": [{
@@ -55,10 +58,10 @@
     "education": [{
       "institution": "Universidad Técnica de Ambato",
       "url": "https://uta.edu.ec/",
-      "area": "Ingeniería en Software",
+      "area": "Ingeniería en Software (en proceso)",
       "studyType": "Bachelor",
-      "startDate": "2019-01-01",
-      "endDate": "2025-01-01",
+      "startDate": "05-08-2020",
+      "endDate": "Presente",
       "score": "4.0",
       "courses": [
         "DB1101 - Basic SQL"
@@ -83,7 +86,7 @@
       "url": "https://publication.com",
       "summary": "Description…"
     }],
-   "programmingLanguages":["Java","TypeScript","PHP","JavaScript","SQL"],
+   "programmingLanguages":["Java","TypeScript","PHP","JavaScript"],
     "skills": [{
       "name": "Next.js",
       "level": "Master",
@@ -97,9 +100,29 @@
     },{
       "name":"Chakra UI"
     },{
-      "name":"MySQL"
+      "name":"HTML5"
+    },{
+      "name":"CSS3"
+    },{
+      "name":"Fastify.js"
     },{
       "name":"Prisma ORM"
+    },{
+      "name":"MySQL"
+    },{
+      "name":"SQL Server"
+    },{
+      "name":"Oracle Server"
+    },{
+      "name":"Sanity CMS"
+    },{
+      "name":"Scrum"
+    },{
+      "name":"Git / Github"
+    },{
+      "name":"Jira"
+    },{
+      "name":"Linux"
     }],
     "languages": [{
       "language": "Español",
@@ -111,7 +134,43 @@
       "points":3
     }],
     "interests": [{
-      "name": "Productivo",
+      "name": "Trabajo en equipo",
+      "keywords": [
+        "Ferrets",
+        "Unicorns"
+      ]
+    },{
+      "name": "Responsable",
+      "keywords": [
+        "Ferrets",
+        "Unicorns"
+      ]
+    },{
+      "name": "Proactivo",
+      "keywords": [
+        "Ferrets",
+        "Unicorns"
+      ]
+    },{
+      "name": "Autodidacta",
+      "keywords": [
+        "Ferrets",
+        "Unicorns"
+      ]
+    },{
+      "name": "Colaborador",
+      "keywords": [
+        "Ferrets",
+        "Unicorns"
+      ]
+    },{
+      "name": "Capacidad de comunicación efectiva y liderazgo",
+      "keywords": [
+        "Ferrets",
+        "Unicorns"
+      ]
+    },{
+      "name": "Aplicar metodologías ágiles(SCRUM)",
       "keywords": [
         "Ferrets",
         "Unicorns"
@@ -122,11 +181,50 @@
       "reference": "Reference…"
     }],
     "projects": [{
-      "heading": "WorkSearch",
+      "heading": "WorkSearch - Sistema de empleos",
       "summary": "El presente proyecto busca ayudar a personas que se encuentran en estado de desempleo, brindándoles una forma de encontrar alguna actividad remunerada.",
       "highlights": [
-        "Metodologia aplicada: Scrum",
-        "Proyecto final Software"
+        "Metodologia aplicada Scrum",
+        "Integración de autenticación con Next Auth"
+      ],
+      "keywords": [
+        "HTML"
+      ],
+      "startDate": "2022-06-24",
+      "endDate": "2021-08-24",
+      "url": "https://sistema-empleos.vercel.app/",
+      "roles": [
+        "Desarrollador web"
+      ],
+      "entity": "Entity",
+      "type": "application"
+    },{
+      "heading": "CRUD Login PHP - Estudiantes",
+      "summary":"Este proyecto es una aplicación web que permite la creación, lectura, actualización y eliminación de estudiantes mediante la autenticación de un usuario con una base de datos MySQL.",
+      "highlights": [
+        "Arquitectura MVC",
+        "Control para inyección de SQL",
+        "Integración de autenticación con SESSION",
+        "Interfaz mediante roles"
+      ],
+      "keywords": [
+        "HTML"
+      ],
+      "startDate": "2022-06-24",
+      "endDate": "2021-08-24",
+      "url": "https://crudylogin-php.herokuapp.com/",
+      "roles": [
+        "Desarrollador web"
+      ],
+      "entity": "Entity",
+      "type": "application"
+    },{
+      "heading": "Registro de asistencia docente",
+      "summary":"Este proyecto es una aplicación de escritorio que permite el registro de asistencia de docentes a clases de una institución educativa.",
+      "highlights": [
+        "Autenticación mediante usuarios en la base de datos",
+        "La fecha y hora toma del sistema",
+        "Genera un reporte de asistencia diaria"
       ],
       "keywords": [
         "HTML"
