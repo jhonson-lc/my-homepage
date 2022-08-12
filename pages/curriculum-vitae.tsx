@@ -65,7 +65,7 @@ const Curriculum: NextPage = () => {
       <Center display={{ base: "none", lg: "flex" }}>
         <Button text="Descargar CV en PDF" onClick={() => createPDF()} />
       </Center>
-      <Center display={{ base: "none", lg: "block" }} id="curriculum-vitae">
+      <Center display={{ base: "none", lg: "flex" }} id="curriculum-vitae">
         <Stack bg="#ffffff" color="#000000" m={4} p={12} width="866px">
           <header>
             <Heading as="h2" fontSize="4xl" letterSpacing="wider">
