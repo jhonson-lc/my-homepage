@@ -29,7 +29,7 @@
       "summary": "Desarrollo de su aplicación web, con el objetivo de que los clientes puedan comprar sus productos.",
       "highlights": [
         "Rediseño de su sitio web",
-        "Mantenimiendo de su sitio web"
+        "Mantenimiento de su sitio web"
       ]
     },{
       "company": "Complejo turístico El Rincón del Cuy",
@@ -37,11 +37,11 @@
       "website":"https://web-rincon-del-cuy.vercel.app/",
       "startDate": "06-03-2022",
       "endDate": "Presente",
-      "summary": "Desarrollo de su aplicación web, con el objetivo de que los clientes puedan conocer todos los servicios que ofrece el complejo",
+      "summary": "Desarrollo de su aplicación web, con el objetivo de que los clientes puedan conocer todos los servicios que ofrece el complejo.",
       "highlights": [
         "Desarrollar su sitio web",
         "Botón de reserva con un formulario completo",
-        "Mantenimiendo de su sitio web"
+        "Mantenimiento de su sitio web"
       ]
     }],
     "volunteer": [{
@@ -184,7 +184,7 @@
       "heading": "WorkSearch - Sistema de empleos",
       "summary": "El presente proyecto busca ayudar a personas que se encuentran en estado de desempleo, brindándoles una forma de encontrar alguna actividad remunerada.",
       "highlights": [
-        "Metodologia aplicada Scrum",
+        "Metodología aplicada Scrum",
         "Integración de autenticación con Next Auth"
       ],
       "keywords": [
