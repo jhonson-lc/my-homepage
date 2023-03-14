@@ -46,7 +46,7 @@ const IndexPage: NextPage<Props> = ({ posts }) => {
               Software Engineer | React | Next.js | Java | SQL{" "}
             </Text>
             <Paragraph>
-              Learn and implement software to help the world be better through
+              Building innovative software, shaping the digital world through
               quality software.
             </Paragraph>
             <Stack
@@ -55,12 +55,6 @@ const IndexPage: NextPage<Props> = ({ posts }) => {
               gap={6}
             >
               <Button href="/blog" text="Read the blog" />
-              <Button
-                bg="transparent"
-                color="secondary"
-                href="/auth/signin"
-                text="Create an account"
-              />
             </Stack>
           </Stack>
           <Box pr={{ base: 0, md: 12, lg: 100 }}>
