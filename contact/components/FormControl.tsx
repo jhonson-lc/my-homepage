@@ -13,6 +13,7 @@ interface Props {
   label: string;
   icon?: IconType;
   help?: string;
+  children?: React.ReactNode;
 }
 
 const FormControl: React.FC<Props> = ({ label, icon, help, children }) => {
