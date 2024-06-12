@@ -12,7 +12,7 @@ export default function Footer() {
       color="secondary"
       divider={<Divider bg="gray" />}
       maxW="container.md"
-      mt={10}
+      my={10}
     >
       <Stack alignItems="center">
         <Stack
