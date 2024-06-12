@@ -6,15 +6,10 @@ interface Props {
   size?: number;
   weight?: number;
   line?: number;
+  children: React.ReactNode;
 }
 
-const Paragraph: React.FC<Props> = ({
-  children,
-  size = 36,
-  limitLines,
-  weight,
-  line = "54px",
-}) => {
+const Paragraph: React.FC<Props> = ({ children, size = 36, limitLines, weight, line = "54px" }) => {
   return (
     <Text
       color="paragraph"

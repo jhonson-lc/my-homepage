@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Text,
-  Button as ButtonUI,
-  Stack,
-  useColorModeValue,
-  Box,
-} from "@chakra-ui/react";
+import { Text, Button as ButtonUI, Stack, useColorModeValue, Box } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { ChevronRightIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import Button from "components/Button";
@@ -50,7 +44,7 @@ const ItemWork: React.FC<Props> = ({ work, i }) => {
       w="100%"
     >
       <Stack gap={2} spacing={0}>
-        <WorkImage work={work} />
+        <WorkImage thumbnail={work.thumbnail} title={work.title} video={work.video} />
         <Text fontSize={[28, 32]} fontWeight={500} variant="information">
           {work.title}
         </Text>
@@ -65,7 +59,7 @@ const ItemWork: React.FC<Props> = ({ work, i }) => {
           <Button
             bg="secondary"
             external={true}
-            href={work.siteurl}
+            href={work.siteurl || ""}
             icon={<ExternalLinkIcon />}
             text="Visit site"
           />

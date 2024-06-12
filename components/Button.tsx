@@ -26,7 +26,7 @@ const Button: React.FC<Props> = ({
   enabled,
 }) => {
   return (
-    <NextLink passHref href={href}>
+    <NextLink legacyBehavior href={href}>
       <Link isExternal={external}>
         <ButtonChakra
           _focus={{ boxShadow: "none" }}

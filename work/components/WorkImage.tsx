@@ -1,11 +1,10 @@
 import React from "react";
-import Image from "next/image";
 import styled from "@emotion/styled";
 
-import { Work } from "../types";
-
 interface Props {
-  work: Work;
+  thumbnail: string | undefined;
+  video: string | undefined;
+  title: string;
 }
 const Wrapper = styled.div`
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -18,16 +17,26 @@ const Wrapper = styled.div`
     border-radius: 10px;
   }
 `;
-const WorkImage: React.FC<Props> = ({ work }) => {
+const WorkImage: React.FC<Props> = ({ thumbnail, video, title }) => {
   return (
     <Wrapper>
-      <Image
-        alt={work.title}
-        className="work-image"
-        layout="fill"
-        objectFit="cover"
-        src={`${work.thumbnail}`}
-      />
+      {thumbnail ? (
+        <img alt={title} className="work-image" src={`${thumbnail}`} />
+      ) : (
+        <video
+          id="video-player"
+          autoPlay
+          muted
+          loop
+          style={{
+            borderRadius: "10px",
+          }}
+          playsInline
+          src={video}
+        >
+          <source type="video/mp4" src={video} />
+        </video>
+      )}
     </Wrapper>
   );
 };

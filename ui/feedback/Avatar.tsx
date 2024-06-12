@@ -1,7 +1,6 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 interface Props {
   height?: number;
@@ -16,12 +15,7 @@ const variants = {
   exit: { opacity: 0 },
 };
 
-const Avatar: React.FC<Props> = ({
-  height = 400,
-  width = 200,
-  scale,
-  rounded,
-}) => {
+const Avatar: React.FC<Props> = ({ height = 400, width = 200, scale, rounded }) => {
   const BoxM = motion(Box);
 
   return (
@@ -38,12 +32,14 @@ const Avatar: React.FC<Props> = ({
       variants={variants}
       w={width}
     >
-      <Image
+      <img
         alt="Foto de Jhon"
-        layout="fill"
-        objectFit="cover"
-        objectPosition={"left"}
         src="/profile.jpg"
+        style={{
+          height: "100%",
+          objectFit: "cover",
+          width: "100%",
+        }}
       />
     </BoxM>
   );

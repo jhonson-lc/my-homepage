@@ -1,10 +1,4 @@
-import {
-  BsGithub,
-  BsInstagram,
-  BsFacebook,
-  BsTwitter,
-  BsLinkedin,
-} from "react-icons/bs";
+import { BsGithub, BsInstagram, BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
 
 import { LinkNav } from "./types";
 
@@ -42,7 +36,6 @@ export const SOCIAL_MEDIAS: LinkNav[] = [
 export const LINKS_NAV: LinkNav[] = [
   { href: "/", text: "Home" },
   { href: "/work", text: "Work" },
-  { href: "/blog", text: "Blog" },
   { href: "/contact", text: "Contact" },
   {
     href: "https://github.com/jhonson-lc",

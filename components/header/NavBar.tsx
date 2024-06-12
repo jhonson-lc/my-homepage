@@ -1,10 +1,7 @@
-import { Avatar, Box, Container, Stack } from "@chakra-ui/react";
+import { Box, Container, Stack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
-import Button from "components/Button";
 import React from "react";
-import { useSession } from "next-auth/react";
-import Link from "next/link";
 
 import Logo from "../../ui/static/Logo";
 import ThemeButton from "../../ui/structure/theme-button";
@@ -15,13 +12,6 @@ import LinkItem from "./LinkItem";
 
 const Navbar: React.FC = () => {
   const { pathname } = useRouter();
-  const { data: session, status } = useSession();
-
-  if (session) {
-    if (status === "unauthenticated") {
-      return;
-    }
-  }
 
   return (
     <Box
@@ -67,37 +57,7 @@ const Navbar: React.FC = () => {
           <Box display={{ base: "none", lg: "flex" }}>
             <ThemeButton size={24} />
           </Box>
-          <Box display={{ base: "none", lg: "block" }}>
-            <Button
-              bg="transparent"
-              color="primary"
-              href="/curriculum-vitae"
-              text="CV"
-              x={3}
-              y={6}
-            />
-          </Box>
-          <Box display={{ base: "block", lg: "none" }}>
-            <Button
-              bg="transparent"
-              color="primary"
-              href="https://drive.google.com/uc?id=1mcfrMQP5Vhby9i_3xnNvA8h_sTCW7N6B&export=download"
-              text="CV"
-              x={3}
-              y={6}
-            />
-          </Box>
           <MenuMobile path={pathname} />
-          {session && (
-            <Link href="/profile">
-              <Avatar
-                border="1px solid white"
-                cursor="pointer"
-                size="md"
-                src={session.user.image}
-              />
-            </Link>
-          )}
         </Stack>
       </Container>
     </Box>

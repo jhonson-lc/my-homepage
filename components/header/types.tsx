@@ -10,4 +10,5 @@ export interface LinkNav {
   font?: { size: any; weight: any };
   color?: string;
   name?: string;
+  children?: React.ReactNode;
 }

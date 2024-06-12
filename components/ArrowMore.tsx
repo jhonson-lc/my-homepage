@@ -11,16 +11,11 @@ interface Props {
   arrow?: boolean;
 }
 
-const ArrowMore: React.FC<Props> = ({
-  text,
-  href,
-  arrow,
-  direction = "column",
-}) => {
+const ArrowMore: React.FC<Props> = ({ text, href, arrow, direction = "column" }) => {
   const Circle = motion(Box);
   const c = useColorModeValue("black", "white");
   return (
-    <NextLink passHref href={href}>
+    <NextLink legacyBehavior href={href}>
       <Stack
         alignItems="center"
         flexDirection={direction}

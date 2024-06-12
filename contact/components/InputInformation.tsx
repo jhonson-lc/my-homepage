@@ -3,6 +3,7 @@ import { Button } from "@chakra-ui/react";
 
 interface Props {
   icon: any;
+  children: React.ReactNode;
 }
 
 const InputInformation: React.FC<Props> = ({ icon, children }) => {

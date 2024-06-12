@@ -10,15 +10,10 @@ interface Props {
   desc?: string;
   labelB?: string;
   hrefB?: string;
+  children: React.ReactNode;
 }
 
-const Section: React.FC<Props> = ({
-  title,
-  subtitle,
-  children,
-  labelB,
-  hrefB,
-}) => {
+const Section: React.FC<Props> = ({ title, subtitle, children, labelB, hrefB }) => {
   const StackM = motion(Stack);
 
   return (
@@ -37,14 +32,7 @@ const Section: React.FC<Props> = ({
           >
             {title}
           </Heading>
-          {hrefB && (
-            <ArrowMore
-              arrow={true}
-              direction="row"
-              href={hrefB}
-              text={labelB}
-            />
-          )}
+          {hrefB && <ArrowMore arrow={true} direction="row" href={hrefB} text={labelB || ""} />}
         </Stack>
         {subtitle && (
           <Heading
