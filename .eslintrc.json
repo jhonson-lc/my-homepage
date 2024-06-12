@@ -19,7 +19,6 @@
     },
     "plugins": [
         "react",
-        "prettier",
         "import",
         "@typescript-eslint"
     ],
@@ -28,19 +27,6 @@
       "react/prop-types":"off",
       "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
       "react/react-in-jsx-scope":"off",
-      "prettier/prettier": [
-        "error",
-        {
-          "printWidth": 80,
-          "trailingComma": "all",
-          "tabWidth": 2,
-          "semi": true,
-          "singleQuote": false,
-          "bracketSpacing": true,
-          "arrowParens": "always",
-          "endOfLine": "auto"
-        }
-      ],
       "import/order": ["warn", {"newlines-between": "always"}],
       "react/self-closing-comp": "warn",
       "react-hooks/rules-of-hooks": "warn",
