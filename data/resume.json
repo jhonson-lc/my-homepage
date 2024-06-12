@@ -1,40 +1,53 @@
 {
-    "basics": {
-      "name": "Jhon Lescano",
-      "label": "Ingeniero en Software",
-      "image": "",
-      "email": "jhoncisneros11@gmail.com",
-      "phone": "+593 098 165 7629",
-      "website": "https://mejhon.dev",
-      "summary": "Soy ingeniero de software (en proceso) y desarrollador fullstack, versátil y productivo en el aprendizaje de nuevas tecnologías, combinando las mejores prácticas y funcionalidades con las últimas innovaciones en desarrollo web. Todos los proyectos están en mi portafolio.",
-      "location": {
-        "address": " Quito, Ecuador",
-        "postalCode": "171010",
-        "city": "Quito",
-        "countryCode": "EC",
-        "region": "Pichincha"
+  "basics": {
+    "name": "Jhon Lescano",
+    "label": "Ingeniero en Software",
+    "image": "",
+    "email": "jhoncisneros11@gmail.com",
+    "phone": "+593 098 165 7629",
+    "website": "https://mejhon.dev",
+    "summary": "Soy ingeniero de software (en proceso) y desarrollador fullstack, versátil y productivo en el aprendizaje de nuevas tecnologías, combinando las mejores prácticas y funcionalidades con las últimas innovaciones en desarrollo web. Todos los proyectos están en mi portafolio.",
+    "location": {
+      "address": " Quito, Ecuador",
+      "postalCode": "171010",
+      "city": "Quito",
+      "countryCode": "EC",
+      "region": "Pichincha"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/jhonlescano/"
       },
-      "profiles": [{
-        "network": "Twitter",
+      {
+        "network": "GitHub",
+        "url": "https://github.com/jhonson-lc"
+      },
+      {
+        "network": "X",
         "username": "jhonson-lc",
         "url": "https://twitter.com/jhonson-lc"
-      }]
-    },
-    "work": [{
+      },
+      {
+        "network": "Instagram",
+        "url": "https://www.instagram.com/jhonnalex08/"
+      }
+    ]
+  },
+  "work": [
+    {
       "company": "Spaciart Ecuador",
       "position": "Desarrollador Frontend",
-      "website":"https://muebles-spaciartecuador.com",
+      "website": "https://muebles-spaciartecuador.com",
       "startDate": "03-08-2021",
       "endDate": "Presente",
       "summary": "Desarrollo de su aplicación web, con el objetivo de que los clientes puedan comprar sus productos.",
-      "highlights": [
-        "Rediseño de su sitio web",
-        "Mantenimiento de su sitio web"
-      ]
-    },{
+      "highlights": ["Rediseño de su sitio web", "Mantenimiento de su sitio web"]
+    },
+    {
       "company": "Complejo turístico El Rincón del Cuy",
       "position": "Desarrollador Frontend",
-      "website":"https://web-rincon-del-cuy.vercel.app/",
+      "website": "https://web-rincon-del-cuy.vercel.app/",
       "startDate": "06-03-2022",
       "endDate": "Presente",
       "summary": "Desarrollo de su aplicación web, con el objetivo de que los clientes puedan conocer todos los servicios que ofrece el complejo.",
@@ -43,19 +56,21 @@
         "Botón de reserva con un formulario completo",
         "Mantenimiento de su sitio web"
       ]
-    }],
-    "volunteer": [{
+    }
+  ],
+  "volunteer": [
+    {
       "organization": "Organization",
       "position": "Volunteer",
       "url": "https://organization.com/",
       "startDate": "2012-01-01",
       "endDate": "2013-01-01",
       "summary": "Description…",
-      "highlights": [
-        "Awarded 'Volunteer of the Month'"
-      ]
-    }],
-    "education": [{
+      "highlights": ["Awarded 'Volunteer of the Month'"]
+    }
+  ],
+  "education": [
+    {
       "institution": "Universidad Técnica de Ambato",
       "url": "https://uta.edu.ec/",
       "area": "Ingeniería en Software (en proceso)",
@@ -63,179 +78,177 @@
       "startDate": "05-08-2020",
       "endDate": "Presente",
       "score": "4.0",
-      "courses": [
-        "DB1101 - Basic SQL"
-      ]
-    }],
-    "awards": [{
+      "courses": ["DB1101 - Basic SQL"]
+    }
+  ],
+  "awards": [
+    {
       "title": "Award",
       "date": "2014-11-01",
       "awarder": "Company",
       "summary": "There is no spoon."
-    }],
-    "certificates": [{
+    }
+  ],
+  "certificates": [
+    {
       "name": "Certificate",
       "date": "2021-11-07",
       "issuer": "Company",
       "url": "https://certificate.com"
-    }],
-    "publications": [{
+    }
+  ],
+  "publications": [
+    {
       "name": "Publication",
       "publisher": "Company",
       "releaseDate": "2014-10-01",
       "url": "https://publication.com",
       "summary": "Description…"
-    }],
-   "programmingLanguages":["Java","TypeScript","PHP","JavaScript"],
-    "skills": [{
+    }
+  ],
+  "programmingLanguages": ["Java", "TypeScript", "PHP", "JavaScript"],
+  "skills": [
+    {
       "name": "Next.js",
       "level": "Master",
-      "keywords": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ]
-    },{
-      "name":"React.js"
-    },{
-      "name":"Chakra UI"
-    },{
-      "name":"HTML5"
-    },{
-      "name":"CSS3"
-    },{
-      "name":"Fastify.js"
-    },{
-      "name":"Prisma ORM"
-    },{
-      "name":"MySQL"
-    },{
-      "name":"SQL Server"
-    },{
-      "name":"Oracle Server"
-    },{
-      "name":"Sanity CMS"
-    },{
-      "name":"Scrum"
-    },{
-      "name":"Git / Github"
-    },{
-      "name":"Jira"
-    },{
-      "name":"Linux"
-    }],
-    "languages": [{
+      "keywords": ["HTML", "CSS", "JavaScript"]
+    },
+    {
+      "name": "React.js"
+    },
+    {
+      "name": "Chakra UI"
+    },
+    {
+      "name": "HTML5"
+    },
+    {
+      "name": "CSS3"
+    },
+    {
+      "name": "Fastify.js"
+    },
+    {
+      "name": "Prisma ORM"
+    },
+    {
+      "name": "MySQL"
+    },
+    {
+      "name": "SQL Server"
+    },
+    {
+      "name": "Oracle Server"
+    },
+    {
+      "name": "Sanity CMS"
+    },
+    {
+      "name": "Scrum"
+    },
+    {
+      "name": "Git / Github"
+    },
+    {
+      "name": "Jira"
+    },
+    {
+      "name": "Linux"
+    }
+  ],
+  "languages": [
+    {
       "language": "Español",
       "fluency": "Nativo",
-      "points":5
-    },{
+      "points": 5
+    },
+    {
       "language": "Inglés",
       "fluency": "Intermedio",
-      "points":3
-    }],
-    "interests": [{
+      "points": 3
+    }
+  ],
+  "interests": [
+    {
       "name": "Trabajo en equipo",
-      "keywords": [
-        "Ferrets",
-        "Unicorns"
-      ]
-    },{
+      "keywords": ["Ferrets", "Unicorns"]
+    },
+    {
       "name": "Responsable",
-      "keywords": [
-        "Ferrets",
-        "Unicorns"
-      ]
-    },{
+      "keywords": ["Ferrets", "Unicorns"]
+    },
+    {
       "name": "Proactivo",
-      "keywords": [
-        "Ferrets",
-        "Unicorns"
-      ]
-    },{
+      "keywords": ["Ferrets", "Unicorns"]
+    },
+    {
       "name": "Autodidacta",
-      "keywords": [
-        "Ferrets",
-        "Unicorns"
-      ]
-    },{
+      "keywords": ["Ferrets", "Unicorns"]
+    },
+    {
       "name": "Colaborador",
-      "keywords": [
-        "Ferrets",
-        "Unicorns"
-      ]
-    },{
+      "keywords": ["Ferrets", "Unicorns"]
+    },
+    {
       "name": "Capacidad de comunicación efectiva y liderazgo",
-      "keywords": [
-        "Ferrets",
-        "Unicorns"
-      ]
-    },{
+      "keywords": ["Ferrets", "Unicorns"]
+    },
+    {
       "name": "Aplicar metodologías ágiles(SCRUM)",
-      "keywords": [
-        "Ferrets",
-        "Unicorns"
-      ]
-    }],
-    "references": [{
+      "keywords": ["Ferrets", "Unicorns"]
+    }
+  ],
+  "references": [
+    {
       "name": "Jane Doe",
       "reference": "Reference…"
-    }],
-    "projects": [{
+    }
+  ],
+  "projects": [
+    {
       "heading": "WorkSearch - Sistema de empleos",
       "summary": "El presente proyecto busca ayudar a personas que se encuentran en estado de desempleo, brindándoles una forma de encontrar alguna actividad remunerada.",
-      "highlights": [
-        "Metodología aplicada Scrum",
-        "Integración de autenticación con Next Auth"
-      ],
-      "keywords": [
-        "HTML"
-      ],
+      "highlights": ["Metodología aplicada Scrum", "Integración de autenticación con Next Auth"],
+      "keywords": ["HTML"],
       "startDate": "2022-06-24",
       "endDate": "2021-08-24",
       "url": "https://sistema-empleos.vercel.app/",
-      "roles": [
-        "Desarrollador web"
-      ],
+      "roles": ["Desarrollador web"],
       "entity": "Entity",
       "type": "application"
-    },{
+    },
+    {
       "heading": "CRUD Login PHP - Estudiantes",
-      "summary":"Este proyecto es una aplicación web que permite la creación, lectura, actualización y eliminación de estudiantes mediante la autenticación de un usuario con una base de datos MySQL.",
+      "summary": "Este proyecto es una aplicación web que permite la creación, lectura, actualización y eliminación de estudiantes mediante la autenticación de un usuario con una base de datos MySQL.",
       "highlights": [
         "Arquitectura MVC",
         "Control para inyección de SQL",
         "Integración de autenticación con SESSION",
         "Interfaz mediante roles"
       ],
-      "keywords": [
-        "HTML"
-      ],
+      "keywords": ["HTML"],
       "startDate": "2022-06-24",
       "endDate": "2021-08-24",
       "url": "https://crudylogin-php.herokuapp.com/",
-      "roles": [
-        "Desarrollador web"
-      ],
+      "roles": ["Desarrollador web"],
       "entity": "Entity",
       "type": "application"
-    },{
+    },
+    {
       "heading": "Registro de asistencia docente",
-      "summary":"Este proyecto es una aplicación de escritorio que permite el registro de asistencia de docentes a clases de una institución educativa.",
+      "summary": "Este proyecto es una aplicación de escritorio que permite el registro de asistencia de docentes a clases de una institución educativa.",
       "highlights": [
         "Autenticación mediante usuarios en la base de datos",
         "La fecha y hora toma del sistema",
         "Genera un reporte de asistencia diaria"
       ],
-      "keywords": [
-        "HTML"
-      ],
+      "keywords": ["HTML"],
       "startDate": "2022-06-24",
       "endDate": "2021-08-24",
       "url": "https://sistema-empleos.vercel.app/",
-      "roles": [
-        "Desarrollador web"
-      ],
+      "roles": ["Desarrollador web"],
       "entity": "Entity",
       "type": "application"
-    }]
-  }
+    }
+  ]
+}
