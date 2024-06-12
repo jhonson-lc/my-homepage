@@ -18,12 +18,7 @@ import jsPDF, { jsPDFOptions } from "jspdf";
 import html2canvas from "html2canvas";
 
 import styles from "../styles/StarRating.module.css";
-import {
-  WorkType,
-  EducationType,
-  NaturalLanguageType,
-  ProjectType,
-} from "../app/types";
+import { WorkType, EducationType, NaturalLanguageType, ProjectType } from "../app/types";
 import data from "../data/resume.json";
 import { H3, H4, TimeSpan } from "../components/Resume";
 
@@ -48,7 +43,7 @@ const Curriculum: NextPage = () => {
 
   const createPDF = async () => {
     const pdf = new jsPDF(options);
-    const data = await html2canvas(document.querySelector("#curriculum-vitae"));
+    const data = await html2canvas(document.querySelector("#curriculum-vitae") as HTMLElement);
     const img = data.toDataURL("image/png");
     const imgProperties = pdf.getImageProperties(img);
     const pdfWidth = pdf.internal.pageSize.getWidth();
@@ -71,12 +66,7 @@ const Curriculum: NextPage = () => {
             <Heading as="h2" fontSize="4xl" letterSpacing="wider">
               {name}
             </Heading>
-            <Flex
-              alignItems="center"
-              flexWrap="wrap"
-              justifyContent="space-between"
-              marginY="3"
-            >
+            <Flex alignItems="center" flexWrap="wrap" justifyContent="space-between" marginY="3">
               <Box flex="1 1 auto">
                 <Text fontWeight="semibold">
                   <EmailIcon color="#992214" /> {email}
@@ -109,28 +99,19 @@ const Curriculum: NextPage = () => {
               <Box>
                 <H3 content="Experiencia" />
                 <Divider py={2} />
-                {works.map(
-                  ({
-                    company,
-                    position,
-                    startDate,
-                    endDate,
-                    summary,
-                    highlights,
-                  }) => (
-                    <Stack key={company}>
-                      <H4 content={company} />
-                      <Text fontSize="md">{position}</Text>
-                      <TimeSpan endDate={endDate} startDate={startDate} />
-                      <Text marginY="3">{summary}</Text>
-                      {highlights.map((highlight) => (
-                        <Text key={highlight} fontSize="sm">
-                          - {highlight}
-                        </Text>
-                      ))}
-                    </Stack>
-                  ),
-                )}
+                {works.map(({ company, position, startDate, endDate, summary, highlights }) => (
+                  <Stack key={company}>
+                    <H4 content={company} />
+                    <Text fontSize="md">{position}</Text>
+                    <TimeSpan endDate={endDate} startDate={startDate} />
+                    <Text marginY="3">{summary}</Text>
+                    {highlights.map((highlight) => (
+                      <Text key={highlight} fontSize="sm">
+                        - {highlight}
+                      </Text>
+                    ))}
+                  </Stack>
+                ))}
               </Box>
               <Box>
                 <H3 content="Formación académica" />

@@ -3,11 +3,7 @@ import { Stack, Text, Link, Image } from "@chakra-ui/react";
 import { GetStaticProps, GetStaticPaths } from "next";
 
 import Layout from "../../app/layouts/Layout";
-import {
-  TitleNavigation,
-  ParameterWork,
-  BuildWork,
-} from "../../work/components/Work";
+import { TitleNavigation, ParameterWork, BuildWork } from "../../work/components/Work";
 import { Work } from "../../work/types";
 import api from "../../work/resources";
 
@@ -36,8 +32,7 @@ const SingleWork: React.FC<Props> = ({ work }) => {
         </ParameterWork>
         <ParameterWork title="Platform">
           <Text color="paragraph" fontSize={14}>
-            {work.platform &&
-              work.platform.reduce((text, item) => text.concat(`${item}/`), ``)}
+            {work.platform && work.platform.reduce((text, item) => text.concat(`${item}/`), ``)}
           </Text>
         </ParameterWork>
         <ParameterWork title="Site URL">
@@ -52,7 +47,23 @@ const SingleWork: React.FC<Props> = ({ work }) => {
         </ParameterWork>
         <ParameterWork title="Screenshot">
           <Stack spacing={10}>
-            <Image alt={work.title} src={work.thumbnail} />
+            {work.thumbnail ? (
+              <Image alt={work.title} src={work.thumbnail} />
+            ) : (
+              <video
+                id="video-player"
+                autoPlay
+                muted
+                loop
+                style={{
+                  borderRadius: "10px",
+                }}
+                playsInline
+                src={work.video}
+              >
+                <source type="video/mp4" src={work.video} />
+              </video>
+            )}
           </Stack>
         </ParameterWork>
       </Stack>
@@ -62,7 +73,7 @@ const SingleWork: React.FC<Props> = ({ work }) => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { works } = api.list();
-  const work = works.find((work) => work.id === params.id);
+  const work = works.find((work) => work.id === params?.id);
 
   return {
     props: {

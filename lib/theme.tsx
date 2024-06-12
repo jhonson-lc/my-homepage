@@ -1,5 +1,4 @@
 import { extendTheme } from "@chakra-ui/react";
-import { mode } from "@chakra-ui/theme-tools";
 
 export default extendTheme({
   fonts: {
@@ -8,7 +7,7 @@ export default extendTheme({
   styles: {
     global: (props: any) => ({
       body: {
-        bg: mode("#fafafa", "#161616")(props),
+        bg: props.colorMode === "light" ? "#fafafa" : "#161616",
       },
     }),
   },
@@ -25,6 +24,10 @@ export default extendTheme({
       primary: {
         default: "blackAlpha.900",
         _dark: "whiteAlpha.900",
+      },
+      experience: {
+        default: "blackAlpha.800",
+        _dark: "whiteAlpha.800",
       },
       hover: {
         default: "blackAlpha.50",
@@ -49,6 +52,10 @@ export default extendTheme({
       badge: {
         default: "teal",
         _dark: "cyan",
+      },
+      icon: {
+        default: "blackAlpha.200",
+        _dark: "whiteAlpha.300",
       },
     },
   },
@@ -89,7 +96,7 @@ export default extendTheme({
     },
     Link: {
       baseStyle: (props: any) => ({
-        color: mode("#3d7aed", "#bb86fc")(props),
+        color: props.colorMode === "light" ? "#3d7aed" : "#bb86fc",
         _hover: { textDecoration: "none" },
       }),
     },
@@ -104,7 +111,7 @@ export default extendTheme({
     },
   },
   config: {
-    initialColorMode: "dark",
+    initialColorMode: "light",
     useSystemColorMode: false,
   },
 });
