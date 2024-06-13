@@ -57,6 +57,10 @@ export default extendTheme({
         default: "blackAlpha.200",
         _dark: "whiteAlpha.300",
       },
+      effect: {
+        default: "#fafafa",
+        _dark: "#161616",
+      },
     },
   },
   components: {
