@@ -36,7 +36,7 @@ export default function Component() {
           const startYear = new Date(startDate).getFullYear();
           const endYear = endDate != null ? new Date(endDate).getFullYear() : "Actual";
           return (
-            <Stack spacing={2}>
+            <Stack spacing={2} key={name}>
               <Heading fontWeight={500} color={"primary"} fontSize={"md"}>
                 {name}
               </Heading>

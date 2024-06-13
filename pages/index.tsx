@@ -135,6 +135,7 @@ const IndexPage: NextPage = () => {
                   return (
                     <Link
                       href={url}
+                      key={url}
                       title={`Visitar el perfil de ${name} en ${network}`}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -161,12 +162,15 @@ const IndexPage: NextPage = () => {
               </Box>
             </Stack>
             <Paragraph>
-              Building innovative software, shaping the digital world through quality software.
+              <div className="paragraph-home">
+                Building innovative software, shaping the digital world through quality software.
+              </div>
             </Paragraph>
             <Stack
               alignItems={{ base: "center", md: "end" }}
               flexDirection={{ base: "column", md: "row" }}
               gap={6}
+              pt={6}
             >
               <Button href="/contact" text="Send email" />
             </Stack>

@@ -8,6 +8,7 @@ const InstagramIcon: React.FC<BoxProps> = ({ ...props }) => {
         height="100%"
         viewBox="0 0 24 24"
         width="100%"
+        fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path d="M17 2a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5h10m0-2H7a7 7 0 00-7 7v10a7 7 0 007 7h10a7 7 0 007-7V7a7 7 0 00-7-7z" />
