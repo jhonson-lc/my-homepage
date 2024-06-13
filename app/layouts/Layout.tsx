@@ -38,13 +38,12 @@ const Layout = ({ children, ...customMeta }) => {
           <meta content={meta.title} name="twitter:title" />
           <meta content={meta.description} name="twitter:description" />
           <meta content={meta.image} property="twitter:image" />
-          {meta.date && (
-            <meta content={meta.date} property="article:published_time" />
-          )}
+          {meta.date && <meta content={meta.date} property="article:published_time" />}
         </Head>
+        <script type="module" src="/cursor.js"></script>
         <Box as="main" pt={10}>
           <NavBar />
-          <Container maxW="container.lg" pt={20}>
+          <Container maxW="container.lg" pt={12}>
             {children}
           </Container>
           <Footer />

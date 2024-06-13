@@ -1,6 +1,6 @@
 :root {
-  --font-sans: 'Inter', --apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
-    Droid Sans, Helvetica Neue, sans-serif;
+  --font-sans: "Inter", --apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --app-bg: var(--gray1);
   --cmdk-shadow: 0 16px 70px rgb(0 0 0 / 20%);
 
@@ -94,7 +94,7 @@
 }
 
 .vercel {
-  [cmdk-overlay]{
+  [cmdk-overlay] {
     position: fixed;
     top: 0;
     left: 0;
@@ -164,7 +164,7 @@
     font-weight: 500;
   }
 
-  [cmdk-vercel-esc]{
+  [cmdk-vercel-esc] {
     position: absolute;
     top: 8px;
     right: 8px;
@@ -201,12 +201,12 @@
     transition: all 150ms ease;
     transition-property: none;
 
-    &[data-selected='true'] {
+    &[data-selected="true"] {
       background: var(--grayA3);
       color: var(--gray12);
     }
 
-    &[data-disabled='true'] {
+    &[data-disabled="true"] {
       color: var(--gray8);
       cursor: not-allowed;
     }
@@ -286,4 +286,91 @@
     white-space: pre-wrap;
     color: var(--gray11);
   }
+}
+
+body {
+  position: relative;
+}
+
+body:hover {
+  --active: 1;
+}
+
+body:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
+    hsl(0 0% 30% / 0.15),
+    transparent 40vmin
+  );
+  background-attachment: fixed;
+  opacity: var(--active, 0);
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+body:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
+      hsl(0 0% 30% / 0.15),
+      transparent 40vmin
+    ),
+    transparent;
+  background-attachment: fixed;
+  pointer-events: none;
+  mask:
+    linear-gradient(white, white) 50% 0 / 100% 4px no-repeat,
+    linear-gradient(white, white) 50% 100% / 100% 4px no-repeat,
+    linear-gradient(white, white) 0 50% / 4px 100% no-repeat,
+    linear-gradient(white, white) 100% 50% / 4px 100% no-repeat;
+}
+
+.paragraph-home:hover {
+  color: var(--gray1);
+  transition: color 0.3s ease;
+}
+
+.item-work {
+  position: relative;
+}
+
+.item-work:hover {
+  --active-item: 1;
+}
+
+.item-work:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-attachment: fixed;
+  opacity: var(--active-item, 0);
+  transition: opacity 0.2s;
+  pointer-events: none;
+  border-radius: inherit;
+  width: 99%;
+  height: 99%;
+  top: 0.5%;
+  left: 0.5%;
+  z-index: -1;
+}
+
+.item-work:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
+      hsl(0 0% 100% / 0.5),
+      transparent 15vmin
+    ),
+    transparent;
+  background-attachment: fixed;
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: -1;
 }

@@ -28,6 +28,7 @@ const ItemWork: React.FC<Props> = ({ work, i }) => {
   return (
     <StackM
       animate="enter"
+      className="item-work"
       as="article"
       backdropBlur={8}
       backdropFilter="auto"
@@ -42,6 +43,9 @@ const ItemWork: React.FC<Props> = ({ work, i }) => {
       transition={{ duration: 0.5, delay: i * 0.3 }}
       variants={variants}
       w="100%"
+      _after={{
+        background: "effect",
+      }}
     >
       <Stack gap={2} spacing={0}>
         <WorkImage thumbnail={work.thumbnail} title={work.title} video={work.video} />
