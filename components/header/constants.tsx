@@ -1,6 +1,7 @@
-import { BsGithub, BsInstagram, BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
+import { BsInstagram, BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
 
 import { LinkNav } from "./types";
+import { CvIcon } from "components/CommandMenu";
 
 export const SOCIAL_MEDIAS: LinkNav[] = [
   {
@@ -38,8 +39,8 @@ export const LINKS_NAV: LinkNav[] = [
   { href: "/work", text: "Work" },
   { href: "/contact", text: "Contact" },
   {
-    href: "https://github.com/jhonson-lc",
-    text: "Source",
-    icon: BsGithub,
+    href: "/curriculum-vitae",
+    text: "Resume",
+    icon: CvIcon,
   },
 ];

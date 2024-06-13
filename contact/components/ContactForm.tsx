@@ -132,7 +132,15 @@ export default function ContactForm() {
             onChange={(e) => handleChange(e)}
           />
         </FormControl>
-        <Button colorScheme="blue" type="submit" width="full">
+        <Button
+          bg="primary"
+          color="background"
+          type="submit"
+          width="full"
+          _hover={{
+            bg: "experience",
+          }}
+        >
           Submit
         </Button>
       </form>
