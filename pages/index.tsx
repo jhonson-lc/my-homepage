@@ -162,9 +162,15 @@ const IndexPage: NextPage = () => {
               </Box>
             </Stack>
             <Paragraph>
-              <div className="paragraph-home">
+              <Text
+                className="paragraph-home"
+                color="paragraph"
+                _hover={{
+                  color: "heading",
+                }}
+              >
                 Building innovative software, shaping the digital world through quality software.
-              </div>
+              </Text>
             </Paragraph>
             <Stack
               alignItems={{ base: "center", md: "end" }}
