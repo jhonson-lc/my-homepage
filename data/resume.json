@@ -5,8 +5,8 @@
     "image": "",
     "email": "jhoncisneros11@gmail.com",
     "phone": "+593 098 165 7629",
-    "website": "https://mejhon.dev",
-    "summary": "Soy ingeniero de software (en proceso) y desarrollador fullstack, versátil y productivo en el aprendizaje de nuevas tecnologías, combinando las mejores prácticas y funcionalidades con las últimas innovaciones en desarrollo web. Todos los proyectos están en mi portafolio.",
+    "website": "https://jhon.vercel.app",
+    "summary": "Soy ingeniero de software y desarrollador fullstack, versátil y productivo en el aprendizaje de nuevas tecnologías, combinando las mejores prácticas y funcionalidades con las últimas innovaciones en desarrollo web. Todos los proyectos están en mi portafolio.",
     "location": {
       "address": " Quito, Ecuador",
       "postalCode": "171010",
@@ -73,7 +73,7 @@
     {
       "institution": "Universidad Técnica de Ambato",
       "url": "https://uta.edu.ec/",
-      "area": "Ingeniería en Software (en proceso)",
+      "area": "Ingeniería en Software",
       "studyType": "Bachelor",
       "startDate": "05-08-2020",
       "endDate": "Presente",
@@ -206,6 +206,23 @@
   ],
   "projects": [
     {
+      "heading": "TorneoPro - Sistema de torneos",
+      "summary": "El presente proyecto busca ayudar a personas que desean organizar torneos de cualquier deporte, brindándoles una forma de gestionar los equipos y los partidos.",
+      "highlights": [
+        "Modelo de negocio SaaS",
+        "Integración de pagos con LemonSqueeze",
+        "Integración de autenticación con Next Auth",
+        "Uso de webhooks para actualización en tiempo real"
+      ],
+      "keywords": ["HTML"],
+      "startDate": "2022-06-24",
+      "endDate": "2021-08-24",
+      "url": "https://sistema-empleos.vercel.app/",
+      "roles": ["Desarrollador web"],
+      "entity": "Entity",
+      "type": "application"
+    },
+    {
       "heading": "WorkSearch - Sistema de empleos",
       "summary": "El presente proyecto busca ayudar a personas que se encuentran en estado de desempleo, brindándoles una forma de encontrar alguna actividad remunerada.",
       "highlights": ["Metodología aplicada Scrum", "Integración de autenticación con Next Auth"],
@@ -230,22 +247,6 @@
       "startDate": "2022-06-24",
       "endDate": "2021-08-24",
       "url": "https://crudylogin-php.herokuapp.com/",
-      "roles": ["Desarrollador web"],
-      "entity": "Entity",
-      "type": "application"
-    },
-    {
-      "heading": "Registro de asistencia docente",
-      "summary": "Este proyecto es una aplicación de escritorio que permite el registro de asistencia de docentes a clases de una institución educativa.",
-      "highlights": [
-        "Autenticación mediante usuarios en la base de datos",
-        "La fecha y hora toma del sistema",
-        "Genera un reporte de asistencia diaria"
-      ],
-      "keywords": ["HTML"],
-      "startDate": "2022-06-24",
-      "endDate": "2021-08-24",
-      "url": "https://sistema-empleos.vercel.app/",
       "roles": ["Desarrollador web"],
       "entity": "Entity",
       "type": "application"

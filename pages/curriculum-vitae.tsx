@@ -8,6 +8,7 @@ import {
   HStack,
   Center,
   SimpleGrid,
+  Image,
 } from "@chakra-ui/react";
 import { AtSignIcon, EmailIcon, PhoneIcon, LinkIcon } from "@chakra-ui/icons";
 import StarRating from "react-svg-star-rating";
@@ -48,7 +49,7 @@ const Curriculum: NextPage = () => {
     const imgProperties = pdf.getImageProperties(img);
     const pdfWidth = pdf.internal.pageSize.getWidth();
     const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
-    pdf.addImage(img, "PNG", 0, 0, pdfWidth, pdfHeight - 75);
+    pdf.addImage(img, "PNG", 0, 0, pdfWidth, pdfHeight - 150);
     pdf.save("curriculum-Lescano-Jhon.pdf");
   };
 
@@ -62,35 +63,38 @@ const Curriculum: NextPage = () => {
       </Center>
       <Center display={{ base: "none", lg: "flex" }} id="curriculum-vitae">
         <Stack bg="#ffffff" color="#000000" m={4} p={12} width="866px">
-          <header>
-            <Heading as="h2" fontSize="4xl" letterSpacing="wider">
-              {name}
-            </Heading>
-            <Flex alignItems="center" flexWrap="wrap" justifyContent="space-between" marginY="3">
-              <Box flex="1 1 auto">
-                <Text fontWeight="semibold">
-                  <EmailIcon color="#992214" /> {email}
-                </Text>
-              </Box>
-              <Box flex="1 1 auto">
-                <Text fontWeight="semibold">
-                  <PhoneIcon color="#992214" /> {phone}
-                </Text>
-              </Box>
-              <Box flex="1 1 auto">
-                <Text fontWeight="semibold">
-                  <LinkIcon color="#992214" /> {website}
-                </Text>
-              </Box>
-              <Box flex="1 1 auto">
-                <Text fontWeight="semibold">
-                  <AtSignIcon color="#992214" />
-                  {address}
-                </Text>
-              </Box>
-            </Flex>
-          </header>
-          <Box marginY="7">
+          <Stack as={"header"} gap={4} display={"flex"} flexDir={"row"} justifyContent={"center"}>
+            <Image w={24} h={24} src="/photo.jpg" alt="Jhon Lescano" objectFit={"cover"} />
+            <div>
+              <Heading as="h2" fontSize="2xl" letterSpacing="wider">
+                {name}
+              </Heading>
+              <Flex alignItems="center" flexWrap="wrap" justifyContent="space-between" marginY="3">
+                <Box flex="1 1 auto">
+                  <Text fontWeight="semibold">
+                    <EmailIcon color="#992214" /> {email}
+                  </Text>
+                </Box>
+                <Box flex="1 1 auto">
+                  <Text fontWeight="semibold">
+                    <PhoneIcon color="#992214" /> {phone}
+                  </Text>
+                </Box>
+                <Box flex="1 1 auto">
+                  <Text fontWeight="semibold">
+                    <LinkIcon color="#992214" /> {website}
+                  </Text>
+                </Box>
+                <Box flex="1 1 auto">
+                  <Text fontWeight="semibold">
+                    <AtSignIcon color="#992214" />
+                    {address}
+                  </Text>
+                </Box>
+              </Flex>
+            </div>
+          </Stack>
+          <Box marginY="4">
             <H3 content="Resumen" />
             <Text py={2}>{summary}</Text>
           </Box>
