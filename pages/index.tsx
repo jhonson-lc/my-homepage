@@ -19,6 +19,7 @@ import WorldMap from "ui/icons/WorldMap";
 import { SocialIcon } from "work/types";
 import { GitHubIcon as GitHub, LinkedInIcon as LinkedIn, XIcon as X } from "components/CommandMenu";
 import InstagramIcon from "ui/icons/Instagram";
+import Certification from "work/sections/Certification";
 
 const Instagram = InstagramIcon;
 
@@ -189,6 +190,10 @@ const IndexPage: NextPage = () => {
         <Section title="Experience">
           <div id="experience" />
           <Experience />
+        </Section>
+        <Section title="Certifications">
+          <div id="certifications" />
+          <Certification />
         </Section>
         <Section hrefB="/work" labelB="VIEW ALL" title="Latest Projects">
           <div id="projects" />

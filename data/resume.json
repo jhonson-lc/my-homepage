@@ -1,16 +1,16 @@
 {
   "basics": {
-    "name": "Jhon Lescano",
+    "name": "JHON ALEXANDER LESCANO CISNEROS",
     "label": "Ingeniero en Software",
     "image": "",
     "email": "jhoncisneros11@gmail.com",
     "phone": "+593 098 165 7629",
-    "website": "https://mejhon.dev",
-    "summary": "Soy ingeniero de software (en proceso) y desarrollador fullstack, versátil y productivo en el aprendizaje de nuevas tecnologías, combinando las mejores prácticas y funcionalidades con las últimas innovaciones en desarrollo web. Todos los proyectos están en mi portafolio.",
+    "website": "https://jhon.vercel.app",
+    "summary": "Ingeniero de software y desarrollador fullstack con amplia experiencia en la creación de soluciones web innovadoras y escalables. Destaco por mi capacidad de adaptación rápida a nuevas tecnologías y mi habilidad para integrar las mejores prácticas de la industria con las últimas tendencias en desarrollo. Mi enfoque se centra en la entrega de código limpio, eficiente y bien documentado, lo que se traduce en aplicaciones robustas y de alto rendimiento.",
     "location": {
-      "address": " Quito, Ecuador",
+      "address": " Pedro Moncayo, Pichincha - Ecuador",
       "postalCode": "171010",
-      "city": "Quito",
+      "city": "Pedro Moncayo",
       "countryCode": "EC",
       "region": "Pichincha"
     },
@@ -39,8 +39,8 @@
       "company": "Spaciart Ecuador",
       "position": "Desarrollador Frontend",
       "website": "https://muebles-spaciartecuador.com",
-      "startDate": "03-08-2021",
-      "endDate": "Presente",
+      "startDate": "Agosto 2021",
+      "endDate": "Octubre 2021",
       "summary": "Desarrollo de su aplicación web, con el objetivo de que los clientes puedan comprar sus productos.",
       "highlights": ["Rediseño de su sitio web", "Mantenimiento de su sitio web"]
     },
@@ -48,8 +48,8 @@
       "company": "Complejo turístico El Rincón del Cuy",
       "position": "Desarrollador Frontend",
       "website": "https://web-rincon-del-cuy.vercel.app/",
-      "startDate": "06-03-2022",
-      "endDate": "Presente",
+      "startDate": "Marzo 2022",
+      "endDate": "Mayo 2022",
       "summary": "Desarrollo de su aplicación web, con el objetivo de que los clientes puedan conocer todos los servicios que ofrece el complejo.",
       "highlights": [
         "Desarrollar su sitio web",
@@ -73,12 +73,13 @@
     {
       "institution": "Universidad Técnica de Ambato",
       "url": "https://uta.edu.ec/",
-      "area": "Ingeniería en Software (en proceso)",
+      "area": "Ingeniería en Software",
       "studyType": "Bachelor",
-      "startDate": "05-08-2020",
+      "startDate": "Agosto 2020",
       "endDate": "Presente",
       "score": "4.0",
-      "courses": ["DB1101 - Basic SQL"]
+      "courses": ["DB1101 - Basic SQL"],
+      "address": "Ambato, Ecuador"
     }
   ],
   "awards": [
@@ -91,10 +92,33 @@
   ],
   "certificates": [
     {
-      "name": "Certificate",
-      "date": "2021-11-07",
-      "issuer": "Company",
-      "url": "https://certificate.com"
+      "name": "Certificado Torneo Universitario de Apps",
+      "date": "Noviembre 2023",
+      "issuer": "TuAPP",
+      "url": "https://certificate.com",
+      "learning": [
+        "Llegamos a la final del Torneo Universitario de Apps, desarrollando una aplicación móvil en React Native para el sector salud.",
+        "Desarrollé una parte del diseño frontend para la aplicación móvil en React Native para el sector salud, alcanzando la final del Torneo Universitario de Apps.",
+        "Implementé un backend robusto utilizando Firebase, adquiriendo experiencia práctica en bases de datos NoSQL y funciones en tiempo real."
+      ]
+    },
+    {
+      "name": "JavaScript Essentials 1",
+      "date": "Mayo 2024",
+      "issuer": "Cisco",
+      "url": "https://certificate.com",
+      "learning": [
+        "Desarrollé una aplicación web de gestión de empleos en JavaScript, aplicando conceptos de programación orientada a objetos y patrones de diseño."
+      ]
+    },
+    {
+      "name": "Python Essentials 2",
+      "date": "Junio 2024",
+      "issuer": "Cisco",
+      "url": "https://certificate.com",
+      "learning": [
+        "Desarrollé aplicaciones de inteligencia artificial con Python, aplicando conceptos de programación orientada a objetos y patrones de diseño."
+      ]
     }
   ],
   "publications": [
@@ -106,54 +130,79 @@
       "summary": "Description…"
     }
   ],
-  "programmingLanguages": ["Java", "TypeScript", "PHP", "JavaScript"],
+  "programmingLanguages": ["TypeScript", "JavaScript", "PHP", "Java", "Python", "HTML5", "CSS3"],
   "skills": [
     {
       "name": "Next.js",
-      "level": "Master",
-      "keywords": ["HTML", "CSS", "JavaScript"]
+      "keywords": ["framework"]
     },
     {
-      "name": "React.js"
+      "name": "React.js",
+      "keywords": ["framework"]
     },
     {
-      "name": "Chakra UI"
+      "name": "Astro",
+      "keywords": ["framework"]
     },
     {
-      "name": "HTML5"
+      "name": "Chakra UI",
+      "keywords": ["tools"]
     },
     {
-      "name": "CSS3"
+      "name": "Fastify.js",
+      "keywords": ["framework"]
     },
     {
-      "name": "Fastify.js"
+      "name": "Prisma ORM",
+      "keywords": ["tools"]
     },
     {
-      "name": "Prisma ORM"
+      "name": "MySQL",
+      "keywords": ["tools"]
     },
     {
-      "name": "MySQL"
+      "name": "SQL Server",
+      "keywords": ["tools"]
     },
     {
-      "name": "SQL Server"
+      "name": "Azure",
+      "keywords": ["platform"]
     },
     {
-      "name": "Oracle Server"
+      "name": "AWS",
+      "keywords": ["platform"]
     },
     {
-      "name": "Sanity CMS"
+      "name": "Sanity CMS",
+      "keywords": ["tools"]
     },
     {
-      "name": "Scrum"
+      "name": "Git / Github",
+      "keywords": ["tools"]
     },
     {
-      "name": "Git / Github"
+      "name": "Jira",
+      "keywords": ["tools"]
     },
     {
-      "name": "Jira"
+      "name": "Linux",
+      "keywords": ["platform"]
     },
     {
-      "name": "Linux"
+      "name": "Docker",
+      "keywords": ["tools"]
+    },
+    {
+      "name": "Visual Studio Code",
+      "keywords": ["platform"]
+    },
+    {
+      "name": "Postman",
+      "keywords": ["tools"]
+    },
+    {
+      "name": "Figma",
+      "keywords": ["tools"]
     }
   ],
   "languages": [
@@ -170,19 +219,19 @@
   ],
   "interests": [
     {
-      "name": "Trabajo en equipo",
+      "name": "Trabajo en equipo eficaz",
       "keywords": ["Ferrets", "Unicorns"]
     },
     {
-      "name": "Responsable",
+      "name": "Alta responsabilidad y compromiso",
       "keywords": ["Ferrets", "Unicorns"]
     },
     {
-      "name": "Proactivo",
+      "name": "Proactivo e iniciativa",
       "keywords": ["Ferrets", "Unicorns"]
     },
     {
-      "name": "Autodidacta",
+      "name": "Aprendizaje autónomo y continuo",
       "keywords": ["Ferrets", "Unicorns"]
     },
     {
@@ -194,7 +243,7 @@
       "keywords": ["Ferrets", "Unicorns"]
     },
     {
-      "name": "Aplicar metodologías ágiles(SCRUM)",
+      "name": "Dominio de metodologías ágiles",
       "keywords": ["Ferrets", "Unicorns"]
     }
   ],
@@ -205,6 +254,24 @@
     }
   ],
   "projects": [
+    {
+      "heading": "TorneoPro - Sistema de torneos",
+      "summary": "El presente proyecto busca ayudar a personas que desean organizar torneos de cualquier deporte, brindándoles una forma de gestionar los equipos y los partidos.",
+      "highlights": [
+        "Más de 1000 usuarios visitan el sitio web mensualmente",
+        "Modelo de negocio SaaS",
+        "Integración de pagos con LemonSqueeze",
+        "Integración de autenticación con Next Auth",
+        "Uso de webhooks para actualización en tiempo real"
+      ],
+      "keywords": ["HTML"],
+      "startDate": "2022-06-24",
+      "endDate": "2021-08-24",
+      "url": "https://sistema-empleos.vercel.app/",
+      "roles": ["Desarrollador web"],
+      "entity": "Entity",
+      "type": "application"
+    },
     {
       "heading": "WorkSearch - Sistema de empleos",
       "summary": "El presente proyecto busca ayudar a personas que se encuentran en estado de desempleo, brindándoles una forma de encontrar alguna actividad remunerada.",
@@ -230,22 +297,6 @@
       "startDate": "2022-06-24",
       "endDate": "2021-08-24",
       "url": "https://crudylogin-php.herokuapp.com/",
-      "roles": ["Desarrollador web"],
-      "entity": "Entity",
-      "type": "application"
-    },
-    {
-      "heading": "Registro de asistencia docente",
-      "summary": "Este proyecto es una aplicación de escritorio que permite el registro de asistencia de docentes a clases de una institución educativa.",
-      "highlights": [
-        "Autenticación mediante usuarios en la base de datos",
-        "La fecha y hora toma del sistema",
-        "Genera un reporte de asistencia diaria"
-      ],
-      "keywords": ["HTML"],
-      "startDate": "2022-06-24",
-      "endDate": "2021-08-24",
-      "url": "https://sistema-empleos.vercel.app/",
       "roles": ["Desarrollador web"],
       "entity": "Entity",
       "type": "application"

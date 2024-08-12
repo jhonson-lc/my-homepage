@@ -1,28 +1,27 @@
+import Layout from "app/layouts/Layout";
+import Button from "ui/controls/Button/Button";
+import React from "react";
 import {
   Box,
-  Divider,
-  Flex,
   Text,
   Heading,
   Stack,
   HStack,
   Center,
-  SimpleGrid,
+  Image,
+  ListItem,
+  UnorderedList,
 } from "@chakra-ui/react";
-import { AtSignIcon, EmailIcon, PhoneIcon, LinkIcon } from "@chakra-ui/icons";
 import StarRating from "react-svg-star-rating";
-import Layout from "app/layouts/Layout";
-import type { NextPage } from "next";
-import Button from "ui/controls/Button/Button";
 import jsPDF, { jsPDFOptions } from "jspdf";
 import html2canvas from "html2canvas";
-
 import styles from "../styles/StarRating.module.css";
+
 import { WorkType, EducationType, NaturalLanguageType, ProjectType } from "../app/types";
 import data from "../data/resume.json";
-import { H3, H4, TimeSpan } from "../components/Resume";
+import { H3, H4, TimeSpan, TitleItem } from "../components/Resume";
 
-const Curriculum: NextPage = () => {
+const Curriculum = () => {
   const { name, email, phone, website, location } = data.basics;
   const { address } = location;
 
@@ -34,6 +33,7 @@ const Curriculum: NextPage = () => {
   const techStacks = data.skills;
   const personalProjects: ProjectType[] = data.projects;
   const qualifications = data.interests;
+  const certificates = data.certificates;
 
   const options: jsPDFOptions = {
     orientation: "p",
@@ -43,12 +43,38 @@ const Curriculum: NextPage = () => {
 
   const createPDF = async () => {
     const pdf = new jsPDF(options);
-    const data = await html2canvas(document.querySelector("#curriculum-vitae") as HTMLElement);
-    const img = data.toDataURL("image/png");
-    const imgProperties = pdf.getImageProperties(img);
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
-    pdf.addImage(img, "PNG", 0, 0, pdfWidth, pdfHeight - 75);
+    const element = document.querySelector("#curriculum-vitae") as HTMLElement;
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = pdf.internal.pageSize.getHeight();
+    console.log({
+      pageWidth,
+      pageHeight,
+    });
+    const margin = 10;
+    const contentWidth = pageWidth - 2 * margin;
+    const contentHeight = pageHeight - 2 * margin + 520;
+
+    const totalHeight = element.scrollHeight; // Cambiar a scrollHeight para obtener la altura total
+    const pageCount = Math.ceil(totalHeight / contentHeight);
+
+    for (let i = 0; i < pageCount; i++) {
+      if (i > 0) pdf.addPage();
+
+      const canvas = await html2canvas(element, {
+        scale: 3, // Aumentar la escala para mejor calidad
+        y: i * contentHeight,
+        height: contentHeight, // Añadir 10px para evitar cortes
+        windowWidth: element.scrollWidth,
+        windowHeight: totalHeight, // Usar scrollHeight para asegurar la captura total
+      });
+
+      const imgData = canvas.toDataURL("image/png");
+      const imgProps = pdf.getImageProperties(imgData);
+      const imgHeight = (imgProps.height * contentWidth) / imgProps.width; // Mantener la relación de aspecto
+
+      pdf.addImage(imgData, "PNG", 0, margin, contentWidth, imgHeight);
+    }
+
     pdf.save("curriculum-Lescano-Jhon.pdf");
   };
 
@@ -61,137 +87,196 @@ const Curriculum: NextPage = () => {
         <Button text="Descargar CV en PDF" onClick={() => createPDF()} />
       </Center>
       <Center display={{ base: "none", lg: "flex" }} id="curriculum-vitae">
-        <Stack bg="#ffffff" color="#000000" m={4} p={12} width="866px">
-          <header>
-            <Heading as="h2" fontSize="4xl" letterSpacing="wider">
-              {name}
-            </Heading>
-            <Flex alignItems="center" flexWrap="wrap" justifyContent="space-between" marginY="3">
-              <Box flex="1 1 auto">
-                <Text fontWeight="semibold">
-                  <EmailIcon color="#992214" /> {email}
-                </Text>
+        <Stack bg="#ffffff" color="#000000" m={4} p={8} width="866px" fontSize={"xs"}>
+          <Stack as={"header"} gap={4} display={"flex"} flexDir={"row"} fontSize={"xs"}>
+            <Image w={24} h={24} src="/photo.jpg" alt="Jhon Lescano" objectFit={"cover"} />
+            <Box w={"full"}>
+              <Heading as="h2" fontSize="2xl" letterSpacing="wider">
+                {name}
+              </Heading>
+              <Box
+                w="100%"
+                display={"flex"}
+                alignItems="center"
+                justifyContent="space-between"
+                marginY="3"
+              >
+                <Box>
+                  <Text marginBottom={1}>Dirección: {address}</Text>
+                  <Text>
+                    Portafolio:{" "}
+                    <a
+                      href={website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: "blue", textDecoration: "underline" }}
+                    >
+                      {website}
+                    </a>
+                  </Text>
+                </Box>
+                <Box>
+                  <Text marginBottom={1}>
+                    Email:{" "}
+                    <a
+                      href={`mailto:${email}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: "blue", textDecoration: "underline" }}
+                    >
+                      {email}
+                    </a>
+                  </Text>
+                  <Text>Móvil: {phone}</Text>
+                </Box>
               </Box>
-              <Box flex="1 1 auto">
-                <Text fontWeight="semibold">
-                  <PhoneIcon color="#992214" /> {phone}
-                </Text>
-              </Box>
-              <Box flex="1 1 auto">
-                <Text fontWeight="semibold">
-                  <LinkIcon color="#992214" /> {website}
-                </Text>
-              </Box>
-              <Box flex="1 1 auto">
-                <Text fontWeight="semibold">
-                  <AtSignIcon color="#992214" />
-                  {address}
-                </Text>
-              </Box>
-            </Flex>
-          </header>
-          <Box marginY="7">
-            <H3 content="Resumen" />
-            <Text py={2}>{summary}</Text>
-          </Box>
-          <Stack flexDirection={"row"} gap={12} spacing={0} w="full">
-            <Stack w="50%">
-              <Box>
-                <H3 content="Experiencia" />
-                <Divider py={2} />
-                {works.map(({ company, position, startDate, endDate, summary, highlights }) => (
-                  <Stack key={company}>
-                    <H4 content={company} />
-                    <Text fontSize="md">{position}</Text>
-                    <TimeSpan endDate={endDate} startDate={startDate} />
-                    <Text marginY="3">{summary}</Text>
-                    {highlights.map((highlight) => (
-                      <Text key={highlight} fontSize="sm">
-                        - {highlight}
-                      </Text>
-                    ))}
-                  </Stack>
-                ))}
-              </Box>
-              <Box>
-                <H3 content="Formación académica" />
-                <Divider py={2} />
-                {educations.map(({ institution, area, startDate, endDate }) => (
-                  <Stack key={institution}>
-                    <H4 content={institution} />
-                    <Text fontSize="md">{area}</Text>
-                    <TimeSpan endDate={endDate} startDate={startDate} />
-                  </Stack>
-                ))}
-              </Box>
-              <Box>
-                <H3 content="Lenguajes de programación" />
-                <Divider py={2} />
-                <SimpleGrid columns={2} w="full">
-                  {programingLanguages.map((language) => (
-                    <Text key={language}>- {language}</Text>
-                  ))}
-                </SimpleGrid>
-              </Box>
-              <Box>
-                <H3 content="Habilidades" />
-                <Divider py={2} />
-                {qualifications.map((qualification) => (
-                  <Text key={qualification.name}>- {qualification.name}</Text>
-                ))}
-              </Box>
-            </Stack>
-            <Stack w="50%">
-              <Box>
-                <H3 content="Proyectos" />
-                <Divider py={2} />
-                {personalProjects.map(({ heading, summary, highlights }) => (
-                  <Stack key={heading}>
-                    <H4 content={heading} />
-                    <Text fontSize="md" marginBottom="3">
-                      {summary}
-                    </Text>
-                    {highlights.map((highlight) => (
-                      <Text key={highlight} fontSize="sm">
-                        - {highlight}
-                      </Text>
-                    ))}
-                  </Stack>
-                ))}
-              </Box>
-              <Stack>
-                <H3 content="Tecnologías" />
-                <Divider py={2} />
-                <SimpleGrid columns={2} w="full">
-                  {techStacks.map((stack) => (
-                    <Text key={stack.name}>- {stack.name}</Text>
-                  ))}
-                </SimpleGrid>
-              </Stack>
-              <Box w="100%">
-                <H3 content="Idiomas" />
-                <Divider py={2} />
-                {naturalLanguages.map(({ language, fluency, points }) => (
-                  <HStack key={language} justifyContent="space-between">
-                    <Text fontSize="md">{language}</Text>
-                    <HStack>
-                      <Text fontSize="sm">{fluency}</Text>
-                      <Box pt={3}>
-                        <StarRating
-                          isReadOnly
-                          activeColor={"#000000"}
-                          containerClassName={styles.star}
-                          initialRating={points}
-                          size={15}
-                          unit="float"
-                        />
-                      </Box>
-                    </HStack>
-                  </HStack>
-                ))}
-              </Box>
-            </Stack>
+            </Box>
           </Stack>
+          <Box>
+            <H3 content="Resumen" />
+            <Text textAlign={"justify"}>{summary}</Text>
+          </Box>
+          <Box>
+            <H3 content="Formación académica" />
+            {educations.map(({ institution, area, startDate, endDate, address }) => (
+              <Stack key={institution} gap={0}>
+                <HStack justifyContent={"space-between"} alignItems={"center"}>
+                  <H4 content={institution} />
+                  <Text>{address}</Text>
+                </HStack>
+                <HStack justifyContent={"space-between"} alignItems={"center"}>
+                  <Text>{area}</Text>
+                  <TimeSpan endDate={endDate} startDate={startDate} />
+                </HStack>
+              </Stack>
+            ))}
+          </Box>
+          <Box>
+            <H3 content="Habilidades" />
+            <UnorderedList listStyleType={"none"}>
+              <ListItem>
+                <TitleItem>- Lenguajes: </TitleItem>
+                {programingLanguages.map((language, indexLanguage) => (
+                  <span key={language}>
+                    {language}
+                    {indexLanguage === programingLanguages.length - 1 ? "" : ", "}
+                  </span>
+                ))}
+              </ListItem>
+              <ListItem>
+                <TitleItem>- Frameworks: </TitleItem>
+                {techStacks
+                  .filter((stack) => stack.keywords?.includes("framework"))
+                  .map((stack) => stack.name)
+                  .join(", ")}
+              </ListItem>
+              <ListItem>
+                <TitleItem>- Herramientas: </TitleItem>
+                {techStacks
+                  .filter((stack) => stack.keywords?.includes("tools"))
+                  .map((stack) => stack.name)
+                  .join(", ")}
+              </ListItem>
+              <ListItem>
+                <TitleItem>- Plataformas: </TitleItem>
+                {techStacks
+                  .filter((stack) => stack.keywords?.includes("platform"))
+                  .map((stack) => stack.name)
+                  .join(", ")}
+              </ListItem>
+              <ListItem>
+                <TitleItem>- Habilidades blandas: </TitleItem>
+                {qualifications.map((qualification, indexQualification) => (
+                  <span key={qualification.name}>
+                    {qualification.name}
+                    {indexQualification === qualifications.length - 1 ? "" : ", "}
+                  </span>
+                ))}
+              </ListItem>
+            </UnorderedList>
+          </Box>
+          <Box>
+            <H3 content="Experiencia" />
+            {works.map(({ company, position, startDate, endDate, summary, highlights }) => (
+              <Stack key={company} marginBottom={2}>
+                <HStack justifyContent={"space-between"} alignItems={"start"}>
+                  <Box>
+                    <H4 content={company} />
+                    <Text>{position}</Text>
+                  </Box>
+                  <TimeSpan endDate={endDate} startDate={startDate} />
+                </HStack>
+                <Box ml={8}>
+                  <Text marginY="1">{summary}</Text>
+                  <UnorderedList ml={12} listStyleType={"none"}>
+                    {highlights.map((highlight) => (
+                      <ListItem key={highlight}>- {highlight}</ListItem>
+                    ))}
+                  </UnorderedList>
+                </Box>
+              </Stack>
+            ))}
+          </Box>
+          <Box>
+            <H3 content="Proyectos" />
+            {personalProjects.map(({ heading, summary, highlights }) => (
+              <Stack key={heading} marginBottom={2}>
+                <H4 content={heading} />
+                <Box ml={8}>
+                  <Text marginY="1">{summary}</Text>
+                  <UnorderedList ml={12} listStyleType={"none"}>
+                    {highlights.map((highlight) => (
+                      <ListItem key={highlight}>- {highlight}</ListItem>
+                    ))}
+                  </UnorderedList>
+                </Box>
+              </Stack>
+            ))}
+          </Box>
+          <Box>
+            <H3 content="Certificados" />
+            {certificates.map(({ name, date, learning, issuer }) => (
+              <Stack key={name} marginBottom={2}>
+                <HStack justifyContent={"space-between"} alignItems={"start"}>
+                  <Box>
+                    <H4 content={name} />
+                    <Text display={"inline"} ml={1} fontWeight="semibold">
+                      ({issuer})
+                    </Text>
+                  </Box>
+                  <TimeSpan startDate={date} />
+                </HStack>
+                <Box ml={8}>
+                  <UnorderedList listStyleType={"none"}>
+                    {learning.map((highlight) => (
+                      <ListItem key={highlight}>- {highlight}</ListItem>
+                    ))}
+                  </UnorderedList>
+                </Box>
+              </Stack>
+            ))}
+          </Box>
+          <Box>
+            <H3 content="Idiomas" />
+            {naturalLanguages.map(({ language, fluency, points }) => (
+              <HStack key={language} justifyContent="space-between">
+                <Text>{language}</Text>
+                <HStack>
+                  <Text>{fluency}</Text>
+                  <Box>
+                    <StarRating
+                      isReadOnly
+                      activeColor={"#000000"}
+                      containerClassName={styles.star}
+                      initialRating={points}
+                      size={15}
+                      unit="float"
+                    />
+                  </Box>
+                </HStack>
+              </HStack>
+            ))}
+          </Box>
         </Stack>
       </Center>
     </Layout>
