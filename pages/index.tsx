@@ -19,7 +19,6 @@ import WorldMap from "ui/icons/WorldMap";
 import { SocialIcon } from "work/types";
 import { GitHubIcon as GitHub, LinkedInIcon as LinkedIn, XIcon as X } from "components/CommandMenu";
 import InstagramIcon from "ui/icons/Instagram";
-import Certification from "work/sections/Certification";
 
 const Instagram = InstagramIcon;
 
@@ -191,10 +190,10 @@ const IndexPage: NextPage = () => {
           <div id="experience" />
           <Experience />
         </Section>
-        <Section title="Certifications">
+        {/* <Section title="Certifications">
           <div id="certifications" />
           <Certification />
-        </Section>
+        </Section> */}
         <Section hrefB="/work" labelB="VIEW ALL" title="Latest Projects">
           <div id="projects" />
           <SimpleGrid columns={[1, 2]} gridGap={16} w="100%">
