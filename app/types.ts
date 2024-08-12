@@ -13,6 +13,7 @@ export type EducationType = {
   area: string;
   startDate: string;
   endDate: string;
+  address: string;
 };
 
 export type ProjectType = {
