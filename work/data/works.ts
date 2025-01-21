@@ -8,7 +8,7 @@ const works: Work[] = [
     build: ["next.js", "tailwindcss", "framer-motion", "typescript", "prisma orm", "nextauth.js"],
     description: "A system to manage tournaments",
     platform: ["Windows", "macOS", "Linux", "iOS", "Android"],
-    siteurl: "https://sistema-empleos.vercel.app/",
+    siteurl: "https://torneopro.app/",
     video:
       "https://res.cloudinary.com/jhonsonlcdev/video/upload/v1692326343/TorneoPro/MainVideo_i0kfgo.mp4",
   },
