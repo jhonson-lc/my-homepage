@@ -36,13 +36,19 @@
   },
   "work": [
     {
-      "company": "Spaciart Ecuador",
-      "position": "Desarrollador Frontend",
-      "website": "https://muebles-spaciartecuador.com",
-      "startDate": "Agosto 2021",
-      "endDate": "Octubre 2021",
-      "summary": "Desarrollo de su aplicación web, con el objetivo de que los clientes puedan comprar sus productos.",
-      "highlights": ["Rediseño de su sitio web", "Mantenimiento de su sitio web"]
+      "company": "TorneoPro",
+      "position": "Fundador y CEO",
+      "website": "https://torneopro.app/",
+      "startDate": "Enero 2023",
+      "endDate": "Presente",
+      "summary": "Desarrollé una aplicación web para gestionar torneos deportivos y optimizar el tiempo de los organizadores.",
+      "highlights": [
+        "Alcancé de 3,000 visitas mensuales a la aplicación web",
+        "Modelo de negocio SaaS con crecimiento sostenido",
+        "Integré soluciones de pago con LemonSqueeze y autenticación con NextAuth",
+        "Implementé actualizaciones en tiempo real utilizando webhooks",
+        "Asistente inteligente con IA para ayudar con el reglamento a los usuarios"
+      ]
     },
     {
       "company": "Complejo turístico El Rincón del Cuy",
@@ -56,6 +62,15 @@
         "Botón de reserva con un formulario completo",
         "Mantenimiento de su sitio web"
       ]
+    },
+    {
+      "company": "Spaciart Ecuador",
+      "position": "Desarrollador Frontend",
+      "website": "https://muebles-spaciartecuador.com",
+      "startDate": "Agosto 2021",
+      "endDate": "Octubre 2021",
+      "summary": "Desarrollo de su aplicación web, con el objetivo de que los clientes puedan comprar sus productos.",
+      "highlights": ["Rediseño de su sitio web", "Mantenimiento de su sitio web"]
     }
   ],
   "volunteer": [
@@ -145,6 +160,10 @@
       "keywords": ["framework"]
     },
     {
+      "name": "TailwindCSS",
+      "keywords": ["tools"]
+    },
+    {
       "name": "Chakra UI",
       "keywords": ["tools"]
     },
@@ -203,6 +222,14 @@
     {
       "name": "Figma",
       "keywords": ["tools"]
+    },
+    {
+      "name": "Zustand",
+      "keywords": ["tools"]
+    },
+    {
+      "name": "tRPC",
+      "keywords": ["tools"]
     }
   ],
   "languages": [
@@ -255,27 +282,14 @@
   ],
   "projects": [
     {
-      "heading": "TorneoPro - Sistema de torneos",
-      "summary": "El presente proyecto busca ayudar a personas que desean organizar torneos de cualquier deporte, brindándoles una forma de gestionar los equipos y los partidos.",
-      "highlights": [
-        "Más de 1000 usuarios visitan el sitio web mensualmente",
-        "Modelo de negocio SaaS",
-        "Integración de pagos con LemonSqueeze",
-        "Integración de autenticación con Next Auth",
-        "Uso de webhooks para actualización en tiempo real"
-      ],
-      "keywords": ["HTML"],
-      "startDate": "2022-06-24",
-      "endDate": "2021-08-24",
-      "url": "https://torneopro.app/",
-      "roles": ["Desarrollador web"],
-      "entity": "Entity",
-      "type": "application"
-    },
-    {
       "heading": "WorkSearch - Sistema de empleos",
       "summary": "El presente proyecto busca ayudar a personas que se encuentran en estado de desempleo, brindándoles una forma de encontrar alguna actividad remunerada.",
-      "highlights": ["Metodología aplicada Scrum", "Integración de autenticación con Next Auth"],
+      "highlights": [
+        "Metodología aplicada Scrum",
+        "Integración de autenticación con Next Auth",
+        "Pruebas unitarias con Cypress",
+        "Diseño de interfaz con Chakra UI y Framer Motion"
+      ],
       "keywords": ["HTML"],
       "startDate": "2022-06-24",
       "endDate": "2021-08-24",
@@ -283,6 +297,22 @@
       "roles": ["Desarrollador web"],
       "entity": "Entity",
       "type": "application"
+    },
+    {
+      "heading": "Fisei Blog - Plataforma para Facultad",
+      "summary": "Aplicación web desarrollada como plataforma de blog utilizando tecnologías web modernas como TypeScript, Next.js y Strapi",
+      "highlights": [
+        "Construido con Next.js para una interfaz rápida y amigable con SEO",
+        "CMS Strapi para gestión de backend personalizable",
+        "TypeScript para verificación estática de tipos"
+      ],
+      "keywords": ["Next.js", "TypeScript", "Strapi", "Desarrollo Web"],
+      "startDate": "2024-01-24",
+      "endDate": null,
+      "url": "https://github.com/jhonson-lc/blog-fisei",
+      "roles": ["Desarrollador Full Stack"],
+      "entity": "Proyecto Personal",
+      "type": "aplicación web"
     },
     {
       "heading": "CRUD Login PHP - Estudiantes",
