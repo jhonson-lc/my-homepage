@@ -91,7 +91,7 @@
       "area": "Ingeniería en Software",
       "studyType": "Bachelor",
       "startDate": "Agosto 2020",
-      "endDate": "Presente",
+      "endDate": "Julio 2025",
       "score": "4.0",
       "courses": ["DB1101 - Basic SQL"],
       "address": "Ambato, Ecuador"
@@ -213,6 +213,10 @@
     },
     {
       "name": "Visual Studio Code",
+      "keywords": ["platform"]
+    },
+    {
+      "name": "Supabase",
       "keywords": ["platform"]
     },
     {
