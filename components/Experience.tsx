@@ -5,11 +5,27 @@ type Exp = {
   name: string;
   position: string;
   startDate: string;
-  endDate?: string;
+  endDate?: string | null;
   summary: string;
 };
 
 const EXPERIENCES: Exp[] = [
+  {
+    name: "Referee Network",
+    position: "Fundador y CEO",
+    startDate: "08-01-2023",
+    endDate: null,
+    summary:
+      "Desarrollé una aplicación web para conectar árbitros certificados amateur y profesionales. ¡Crear oportunidades, comunidad y crecimiento!.",
+  },
+  {
+    name: "TorneoPro",
+    position: "Fundador y CEO",
+    startDate: "08-01-2023",
+    endDate: null,
+    summary:
+      "Desarrollé una aplicación web para gestionar torneos deportivos y optimizar el tiempo de los organizadores.",
+  },
   {
     name: "Spaciart Ecuador",
     position: "Desarrollador Frontend",
@@ -48,7 +64,7 @@ export default function Component() {
                     {startYear}
                   </time>
                   {" - "}
-                  <time dateTime={endDate} data-title={endDate}>
+                  <time dateTime={endDate ? endDate : ""} data-title={endDate}>
                     {endYear}
                   </time>
                 </div>

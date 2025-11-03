@@ -2,10 +2,37 @@ import { Work } from "work/types";
 
 const works: Work[] = [
   {
+    id: "referee-network",
+    type: "work",
+    title: "Red de Árbitros",
+    build: [
+      "astro",
+      "next.js",
+      "tailwindcss",
+      "framer-motion",
+      "typescript",
+      "prisma orm",
+      "supabase",
+    ],
+    description: "A system to connect certified referees.",
+    platform: ["Windows", "macOS", "Linux", "iOS", "Android"],
+    siteurl: "https://redrefereenetwork.com/",
+    thumbnail:
+      "https://dsiqosuglezokxtcfjks.supabase.co/storage/v1/object/public/referee/og-image.webp",
+  },
+  {
     id: "torneo-pro",
     type: "work",
-    title: "Plataforma de gestión de torneos",
-    build: ["next.js", "tailwindcss", "framer-motion", "typescript", "prisma orm", "nextauth.js"],
+    title: "Gestión de torneos",
+    build: [
+      "astro",
+      "next.js",
+      "tailwindcss",
+      "framer-motion",
+      "typescript",
+      "prisma orm",
+      "supabase",
+    ],
     description: "A system to manage tournaments",
     platform: ["Windows", "macOS", "Linux", "iOS", "Android"],
     siteurl: "https://torneopro.app/",

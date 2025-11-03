@@ -36,6 +36,22 @@
   },
   "work": [
     {
+      "company": "Referee Network",
+      "position": "Fundador y CEO",
+      "website": "https://refereenetwork.com/",
+      "startDate": "Julio 2025",
+      "endDate": "Presente",
+      "summary": "Desarrollé una aplicación web para conectar árbitros certificados amateur y profesionales. ¡Crear oportunidades, comunidad y crecimiento!.",
+      "highlights": [
+        "Diseñé y desarrollé la arquitectura completa del sistema web utilizando Next.js, TypeScript, Prisma, Supabase y PostgreSQL, garantizando escalabilidad y mantenimiento a largo plazo.",
+        "Implementé módulos de registro de árbitros, gremios y gestión de asignaciones, optimizando los procesos de organización y comunicación dentro de la comunidad arbitral.",
+        "Creé un panel de administración intuitivo y responsivo, con control de roles y permisos adaptado a distintos tipos de usuarios.",
+        "Integré un sistema modular y extensible tipo SaaS, preparado para ofrecer la plataforma a distintas organizaciones deportivas de forma independiente.",
+        "Definí la visión del producto, desde la idea y validación de mercado hasta el desarrollo de la versión beta funcional, conectando a árbitros amateur y profesionales.",
+        "Coordiné todas las fases del proyecto: diseño UX/UI, desarrollo full-stack, despliegue en la nube y estrategia de lanzamiento, fomentando la creación de una comunidad arbitral digital."
+      ]
+    },
+    {
       "company": "TorneoPro",
       "position": "Fundador y CEO",
       "website": "https://torneopro.app/",
@@ -43,11 +59,12 @@
       "endDate": "Presente",
       "summary": "Desarrollé una aplicación web para gestionar torneos deportivos y optimizar el tiempo de los organizadores.",
       "highlights": [
-        "Alcancé de 3,000 visitas mensuales a la aplicación web",
-        "Modelo de negocio SaaS con crecimiento sostenido",
-        "Integré soluciones de pago con LemonSqueeze y autenticación con NextAuth",
-        "Implementé actualizaciones en tiempo real utilizando webhooks",
-        "Asistente inteligente con IA para ayudar con el reglamento a los usuarios"
+        "Diseñé y desarrollé la arquitectura del sistema con Next.js, TypeScript, Supabase y tRPC, priorizando escalabilidad y rendimiento.",
+        "Logré un crecimiento orgánico de más de 15000 visitas mensuales mediante estrategias de optimización UX y posicionamiento digital.",
+        "Implementé un modelo SaaS con planes diferenciados y funciones premium orientadas a ligas deportivas parroquiales y amateur.",
+        "Integré pasarelas de pago seguras con Polar.sh y autenticación avanzada con Supabase Auth.",
+        "Desarrollé un sistema de actualizaciones en tiempo real utilizando Webhooks y Supabase Realtime.",
+        "Incorporé un asistente virtual con IA para resolver consultas sobre reglamentos y gestión de campeonatos, mejorando la experiencia del usuario."
       ]
     },
     {

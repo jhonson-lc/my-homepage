@@ -9,12 +9,17 @@ interface Props {
 const Wrapper = styled.div`
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   height: 200px;
-  width: "350px";
+  width: 350px;
   border-radius: 10px;
   position: relative;
 
   .work-image {
     border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
   }
 `;
 const WorkImage: React.FC<Props> = ({ thumbnail, video, title }) => {
