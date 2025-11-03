@@ -1,6 +1,6 @@
 import Layout from "app/layouts/Layout";
 import Button from "ui/controls/Button/Button";
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Text,
@@ -11,6 +11,7 @@ import {
   Image,
   ListItem,
   UnorderedList,
+  Spinner,
 } from "@chakra-ui/react";
 import StarRating from "react-svg-star-rating";
 import jsPDF, { jsPDFOptions } from "jspdf";
@@ -22,6 +23,7 @@ import data from "../data/resume.json";
 import { H3, H4, TimeSpan, TitleItem } from "../components/Resume";
 
 const Curriculum = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const { name, email, phone, website, location } = data.basics;
   const { address } = location;
 
@@ -42,36 +44,43 @@ const Curriculum = () => {
   };
 
   const createPDF = async () => {
-    const pdf = new jsPDF(options);
-    const element = document.querySelector("#curriculum-vitae") as HTMLElement;
-    const pageWidth = pdf.internal.pageSize.getWidth();
-    const pageHeight = pdf.internal.pageSize.getHeight();
-    const margin = 10;
-    const contentWidth = pageWidth - 2 * margin;
-    const contentHeight = pageHeight - 2 * margin + 520;
+    try {
+      setIsLoading(true);
+      const pdf = new jsPDF(options);
+      const element = document.querySelector("#curriculum-vitae") as HTMLElement;
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+      const margin = 10;
+      const contentWidth = pageWidth - 2 * margin;
+      const contentHeight = pageHeight - 2 * margin + 520;
 
-    const totalHeight = element.scrollHeight; // Cambiar a scrollHeight para obtener la altura total
-    const pageCount = Math.ceil(totalHeight / contentHeight);
+      const totalHeight = element.scrollHeight; // Cambiar a scrollHeight para obtener la altura total
+      const pageCount = Math.ceil(totalHeight / contentHeight);
 
-    for (let i = 0; i < pageCount; i++) {
-      if (i > 0) pdf.addPage();
+      for (let i = 0; i < pageCount; i++) {
+        if (i > 0) pdf.addPage();
 
-      const canvas = await html2canvas(element, {
-        scale: 1.5, // Aumentar la escala para mejor calidad
-        y: i * contentHeight,
-        height: contentHeight, // Añadir 10px para evitar cortes
-        windowWidth: element.scrollWidth,
-        windowHeight: totalHeight, // Usar scrollHeight para asegurar la captura total
-      });
+        const canvas = await html2canvas(element, {
+          scale: 1.5, // Aumentar la escala para mejor calidad
+          y: i * contentHeight,
+          height: contentHeight, // Añadir 10px para evitar cortes
+          windowWidth: element.scrollWidth,
+          windowHeight: totalHeight, // Usar scrollHeight para asegurar la captura total
+        });
 
-      const imgData = canvas.toDataURL("image/png", 0.85);
-      const imgProps = pdf.getImageProperties(imgData);
-      const imgHeight = (imgProps.height * contentWidth) / imgProps.width; // Mantener la relación de aspecto
+        const imgData = canvas.toDataURL("image/png", 0.85);
+        const imgProps = pdf.getImageProperties(imgData);
+        const imgHeight = (imgProps.height * contentWidth) / imgProps.width; // Mantener la relación de aspecto
 
-      pdf.addImage(imgData, "PNG", 0, margin, contentWidth, imgHeight);
+        pdf.addImage(imgData, "PNG", 0, margin, contentWidth, imgHeight);
+      }
+
+      pdf.save("curriculum-Lescano-Jhon.pdf");
+    } catch (error) {
+      console.error("Error al generar PDF:", error);
+    } finally {
+      setIsLoading(false); // 🔹 Ocultar spinner
     }
-
-    pdf.save("curriculum-Lescano-Jhon.pdf");
   };
 
   return (
@@ -79,8 +88,20 @@ const Curriculum = () => {
       description="I believe in web development as a powerful communication tool to reflect life projects, communicate ventures and ideas."
       title="Curriculum Vitae - Jhon Lescano"
     >
-      <Center display={{ base: "none", lg: "flex" }}>
-        <Button text="Descargar CV en PDF" onClick={() => createPDF()} />
+      <Center display={{ base: "none", lg: "flex" }} flexDir="column" gap={4}>
+        <Button
+          text={isLoading ? "Generando PDF..." : "Descargar CV en PDF"}
+          onClick={() => createPDF()}
+          enabled={isLoading}
+        />
+        {isLoading && (
+          <HStack>
+            <Spinner size="sm" color="blue.500" />
+            <Text fontSize="sm" color="gray.600">
+              Generando PDF, por favor espera...
+            </Text>
+          </HStack>
+        )}
       </Center>
       <Center display={{ base: "none", lg: "flex" }} id="curriculum-vitae">
         <Stack bg="#ffffff" color="#000000" m={4} p={8} width="866px" fontSize={"xs"}>
