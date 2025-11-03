@@ -46,10 +46,6 @@ const Curriculum = () => {
     const element = document.querySelector("#curriculum-vitae") as HTMLElement;
     const pageWidth = pdf.internal.pageSize.getWidth();
     const pageHeight = pdf.internal.pageSize.getHeight();
-    console.log({
-      pageWidth,
-      pageHeight,
-    });
     const margin = 10;
     const contentWidth = pageWidth - 2 * margin;
     const contentHeight = pageHeight - 2 * margin + 520;
@@ -61,14 +57,14 @@ const Curriculum = () => {
       if (i > 0) pdf.addPage();
 
       const canvas = await html2canvas(element, {
-        scale: 3, // Aumentar la escala para mejor calidad
+        scale: 1.5, // Aumentar la escala para mejor calidad
         y: i * contentHeight,
         height: contentHeight, // Añadir 10px para evitar cortes
         windowWidth: element.scrollWidth,
         windowHeight: totalHeight, // Usar scrollHeight para asegurar la captura total
       });
 
-      const imgData = canvas.toDataURL("image/png");
+      const imgData = canvas.toDataURL("image/png", 0.85);
       const imgProps = pdf.getImageProperties(imgData);
       const imgHeight = (imgProps.height * contentWidth) / imgProps.width; // Mantener la relación de aspecto
 

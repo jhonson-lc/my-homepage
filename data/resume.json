@@ -75,9 +75,11 @@
       "endDate": "Mayo 2022",
       "summary": "Desarrollo de su aplicación web, con el objetivo de que los clientes puedan conocer todos los servicios que ofrece el complejo.",
       "highlights": [
-        "Desarrollar su sitio web",
-        "Botón de reserva con un formulario completo",
-        "Mantenimiento de su sitio web"
+        "Diseñé y desarrollé una interfaz moderna y responsiva utilizando React, Chakra UI y JavaScript.",
+        "Implementé un sistema de reservas con formulario interactivo y validación de datos en tiempo real.",
+        "Optimizé la experiencia del usuario mediante navegación fluida y tiempos de carga reducidos.",
+        "Brindé soporte técnico y mantenimiento posterior para asegurar la disponibilidad y estabilidad del sitio.",
+        "Desarrollé componentes reutilizables con Astro, Tailwind y JavaScript para optimizar el mantenimiento del código."
       ]
     },
     {
@@ -87,7 +89,12 @@
       "startDate": "Agosto 2021",
       "endDate": "Octubre 2021",
       "summary": "Desarrollo de su aplicación web, con el objetivo de que los clientes puedan comprar sus productos.",
-      "highlights": ["Rediseño de su sitio web", "Mantenimiento de su sitio web"]
+      "highlights": [
+        "Rediseñé la estructura visual del sitio mejorando la presentación de productos y la navegabilidad.",
+        "Desarrollé componentes reutilizables con Astro, Tailwind y JavaScript para optimizar el mantenimiento del código.",
+        "Apliqué prácticas de diseño responsive garantizando compatibilidad en dispositivos móviles.",
+        "Proporcioné mantenimiento preventivo y correctivo asegurando la continuidad del servicio."
+      ]
     }
   ],
   "volunteer": [
