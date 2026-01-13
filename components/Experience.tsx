@@ -13,7 +13,7 @@ const EXPERIENCES: Exp[] = [
   {
     name: "Referee Network",
     position: "Fundador y CEO",
-    startDate: "08-01-2023",
+    startDate: "12-11-2025",
     endDate: null,
     summary:
       "Desarrollé una aplicación web para conectar árbitros certificados amateur y profesionales. ¡Crear oportunidades, comunidad y crecimiento!.",
