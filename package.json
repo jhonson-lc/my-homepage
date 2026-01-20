@@ -4,7 +4,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 8085",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -19,6 +19,7 @@
     "@next-auth/prisma-adapter": "^1.0.7",
     "@portabletext/react": "^3.1.0",
     "@prisma/client": "^5.15.0",
+    "@react-pdf/renderer": "^4.3.2",
     "atropos": "^2.0.2",
     "cmdk": "^1.0.0",
     "copy-to-clipboard": "^3.3.3",
