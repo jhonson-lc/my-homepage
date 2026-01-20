@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   page: {
     padding: 30,
     fontSize: 10,
-    fontFamily: "Times-Roman",
+    fontFamily: "Helvetica",
     backgroundColor: "#ffffff",
     color: "#000000",
   },
@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
     fontSize: 8,
     fontWeight: "bold",
     color: "#333333",
+    marginBottom: 2.8,
   },
   subsubsectionRow: {
     flexDirection: "column",
