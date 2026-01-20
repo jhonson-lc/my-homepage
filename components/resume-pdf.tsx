@@ -135,14 +135,6 @@ const ResumePDF: React.FC<ResumePDFProps> = ({ data }) => {
   const qualifications = data.interests;
   const certificates = data.certificates;
 
-  // Función para renderizar estrellas como texto
-
-  const renderStars = (points: number) => {
-    const filled = "&#9733;".repeat(Math.floor(points)); // ★
-    const empty = "&#9734;".repeat(5 - Math.floor(points)); // ☆
-    return filled + empty;
-  };
-
   return (
     <Document>
       <Page size="A4" style={styles.page}>
