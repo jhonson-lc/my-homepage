@@ -5,7 +5,7 @@
     "image": "",
     "email": "jhoncisneros11@gmail.com",
     "phone": "+593 098 165 7629",
-    "website": "https://jhon.vercel.app",
+    "website": "linkedin.com/in/jhonlescano/",
     "summary": "Ingeniero de software y desarrollador fullstack con amplia experiencia en la creación de soluciones web innovadoras y escalables. Destaco por mi capacidad de adaptación rápida a nuevas tecnologías y mi habilidad para integrar las mejores prácticas de la industria con las últimas tendencias en desarrollo. Mi enfoque se centra en la entrega de código limpio, eficiente y bien documentado, lo que se traduce en aplicaciones robustas y de alto rendimiento.",
     "location": {
       "address": " Pedro Moncayo, Pichincha - Ecuador",
@@ -42,6 +42,10 @@
       "startDate": "Julio 2025",
       "endDate": "Presente",
       "summary": "Desarrollé una aplicación web para conectar árbitros certificados amateur y profesionales. ¡Crear oportunidades, comunidad y crecimiento!.",
+      "location": {
+        "city": "Quito",
+        "region": "Ecuador"
+      },
       "highlights": [
         "Diseñé y desarrollé la arquitectura completa del sistema web utilizando Next.js, TypeScript, Prisma, Supabase y PostgreSQL, garantizando escalabilidad y mantenimiento a largo plazo.",
         "Implementé módulos de registro de árbitros, gremios y gestión de asignaciones, optimizando los procesos de organización y comunicación dentro de la comunidad arbitral.",
@@ -58,6 +62,10 @@
       "startDate": "Enero 2023",
       "endDate": "Presente",
       "summary": "Desarrollé una aplicación web para gestionar torneos deportivos y optimizar el tiempo de los organizadores.",
+      "location": {
+        "city": "Quito",
+        "region": "Ecuador"
+      },
       "highlights": [
         "Diseñé y desarrollé la arquitectura del sistema con Next.js, TypeScript, Supabase y tRPC, priorizando escalabilidad y rendimiento.",
         "Logré un crecimiento orgánico de más de 15000 visitas mensuales mediante estrategias de optimización UX y posicionamiento digital.",
@@ -74,6 +82,10 @@
       "startDate": "Marzo 2022",
       "endDate": "Mayo 2022",
       "summary": "Desarrollo de su aplicación web, con el objetivo de que los clientes puedan conocer todos los servicios que ofrece el complejo.",
+      "location": {
+        "city": "Tabacundo",
+        "region": "Ecuador"
+      },
       "highlights": [
         "Diseñé y desarrollé una interfaz moderna y responsiva utilizando React, Chakra UI y JavaScript.",
         "Implementé un sistema de reservas con formulario interactivo y validación de datos en tiempo real.",
@@ -89,6 +101,10 @@
       "startDate": "Agosto 2021",
       "endDate": "Octubre 2021",
       "summary": "Desarrollo de su aplicación web, con el objetivo de que los clientes puedan comprar sus productos.",
+      "location": {
+        "city": "Tabacundo",
+        "region": "Ecuador"
+      },
       "highlights": [
         "Rediseñé la estructura visual del sitio mejorando la presentación de productos y la navegabilidad.",
         "Desarrollé componentes reutilizables con Astro, Tailwind y JavaScript para optimizar el mantenimiento del código.",

@@ -30,13 +30,7 @@ const Curriculum = () => {
       description="I believe in web development as a powerful communication tool to reflect life projects, communicate ventures and ideas."
       title="Curriculum Vitae - Jhon Lescano"
     >
-      <Center
-        display={{ base: "none", lg: "flex" }}
-        flexDir="column"
-        gap={4}
-        h={"full"}
-        alignItems={"center"}
-      >
+      <Center display={"flex"} flexDir="column" gap={4} h={"full"} alignItems={"center"}>
         <Button
           text={isLoading ? "Generando PDF..." : "Descargar CV en PDF"}
           onClick={() => createPDF()}

@@ -6,6 +6,10 @@ export type WorkType = {
   endDate: string;
   summary: string;
   highlights: string[];
+  location: {
+    city: string;
+    region: string;
+  };
 };
 
 export type EducationType = {

@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   page: {
     padding: 30,
     fontSize: 10,
-    fontFamily: "Helvetica",
+    fontFamily: "Times-Roman",
     backgroundColor: "#ffffff",
     color: "#000000",
   },
@@ -79,6 +79,17 @@ const styles = StyleSheet.create({
     fontSize: 8,
     color: "#333333",
   },
+  subsectionDateLocation: {
+    fontSize: 8,
+    fontWeight: "bold",
+    color: "#333333",
+  },
+  subsubsectionRow: {
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "flex-end",
+    marginBottom: 2,
+  },
   subsectionRow: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -147,7 +158,7 @@ const ResumePDF: React.FC<ResumePDFProps> = ({ data }) => {
               <View style={styles.contactColumn}>
                 <Text style={styles.contactText}>Dirección: {address}</Text>
                 <Text style={styles.contactText}>
-                  Portafolio:{" "}
+                  LinkedIn:{" "}
                   <Link src={website} style={styles.link}>
                     {website}
                   </Link>
@@ -179,7 +190,7 @@ const ResumePDF: React.FC<ResumePDFProps> = ({ data }) => {
             <View key={edu.institution} style={styles.subsectionContainer}>
               <View style={styles.subsectionHeader}>
                 <Text style={styles.subsectionTitle}>{edu.institution}</Text>
-                <Text style={styles.subsectionDate}>{edu.address}</Text>
+                <Text style={styles.subsectionDateLocation}>{edu.address}</Text>
               </View>
               <View style={styles.subsectionRow}>
                 <Text style={styles.subsectionText}>{edu.area}</Text>
@@ -237,9 +248,15 @@ const ResumePDF: React.FC<ResumePDFProps> = ({ data }) => {
                   <Text style={styles.subsectionTitle}>{work.company}</Text>
                   <Text style={styles.subsectionText}>{work.position}</Text>
                 </View>
-                <Text style={styles.subsectionDate}>
-                  {work.startDate} - {work.endDate}
-                </Text>
+
+                <View style={styles.subsubsectionRow}>
+                  <Text style={styles.subsectionDateLocation}>
+                    {work.location.city}, {work.location.region}
+                  </Text>
+                  <Text style={styles.subsectionDate}>
+                    {work.startDate} - {work.endDate}
+                  </Text>
+                </View>
               </View>
               <View style={styles.contentIndent}>
                 <Text style={styles.text}>{work.summary}</Text>

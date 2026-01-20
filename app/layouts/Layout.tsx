@@ -1,14 +1,14 @@
 import React from "react";
 import { Box, Container } from "@chakra-ui/react";
 import Head from "next/head";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import NavBar from "components/header/NavBar";
 import Footer from "components/Footer";
 
 import { META } from "../constants/config";
 
 const Layout = ({ children, ...customMeta }) => {
-  const router = useRouter();
+  const pathname = usePathname();
   const meta: any = {
     ...META,
     ...customMeta,
@@ -22,8 +22,8 @@ const Layout = ({ children, ...customMeta }) => {
           <title>{meta.title}</title>
           <meta content="follow, index" name="robots" />
           <meta content={meta.description} name="description" />
-          <meta content={`${meta.url}${router.asPath}`} property="og:url" />
-          <link href={`${meta.url}${router.asPath}`} rel="canonical" />
+          <meta content={`${meta.url}${pathname}`} property="og:url" />
+          <link href={`${meta.url}${pathname}`} rel="canonical" />
           <meta content={meta.keywords} name="keywords" />
           <meta content={meta.author} name="author" />
           <meta content={meta.type} property="og:type" />
