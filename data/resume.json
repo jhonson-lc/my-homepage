@@ -196,6 +196,10 @@
       "keywords": ["framework"]
     },
     {
+      "name": "Angular",
+      "keywords": ["framework"]
+    },
+    {
       "name": "Astro",
       "keywords": ["framework"]
     },
@@ -209,6 +213,22 @@
     },
     {
       "name": "Fastify.js",
+      "keywords": ["framework"]
+    },
+    {
+      "name": "NestJS",
+      "keywords": ["framework"]
+    },
+    {
+      "name": "Spring Boot",
+      "keywords": ["framework"]
+    },
+    {
+      "name": "React Native",
+      "keywords": ["framework"]
+    },
+    {
+      "name": "Flutter",
       "keywords": ["framework"]
     },
     {
@@ -252,7 +272,7 @@
       "keywords": ["tools"]
     },
     {
-      "name": "Visual Studio Code",
+      "name": "Visual Studio",
       "keywords": ["platform"]
     },
     {
